@@ -1,3 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
+  <entry>
+    <title><![CDATA[scikit-learn学习笔记（二）]]></title>
+    <url>%2F2018%2F12%2F24%2Fscikit-learn%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[123]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[scikit-learn学习笔记（一）]]></title>
+    <url>%2F2018%2F12%2F23%2Fskicit-learn%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[scikit-learn是一个python的库，包含大量的机器学习算法。由于做kaggle上面的项目需要，使用到了这个库，但是需要注意的是scikit-learn的数据必须是numeric类型的。 安装前提:有python，且安装好了numpy库和scipy库，然后通过pip的方式安装如下： 1pip install -U sickit-learn 选择模型方法官网中有流程图，对于不同的场景需要选择不同的机器学习模型，模型图如下： 图中蓝色的圆圈是判断，绿色的方框是可以选择的算法。 算法分为了四大类： classfication(分类）、regression（回归）、clustering（聚类）、dimensionality reduction（数据降维） 数据集利用 scikit-learn中包含了很多技术集，可供学习。 比如iris数据集，中文名是安德森鸢尾花卉数据集，是一个给鸢尾花做分类的数据集，包含四个属性： 花萼长度、花萼宽度、花瓣长度、花瓣宽度 以及花的品种：山鸢尾、变色鸢尾、维吉尼亚鸢尾 根据四个属性预测出花的品种，是一个典型的分类问题，可以根据这个数据集，走一下sickit-learn的使用流程 使用流程以iris数据集为例子： 导入数据集 查看数据格式 可以看出，每条数据有四个属性，标签一共有三类，用0、1、2表示。 划分数据集 train_test_split可以随机划分数据集，要划分的是iris_X和iris_y，划分比例是训练数据80%,测试数据20% 使用模型、预测、计算准确率 使用knn模型，至于此模型的原理，不是本文重点，不再解释。 打印出的结果可以看到模型预测的结果不一定是完全准确的。可以通过以下方式计算模型的准确率： 训练数据准确率为96%左右，测试数据准确率为93%左右，说明使用knn做鸢尾花数据集的分类是一个不错的选择。 参考：莫烦的学习网站]]></content>
+  </entry>
 </search>
