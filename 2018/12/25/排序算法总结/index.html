@@ -104,18 +104,18 @@
 
 
 
-  <meta name="description" content="基于比较的排序算法交换类排序 冒泡排序 快速排序  选择类排序 简单选择排序 堆排序  插入类排序 直接插入排序 折半插入排序 希尔排序  基于某种映射函数的排序算法 桶排序 基数排序">
+  <meta name="description" content="本文对排序算法做一次总结和梳理，主要思想+实例+代码实现+时间空间复杂度分析 基于比较的排序算法交换类排序 冒泡排序  基本思想连续的扫描待排序的记录；每趟扫描时，都会移动最大的记录，使之更接近于序列的尾部，像气泡一样缓缓上升。 若某趟扫描过程中没有执行任何交换，则表明记录是有序的，因而需终止排序。 如何移动最大的记录，使之更接近于序列的尾部？ 将当前记录与下一条记录进行比较，若当前记录&amp;gt;下">
 <meta name="keywords" content="数据结构">
 <meta property="og:type" content="article">
 <meta property="og:title" content="排序算法总结">
 <meta property="og:url" content="http://yoursite.com/2018/12/25/排序算法总结/index.html">
 <meta property="og:site_name" content="YangJie&#39;s Blog">
-<meta property="og:description" content="基于比较的排序算法交换类排序 冒泡排序 快速排序  选择类排序 简单选择排序 堆排序  插入类排序 直接插入排序 折半插入排序 希尔排序  基于某种映射函数的排序算法 桶排序 基数排序">
+<meta property="og:description" content="本文对排序算法做一次总结和梳理，主要思想+实例+代码实现+时间空间复杂度分析 基于比较的排序算法交换类排序 冒泡排序  基本思想连续的扫描待排序的记录；每趟扫描时，都会移动最大的记录，使之更接近于序列的尾部，像气泡一样缓缓上升。 若某趟扫描过程中没有执行任何交换，则表明记录是有序的，因而需终止排序。 如何移动最大的记录，使之更接近于序列的尾部？ 将当前记录与下一条记录进行比较，若当前记录&amp;gt;下">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-12-26T07:18:17.004Z">
+<meta property="og:updated_time" content="2018-12-26T12:17:27.400Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="排序算法总结">
-<meta name="twitter:description" content="基于比较的排序算法交换类排序 冒泡排序 快速排序  选择类排序 简单选择排序 堆排序  插入类排序 直接插入排序 折半插入排序 希尔排序  基于某种映射函数的排序算法 桶排序 基数排序">
+<meta name="twitter:description" content="本文对排序算法做一次总结和梳理，主要思想+实例+代码实现+时间空间复杂度分析 基于比较的排序算法交换类排序 冒泡排序  基本思想连续的扫描待排序的记录；每趟扫描时，都会移动最大的记录，使之更接近于序列的尾部，像气泡一样缓缓上升。 若某趟扫描过程中没有执行任何交换，则表明记录是有序的，因而需终止排序。 如何移动最大的记录，使之更接近于序列的尾部？ 将当前记录与下一条记录进行比较，若当前记录&amp;gt;下">
 
 
 
@@ -416,7 +416,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-12-26 15:18:17" itemprop="dateModified" datetime="2018-12-26T15:18:17+08:00">2018-12-26</time>
+                <time title="修改时间：2018-12-26 20:17:27" itemprop="dateModified" datetime="2018-12-26T20:17:27+08:00">2018-12-26</time>
               
             
           </span>
@@ -475,8 +475,33 @@
       
       
       
-        <h2 id="基于比较的排序算法"><a href="#基于比较的排序算法" class="headerlink" title="基于比较的排序算法"></a>基于比较的排序算法</h2><h3 id="交换类排序"><a href="#交换类排序" class="headerlink" title="交换类排序"></a>交换类排序</h3><ul>
+        <p>本文对排序算法做一次总结和梳理，主要思想+实例+代码实现+时间空间复杂度分析</p>
+<h2 id="基于比较的排序算法"><a href="#基于比较的排序算法" class="headerlink" title="基于比较的排序算法"></a>基于比较的排序算法</h2><h3 id="交换类排序"><a href="#交换类排序" class="headerlink" title="交换类排序"></a>交换类排序</h3><ul>
 <li><h4 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h4></li>
+</ul>
+<h5 id="基本思想"><a href="#基本思想" class="headerlink" title="基本思想"></a>基本思想</h5><p>连续的扫描待排序的记录；<br>每趟扫描时，都会移动最大的记录，使之更接近于序列的尾部，像气泡一样缓缓上升。</p>
+<p>若某趟扫描过程中没有执行任何交换，则表明记录是有序的，因而需终止排序。</p>
+<p>如何移动最大的记录，使之更接近于序列的尾部？</p>
+<p>将当前记录与下一条记录进行比较，若当前记录&gt;下一条记录，则交换两条记录的位置。</p>
+<h5 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h5><p>5 4 3 6 1 从小到大排序</p>
+<p>第一趟：从头到尾，两两比较，不符合前小后大，就交换位置。</p>
+<p>5和4比较，5比4大，交换位置，接着5和3比较，5比3大，交换位置，5再和6比较，不交换，6和1比较，6比1大，两者交换位置，一趟排序下来，变为</p>
+<p>4 3 5 1 6 </p>
+<p>此时最大的数字6，已经像气泡一样上升到了最后，它的位置就已经确定，下次比较，就只需要对前面4个数字进行排序</p>
+<p>第二趟：</p>
+<p>4和3比较，交换，4再和5比较，不交换，5和1比较，交换，此趟结束，那么一趟排序下来，变为了</p>
+<p>3 4 1 5 6</p>
+<p>5也升到了最后，也就是一次排序有一个数字到达了最终位置，第一趟是最后一个数，第二趟是倒数第二个数，因此下次只用对前面的数进行排序。</p>
+<p>第三趟：</p>
+<p>只用对3 4 1 排序，排序下来变为</p>
+<p>3 1 4 5 6</p>
+<p>第四趟：</p>
+<p>只用对 3 1排序</p>
+<p>1 3 4 5 6</p>
+<p>第五趟:只有一个1，排序完成</p>
+<p>最终就是 1 3 4 5 6</p>
+<h5 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h5><p>整个排序过程可以用两层循环完成，代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">void BubbleSort(int *a, int length)</span><br><span class="line">&#123;</span><br><span class="line">    int i,temp;</span><br><span class="line">	for (i = 0;i &lt; length - 1;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		for (int j = 0;j &lt; length - i - 1;j++)</span><br><span class="line">		&#123;</span><br><span class="line">			if (a[j] &gt; a[j + 1])</span><br><span class="line">			&#123;</span><br><span class="line">				temp = a[j];</span><br><span class="line">				a[j] = a[j + 1];</span><br><span class="line">				a[j + 1] = temp;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<ul>
 <li><h4 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h4></li>
 </ul>
 <h3 id="选择类排序"><a href="#选择类排序" class="headerlink" title="选择类排序"></a>选择类排序</h3><ul>
@@ -728,7 +753,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基于比较的排序算法"><span class="nav-number">1.</span> <span class="nav-text">基于比较的排序算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#交换类排序"><span class="nav-number">1.1.</span> <span class="nav-text">交换类排序</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#冒泡排序"><span class="nav-number">1.1.1.</span> <span class="nav-text">冒泡排序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#快速排序"><span class="nav-number">1.1.2.</span> <span class="nav-text">快速排序</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#选择类排序"><span class="nav-number">1.2.</span> <span class="nav-text">选择类排序</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#简单选择排序"><span class="nav-number">1.2.1.</span> <span class="nav-text">简单选择排序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#堆排序"><span class="nav-number">1.2.2.</span> <span class="nav-text">堆排序</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#插入类排序"><span class="nav-number">1.3.</span> <span class="nav-text">插入类排序</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#直接插入排序"><span class="nav-number">1.3.1.</span> <span class="nav-text">直接插入排序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#折半插入排序"><span class="nav-number">1.3.2.</span> <span class="nav-text">折半插入排序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#希尔排序"><span class="nav-number">1.3.3.</span> <span class="nav-text">希尔排序</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基于某种映射函数的排序算法"><span class="nav-number">2.</span> <span class="nav-text">基于某种映射函数的排序算法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#桶排序"><span class="nav-number">2.0.1.</span> <span class="nav-text">桶排序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基数排序"><span class="nav-number">2.0.2.</span> <span class="nav-text">基数排序</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基于比较的排序算法"><span class="nav-number">1.</span> <span class="nav-text">基于比较的排序算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#交换类排序"><span class="nav-number">1.1.</span> <span class="nav-text">交换类排序</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#冒泡排序"><span class="nav-number">1.1.1.</span> <span class="nav-text">冒泡排序</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#基本思想"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">基本思想</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#实例"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">实例</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#实现代码"><span class="nav-number">1.1.1.3.</span> <span class="nav-text">实现代码</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#快速排序"><span class="nav-number">1.1.2.</span> <span class="nav-text">快速排序</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#选择类排序"><span class="nav-number">1.2.</span> <span class="nav-text">选择类排序</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#简单选择排序"><span class="nav-number">1.2.1.</span> <span class="nav-text">简单选择排序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#堆排序"><span class="nav-number">1.2.2.</span> <span class="nav-text">堆排序</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#插入类排序"><span class="nav-number">1.3.</span> <span class="nav-text">插入类排序</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#直接插入排序"><span class="nav-number">1.3.1.</span> <span class="nav-text">直接插入排序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#折半插入排序"><span class="nav-number">1.3.2.</span> <span class="nav-text">折半插入排序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#希尔排序"><span class="nav-number">1.3.3.</span> <span class="nav-text">希尔排序</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基于某种映射函数的排序算法"><span class="nav-number">2.</span> <span class="nav-text">基于某种映射函数的排序算法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#桶排序"><span class="nav-number">2.0.1.</span> <span class="nav-text">桶排序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基数排序"><span class="nav-number">2.0.2.</span> <span class="nav-text">基数排序</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -843,9 +868,6 @@
 
 
 
-  
-  
-
 
 
 
@@ -865,16 +887,6 @@
   
   
     <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script src="/lib/three/three.min.js"></script>
-  
-
-  
-  
-    <script src="/lib/three/canvas_sphere.min.js"></script>
   
 
 
