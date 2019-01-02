@@ -114,7 +114,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/19-1-2/68380103.jpg">
 <meta property="og:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/19-1-2/14653488.jpg">
-<meta property="og:updated_time" content="2019-01-02T13:32:33.086Z">
+<meta property="og:updated_time" content="2019-01-02T13:36:10.898Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="实用算法总结(二) 栈和队列">
 <meta name="twitter:description" content="栈线性表：有限个数据元素组成的序列，记作(a1,a2, … , an) 栈：操作受限的特殊线性表，即限定在表尾进行插入或删除操作的线性表； 栈顶(top)：允许插入或删除的一端——表尾端； 栈底（base/bottom）——表头端 特性：后进先出 存储结构： &amp;emsp;顺序栈：顺序方式存储 &amp;emsp;链栈：链式存储 栈的应用举例：函数调用； 顺序栈的定义与实现顺序栈：利用顺序表来实现栈 C语言">
@@ -402,7 +402,7 @@
                 
               
 
-              <time title="创建时间：2019-01-02 21:30:29 / 修改时间：21:32:33" itemprop="dateCreated datePublished" datetime="2019-01-02T21:30:29+08:00">2019-01-02</time>
+              <time title="创建时间：2019-01-02 21:30:29 / 修改时间：21:36:10" itemprop="dateCreated datePublished" datetime="2019-01-02T21:30:29+08:00">2019-01-02</time>
             
 
             
@@ -513,10 +513,9 @@
 <p>特点：无栈满问题，内存可以扩充，除非是内存不足。</p>
 <p>链栈的原子操作课件中没有涉及，个人觉得也应该掌握，参考了一下博客：<a href="https://blog.csdn.net/rainchxy/article/details/78189472" target="_blank" rel="noopener">数据结构 第6讲 链栈</a>，总结如下：</p>
 <ul>
-<li>定义链栈</li>
-</ul>
+<li><p>定义链栈</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">typedef struct Snode</span><br><span class="line">&#123;</span><br><span class="line">    ElemType data;</span><br><span class="line">    struct Snode *next;</span><br><span class="line">&#125;Snode,*LinkStack；</span><br></pre></td></tr></table></figure>
-<ul>
+</li>
 <li><p>初始化链栈</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">bool InitStack(LinkStack &amp;S) //构造一个空栈S</span><br><span class="line">&#123;</span><br><span class="line">    S=NULL; </span><br><span class="line">    return true;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
