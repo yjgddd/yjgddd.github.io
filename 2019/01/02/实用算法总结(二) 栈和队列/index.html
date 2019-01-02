@@ -104,25 +104,28 @@
 
 
 
-  <meta name="description" content="本文对排序算法做一次总结和梳理，主要思想+实例+代码实现+时间空间复杂度分析 基于比较的排序算法交换类排序 冒泡排序  基本思想连续的扫描待排序的记录；每趟扫描时，都会移动最大的记录，使之更接近于序列的尾部，像气泡一样缓缓上升。 若某趟扫描过程中没有执行任何交换，则表明记录是有序的，因而需终止排序。 如何移动最大的记录，使之更接近于序列的尾部？ 将当前记录与下一条记录进行比较，若当前记录&amp;gt;下">
-<meta name="keywords" content="数据结构">
+  <meta name="description" content="栈线性表：有限个数据元素组成的序列，记作(a1,a2, … , an) 栈：操作受限的特殊线性表，即限定在表尾进行插入或删除操作的线性表； 栈顶(top)：允许插入或删除的一端——表尾端； 栈底（base/bottom）——表头端 特性：后进先出 存储结构： &amp;emsp;顺序栈：顺序方式存储 &amp;emsp;链栈：链式存储 栈的应用举例：函数调用； 顺序栈的定义与实现顺序栈：利用顺序表来实现栈 C语言">
+<meta name="keywords" content="数据结构,栈和队列">
 <meta property="og:type" content="article">
-<meta property="og:title" content="排序算法总结">
-<meta property="og:url" content="http://yoursite.com/2018/12/25/排序算法总结/index.html">
+<meta property="og:title" content="实用算法总结(二) 栈和队列">
+<meta property="og:url" content="http://yoursite.com/2019/01/02/实用算法总结(二) 栈和队列/index.html">
 <meta property="og:site_name" content="YangJie&#39;s Blog">
-<meta property="og:description" content="本文对排序算法做一次总结和梳理，主要思想+实例+代码实现+时间空间复杂度分析 基于比较的排序算法交换类排序 冒泡排序  基本思想连续的扫描待排序的记录；每趟扫描时，都会移动最大的记录，使之更接近于序列的尾部，像气泡一样缓缓上升。 若某趟扫描过程中没有执行任何交换，则表明记录是有序的，因而需终止排序。 如何移动最大的记录，使之更接近于序列的尾部？ 将当前记录与下一条记录进行比较，若当前记录&amp;gt;下">
+<meta property="og:description" content="栈线性表：有限个数据元素组成的序列，记作(a1,a2, … , an) 栈：操作受限的特殊线性表，即限定在表尾进行插入或删除操作的线性表； 栈顶(top)：允许插入或删除的一端——表尾端； 栈底（base/bottom）——表头端 特性：后进先出 存储结构： &amp;emsp;顺序栈：顺序方式存储 &amp;emsp;链栈：链式存储 栈的应用举例：函数调用； 顺序栈的定义与实现顺序栈：利用顺序表来实现栈 C语言">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-01-02T12:06:02.169Z">
+<meta property="og:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/19-1-2/68380103.jpg">
+<meta property="og:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/19-1-2/14653488.jpg">
+<meta property="og:updated_time" content="2019-01-02T13:32:33.086Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="排序算法总结">
-<meta name="twitter:description" content="本文对排序算法做一次总结和梳理，主要思想+实例+代码实现+时间空间复杂度分析 基于比较的排序算法交换类排序 冒泡排序  基本思想连续的扫描待排序的记录；每趟扫描时，都会移动最大的记录，使之更接近于序列的尾部，像气泡一样缓缓上升。 若某趟扫描过程中没有执行任何交换，则表明记录是有序的，因而需终止排序。 如何移动最大的记录，使之更接近于序列的尾部？ 将当前记录与下一条记录进行比较，若当前记录&amp;gt;下">
+<meta name="twitter:title" content="实用算法总结(二) 栈和队列">
+<meta name="twitter:description" content="栈线性表：有限个数据元素组成的序列，记作(a1,a2, … , an) 栈：操作受限的特殊线性表，即限定在表尾进行插入或删除操作的线性表； 栈顶(top)：允许插入或删除的一端——表尾端； 栈底（base/bottom）——表头端 特性：后进先出 存储结构： &amp;emsp;顺序栈：顺序方式存储 &amp;emsp;链栈：链式存储 栈的应用举例：函数调用； 顺序栈的定义与实现顺序栈：利用顺序表来实现栈 C语言">
+<meta name="twitter:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/19-1-2/68380103.jpg">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/12/25/排序算法总结/">
+  <link rel="canonical" href="http://yoursite.com/2019/01/02/实用算法总结(二) 栈和队列/">
 
 
 
@@ -132,7 +135,7 @@
   };
 </script>
 
-  <title>排序算法总结 | YangJie's Blog</title>
+  <title>实用算法总结(二) 栈和队列 | YangJie's Blog</title>
   
 
 
@@ -356,7 +359,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/25/排序算法总结/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/02/实用算法总结(二) 栈和队列/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="YangJie">
@@ -373,7 +376,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">排序算法总结
+          <h1 class="post-title" itemprop="name headline">实用算法总结(二) 栈和队列
 
               
             
@@ -399,24 +402,12 @@
                 
               
 
-              <time title="创建时间：2018-12-25 10:04:48" itemprop="dateCreated datePublished" datetime="2018-12-25T10:04:48+08:00">2018-12-25</time>
+              <time title="创建时间：2019-01-02 21:30:29 / 修改时间：21:32:33" itemprop="dateCreated datePublished" datetime="2019-01-02T21:30:29+08:00">2019-01-02</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-01-02 20:06:02" itemprop="dateModified" datetime="2019-01-02T20:06:02+08:00">2019-01-02</time>
               
             
           </span>
@@ -447,7 +438,7 @@
 
           
           
-             <span id="/2018/12/25/排序算法总结/" class="leancloud_visitors" data-flag-title="排序算法总结">
+             <span id="/2019/01/02/实用算法总结(二) 栈和队列/" class="leancloud_visitors" data-flag-title="实用算法总结(二) 栈和队列">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -475,48 +466,91 @@
       
       
       
-        <p>本文对排序算法做一次总结和梳理，主要思想+实例+代码实现+时间空间复杂度分析</p>
-<h2 id="基于比较的排序算法"><a href="#基于比较的排序算法" class="headerlink" title="基于比较的排序算法"></a>基于比较的排序算法</h2><h3 id="交换类排序"><a href="#交换类排序" class="headerlink" title="交换类排序"></a>交换类排序</h3><ul>
-<li><h4 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h4></li>
-</ul>
-<h5 id="基本思想"><a href="#基本思想" class="headerlink" title="基本思想"></a>基本思想</h5><p>连续的扫描待排序的记录；<br>每趟扫描时，都会移动最大的记录，使之更接近于序列的尾部，像气泡一样缓缓上升。</p>
-<p>若某趟扫描过程中没有执行任何交换，则表明记录是有序的，因而需终止排序。</p>
-<p>如何移动最大的记录，使之更接近于序列的尾部？</p>
-<p>将当前记录与下一条记录进行比较，若当前记录&gt;下一条记录，则交换两条记录的位置。</p>
-<h5 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h5><p>5 4 3 6 1 从小到大排序</p>
-<p>第一趟：从头到尾，两两比较，不符合前小后大，就交换位置。</p>
-<p>5和4比较，5比4大，交换位置，接着5和3比较，5比3大，交换位置，5再和6比较，不交换，6和1比较，6比1大，两者交换位置，一趟排序下来，变为</p>
-<p>4 3 5 1 6 </p>
-<p>此时最大的数字6，已经像气泡一样上升到了最后，它的位置就已经确定，下次比较，就只需要对前面4个数字进行排序</p>
-<p>第二趟：</p>
-<p>4和3比较，交换，4再和5比较，不交换，5和1比较，交换，此趟结束，那么一趟排序下来，变为了</p>
-<p>3 4 1 5 6</p>
-<p>5也升到了最后，也就是一次排序有一个数字到达了最终位置，第一趟是最后一个数，第二趟是倒数第二个数，因此下次只用对前面的数进行排序。</p>
-<p>第三趟：</p>
-<p>只用对3 4 1 排序，排序下来变为</p>
-<p>3 1 4 5 6</p>
-<p>第四趟：</p>
-<p>只用对 3 1排序</p>
-<p>1 3 4 5 6</p>
-<p>第五趟:只有一个1，排序完成</p>
-<p>最终就是 1 3 4 5 6</p>
-<h5 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h5><p>整个排序过程可以用两层循环完成，代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">void BubbleSort(int *a, int length)</span><br><span class="line">&#123;</span><br><span class="line">    int i,temp,flag;</span><br><span class="line">	for (i = 0;i &lt; length - 1;i++)</span><br><span class="line">	&#123;</span><br><span class="line">	    flag=0;</span><br><span class="line">		for (int j = 0;j &lt; length - i - 1;j++)</span><br><span class="line">		&#123;</span><br><span class="line">			if (a[j] &gt; a[j + 1])</span><br><span class="line">			&#123;</span><br><span class="line">				temp = a[j];</span><br><span class="line">				a[j] = a[j + 1];</span><br><span class="line">				a[j + 1] = temp;</span><br><span class="line">				flag=1;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		if(flag==0) break;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+        <h3 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h3><p>线性表：有限个数据元素组成的序列，记作(a1,a2, … , an)</p>
+<p>栈：操作受限的特殊线性表，即限定在表尾进行插入或删除操作的线性表；<br><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/19-1-2/68380103.jpg" alt=""></p>
+<p>栈顶(top)：允许插入或删除的一端——表尾端；</p>
+<p>栈底（base/bottom）——表头端</p>
+<p>特性：后进先出</p>
+<p>存储结构：</p>
+<p>&emsp;顺序栈：顺序方式存储</p>
+<p>&emsp;链栈：链式存储</p>
+<p>栈的应用举例：函数调用；</p>
+<h4 id="顺序栈的定义与实现"><a href="#顺序栈的定义与实现" class="headerlink" title="顺序栈的定义与实现"></a>顺序栈的定义与实现</h4><p>顺序栈：利用顺序表来实现栈</p>
+<p>C语言定义：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">struct stack_struct &#123;</span><br><span class="line">    ElemType *base;        /* point to base of stack */</span><br><span class="line">    int                stack_size;  /* number of elements */</span><br><span class="line">    int                min_stack;   /* bottom-most element */</span><br><span class="line">    int                max_stack;  /* last possible element */</span><br><span class="line">    int                top;         /* current top */</span><br><span class="line">&#125;;</span><br><span class="line">typedef struct stack_struct Stack;</span><br></pre></td></tr></table></figure>
+<p>原子操作的实现：<br>Stack *this_stack;</p>
 <ul>
-<li><h4 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h4></li>
+<li>创建空栈（初始化栈）</li>
 </ul>
-<h3 id="选择类排序"><a href="#选择类排序" class="headerlink" title="选择类排序"></a>选择类排序</h3><ul>
-<li><h4 id="简单选择排序"><a href="#简单选择排序" class="headerlink" title="简单选择排序"></a>简单选择排序</h4></li>
-<li><h4 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h4></li>
+<p>&emsp;将this_stack-&gt;base指向分配成功的连续内存空间的开始处;</p>
+<p>&emsp;this_stack-&gt;top=-1（注意不是0,若为0则意味着栈中已有一个元素了）;</p>
+<ul>
+<li><p>销毁已有栈</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">//关键操作</span><br><span class="line">this_stack-&gt;top=-1;</span><br><span class="line">free(this_stack-&gt;base);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查找直接后继和直接前驱</p>
+</li>
 </ul>
-<h3 id="插入类排序"><a href="#插入类排序" class="headerlink" title="插入类排序"></a>插入类排序</h3><ul>
-<li><h4 id="直接插入排序"><a href="#直接插入排序" class="headerlink" title="直接插入排序"></a>直接插入排序</h4></li>
-<li><h4 id="折半插入排序"><a href="#折半插入排序" class="headerlink" title="折半插入排序"></a>折半插入排序</h4></li>
-<li><h4 id="希尔排序"><a href="#希尔排序" class="headerlink" title="希尔排序"></a>希尔排序</h4></li>
+<p>&emsp;若要查看的元素下标是合法的（[0,top]），则可以通过this_stack-&gt;base的下标来随机存取与栈顶元素间隔为i的栈元素 ：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">( this_stack-&gt;base )[this_stack-&gt;top – i].</span><br></pre></td></tr></table></figure>
+<ul>
+<li>入栈</li>
 </ul>
-<h2 id="基于某种映射函数的排序算法"><a href="#基于某种映射函数的排序算法" class="headerlink" title="基于某种映射函数的排序算法"></a>基于某种映射函数的排序算法</h2><ul>
-<li><h4 id="桶排序"><a href="#桶排序" class="headerlink" title="桶排序"></a>桶排序</h4></li>
-<li><h4 id="基数排序"><a href="#基数排序" class="headerlink" title="基数排序"></a>基数排序</h4></li>
+<p>&emsp;若栈未满，则让栈顶下标top递增，然后将要入栈的数复制到栈顶处。</p>
+<p>&emsp;分析：插入位置为栈顶元素的下一个，无须判断位置的合法性；上溢即栈满的条件需要判断，由于是增量式分配，故栈满时需要重新申请空间.</p>
+<ul>
+<li>出栈</li>
 </ul>
+<p>&emsp;若栈未空，则将栈顶元素复制到一个指定的目的地；并让栈顶下标top递减以指向栈上的下一个元素：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this_stack-&gt;top -= 1</span><br></pre></td></tr></table></figure></p>
+<p>入栈和出栈的时间复杂度都是O(1)</p>
+<p><strong>关键问题：怎么判断栈满、栈空？</strong></p>
+<p>栈空: stack-&gt;top==-1</p>
+<p>栈满：stack-&gt;top == this_stack-&gt;max_stack </p>
+<h4 id="链栈的定义与实现"><a href="#链栈的定义与实现" class="headerlink" title="链栈的定义与实现"></a>链栈的定义与实现</h4><p>链栈：用链表来实现栈</p>
+<p>栈顶(top)：用链表的头指针来表示。</p>
+<p>栈底(base)：无需额外表示。(只在栈顶top中进行操作)</p>
+<p><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/19-1-2/14653488.jpg" alt=""></p>
+<p>特点：无栈满问题，内存可以扩充，除非是内存不足。</p>
+<p>链栈的原子操作课件中没有涉及，个人觉得也应该掌握，参考了一下博客：<a href="https://blog.csdn.net/rainchxy/article/details/78189472" target="_blank" rel="noopener">数据结构 第6讲 链栈</a>，总结如下：</p>
+<ul>
+<li>定义链栈</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">typedef struct Snode</span><br><span class="line">&#123;</span><br><span class="line">    ElemType data;</span><br><span class="line">    struct Snode *next;</span><br><span class="line">&#125;Snode,*LinkStack；</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>初始化链栈</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">bool InitStack(LinkStack &amp;S) //构造一个空栈S</span><br><span class="line">&#123;</span><br><span class="line">    S=NULL; </span><br><span class="line">    return true;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>入栈</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">bool Push(LinkStack &amp;S, int e) //在栈顶插入元素e</span><br><span class="line">&#123;</span><br><span class="line">    LinkStack p;</span><br><span class="line">    p = new Snode; //生成新结点</span><br><span class="line">    p-&gt;data = e; //将e放在新结点数据域</span><br><span class="line">    p-&gt;next = S; //将新结点的指针域指向S，即将S的地址赋值给新结点的指针域</span><br><span class="line">    S = p; //修改栈顶指针为p</span><br><span class="line">    return true;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>出栈</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">bool Pop(LinkStack &amp;S, int &amp;e) //删除S的栈顶元素，用e保存其值</span><br><span class="line">&#123; </span><br><span class="line"></span><br><span class="line">    LinkStack p;</span><br><span class="line">    if (S == NULL) //栈空</span><br><span class="line">        return false;</span><br><span class="line">    e = S-&gt;data; //将栈顶元素赋给e</span><br><span class="line">    p = S; //用p保存栈顶元素地址，以备释放</span><br><span class="line">    S = S-&gt;next; //修改栈顶指针，指向下一个结点</span><br><span class="line">    delete p; //释放原栈顶元素的空间</span><br><span class="line">    return true;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>取栈顶元素</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">int GetTop(LinkStack S) //返回S的栈顶元素，不修改栈顶指针</span><br><span class="line">&#123; </span><br><span class="line">    if (S != NULL) //栈非空</span><br><span class="line">        return S-&gt;data; //返回栈顶元素的值，栈顶指针不变</span><br><span class="line">    else return -1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>问题：</p>
+<p>1.需要引入头结点（无需）</p>
+<p>2.在链栈下的入栈、出栈如何实现？(见上面)</p>
+<p>3.如何判断栈空？（头指针为空即栈空）</p>
+<p>4.顺序栈中为何要定义base（个人觉得是用来检查内存分配是否成功，以及访问栈中的元素也要借助base)</p>
+<h4 id="两种栈的总结对比"><a href="#两种栈的总结对比" class="headerlink" title="两种栈的总结对比"></a>两种栈的总结对比</h4><p>推荐使用顺序栈，实现简单</p>
+<p>栈的受限操作的特性正好屏蔽了顺序表的弱势：添加和删除数据都是在同一端进行的。</p>
+<h4 id="栈的应用-递归"><a href="#栈的应用-递归" class="headerlink" title="栈的应用:递归"></a>栈的应用:递归</h4><p>这里知识其实挺多的，在此简单总结一下：</p>
+<p><strong>递归的实现：</strong></p>
+<p>调用前：</p>
+<p>&emsp;现场保护（参数、返回地址、旧基址），被调用函数的局部变量的空间分配，控制转移至被调用的函数入口。</p>
+<p>调用后：</p>
+<p>&emsp;保存计算结果，释放被调函数的数据区，控制转移回调用处。</p>
+<p>实现——栈</p>
+<p>“后调用先返回”。系统利用递归工作栈记录各层调用的现场信息。</p>
+<p><strong>总结：什么时候可以使用栈？</strong></p>
+<p>程序员需要跟踪程序当前所在的位置</p>
+<p>程序员需要知道什么动作或数据位于当前正在进行的动作之前</p>
+<h3 id="参考资料："><a href="#参考资料：" class="headerlink" title="参考资料："></a>参考资料：</h3><p>【1】中科大余艳玮老师实用算法课程</p>
+<p>【2】[程序员实用算法].Andrew.Binstock.等著</p>
+<p>【3】<a href="https://blog.csdn.net/rainchxy/article/details/78189472" target="_blank" rel="noopener">数据结构 第6讲 链栈</a></p>
 
       
     </div>
@@ -571,6 +605,8 @@
           
             <a href="/tags/数据结构/" rel="tag"><i class="fa fa-tag"></i> 数据结构</a>
           
+            <a href="/tags/栈和队列/" rel="tag"><i class="fa fa-tag"></i> 栈和队列</a>
+          
         </div>
       
 
@@ -582,8 +618,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/12/23/skicit-learn学习笔记(一)/" rel="next" title="scikit-learn学习笔记（一）">
-                <i class="fa fa-chevron-left"></i> scikit-learn学习笔记（一）
+              <a href="/2019/01/01/机器学习总结（一）/" rel="next" title="机器学习总结（一）">
+                <i class="fa fa-chevron-left"></i> 机器学习总结（一）
               </a>
             
           </div>
@@ -591,10 +627,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/01/01/实用算法总结(一) 基本概念、线性表/" rel="prev" title="实用算法总结(一) 基本概念、线性表">
-                实用算法总结(一) 基本概念、线性表 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -765,7 +797,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基于比较的排序算法"><span class="nav-number">1.</span> <span class="nav-text">基于比较的排序算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#交换类排序"><span class="nav-number">1.1.</span> <span class="nav-text">交换类排序</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#冒泡排序"><span class="nav-number">1.1.1.</span> <span class="nav-text">冒泡排序</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#基本思想"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">基本思想</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#实例"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">实例</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#实现代码"><span class="nav-number">1.1.1.3.</span> <span class="nav-text">实现代码</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#快速排序"><span class="nav-number">1.1.2.</span> <span class="nav-text">快速排序</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#选择类排序"><span class="nav-number">1.2.</span> <span class="nav-text">选择类排序</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#简单选择排序"><span class="nav-number">1.2.1.</span> <span class="nav-text">简单选择排序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#堆排序"><span class="nav-number">1.2.2.</span> <span class="nav-text">堆排序</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#插入类排序"><span class="nav-number">1.3.</span> <span class="nav-text">插入类排序</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#直接插入排序"><span class="nav-number">1.3.1.</span> <span class="nav-text">直接插入排序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#折半插入排序"><span class="nav-number">1.3.2.</span> <span class="nav-text">折半插入排序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#希尔排序"><span class="nav-number">1.3.3.</span> <span class="nav-text">希尔排序</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基于某种映射函数的排序算法"><span class="nav-number">2.</span> <span class="nav-text">基于某种映射函数的排序算法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#桶排序"><span class="nav-number">2.0.1.</span> <span class="nav-text">桶排序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基数排序"><span class="nav-number">2.0.2.</span> <span class="nav-text">基数排序</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#栈"><span class="nav-number">1.</span> <span class="nav-text">栈</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#顺序栈的定义与实现"><span class="nav-number">1.1.</span> <span class="nav-text">顺序栈的定义与实现</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#链栈的定义与实现"><span class="nav-number">1.2.</span> <span class="nav-text">链栈的定义与实现</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#两种栈的总结对比"><span class="nav-number">1.3.</span> <span class="nav-text">两种栈的总结对比</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#栈的应用-递归"><span class="nav-number">1.4.</span> <span class="nav-text">栈的应用:递归</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考资料："><span class="nav-number">2.</span> <span class="nav-text">参考资料：</span></a></li></ol></div>
             
 
           </div>
