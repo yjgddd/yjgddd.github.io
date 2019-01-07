@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.6.0" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.6.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.ico?v=6.6.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.ico?v=6.6.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.6.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '6.6.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="机器学习期末总结~知识的搬运和总结，大部分内容来源于张曙老师机器学习课程~ 第一章 绪论1.1 机器学习的历史（略） 1.2  什么是机器学习对于给定的任务T，在合理的性能度量方案P的前提下，某计算机程序可以自主学习任务T的经验E，随着提供合适、优质、大量的经验E，该程序对于任务T的性能逐步提高。 所谓机器学习更通俗的说就是：我们使用计算机设计一个系统，使它能够根据提供的训练数据按照一定的方式来学">
+<meta name="keywords" content="机器学习">
+<meta property="og:type" content="article">
+<meta property="og:title" content="机器学习总结（一）基本概念">
+<meta property="og:url" content="http://yoursite.com/2019/01/01/机器学习总结（一）基本概念/index.html">
+<meta property="og:site_name" content="YangJie&#39;s Blog">
+<meta property="og:description" content="机器学习期末总结~知识的搬运和总结，大部分内容来源于张曙老师机器学习课程~ 第一章 绪论1.1 机器学习的历史（略） 1.2  什么是机器学习对于给定的任务T，在合理的性能度量方案P的前提下，某计算机程序可以自主学习任务T的经验E，随着提供合适、优质、大量的经验E，该程序对于任务T的性能逐步提高。 所谓机器学习更通俗的说就是：我们使用计算机设计一个系统，使它能够根据提供的训练数据按照一定的方式来学">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-31/75470158.jpg">
+<meta property="og:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-31/25040720.jpg">
+<meta property="og:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-31/18348509.jpg">
+<meta property="og:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-31/88574904.jpg">
+<meta property="og:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-31/47654455.jpg">
+<meta property="og:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-31/79251296.jpg">
+<meta property="og:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-31/6772378.jpg">
+<meta property="og:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-31/48984032.jpg">
+<meta property="og:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-31/5450049.jpg">
+<meta property="og:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-31/98606200.jpg">
+<meta property="og:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-31/89387456.jpg">
+<meta property="og:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-31/43467540.jpg">
+<meta property="og:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-31/43262609.jpg">
+<meta property="og:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-31/44592326.jpg">
+<meta property="og:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-31/59281355.jpg">
+<meta property="og:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-31/53816234.jpg">
+<meta property="og:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-31/31160377.jpg">
+<meta property="og:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-31/56738299.jpg">
+<meta property="og:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-31/31206558.jpg">
+<meta property="og:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-31/88031435.jpg">
+<meta property="og:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-31/7016574.jpg">
+<meta property="og:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-31/18829648.jpg">
+<meta property="og:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-31/67079978.jpg">
+<meta property="og:updated_time" content="2019-01-03T11:34:09.657Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="机器学习总结（一）基本概念">
+<meta name="twitter:description" content="机器学习期末总结~知识的搬运和总结，大部分内容来源于张曙老师机器学习课程~ 第一章 绪论1.1 机器学习的历史（略） 1.2  什么是机器学习对于给定的任务T，在合理的性能度量方案P的前提下，某计算机程序可以自主学习任务T的经验E，随着提供合适、优质、大量的经验E，该程序对于任务T的性能逐步提高。 所谓机器学习更通俗的说就是：我们使用计算机设计一个系统，使它能够根据提供的训练数据按照一定的方式来学">
+<meta name="twitter:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-31/75470158.jpg">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/01/01/机器学习总结（一）基本概念/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>机器学习总结（一）基本概念 | YangJie's Blog</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion .logo-line-before i { left: initial; }
+    .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">YangJie's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+  
+  
+  
+  
+
+  
+
+    <a href="https://github.com/yjgddd" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewbox="0 0 250 250" style="fill: #222; color: #fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a>
+
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/01/机器学习总结（一）基本概念/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="YangJie">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YangJie's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">机器学习总结（一）基本概念
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-01-01 21:39:26" itemprop="dateCreated datePublished" datetime="2019-01-01T21:39:26+08:00">2019-01-01</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-01-03 19:34:09" itemprop="dateModified" datetime="2019-01-03T19:34:09+08:00">2019-01-03</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/机器学习/" itemprop="url" rel="index"><span itemprop="name">机器学习</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2019/01/01/机器学习总结（一）基本概念/" class="leancloud_visitors" data-flag-title="机器学习总结（一）基本概念">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+      
+        <h2 id="机器学习期末总结"><a href="#机器学习期末总结" class="headerlink" title="机器学习期末总结"></a>机器学习期末总结</h2><p>~知识的搬运和总结，大部分内容来源于张曙老师机器学习课程~</p>
+<h3 id="第一章-绪论"><a href="#第一章-绪论" class="headerlink" title="第一章 绪论"></a>第一章 绪论</h3><h4 id="1-1-机器学习的历史"><a href="#1-1-机器学习的历史" class="headerlink" title="1.1 机器学习的历史"></a>1.1 机器学习的历史</h4><p>（略）</p>
+<h4 id="1-2-什么是机器学习"><a href="#1-2-什么是机器学习" class="headerlink" title="1.2  什么是机器学习"></a>1.2  什么是机器学习</h4><p>对于给定的<strong>任务T</strong>，在合理的<strong>性能度量方案P</strong>的前提下，某计算机程序可以自主学习任务T的<strong>经验E</strong>，随着提供合适、优质、大量的经验E，该程序对于任务T的性能逐步提高。</p>
+<p>所谓机器学习更通俗的说就是：我们使用计算机设计一个系统，使它能够根据提供的训练数据按照一定的方式来学习，随着训练次数的增加，该系统可以在性能上不断学习和改进，通过参数优化的学习模型，能够用于预测相关问题的输出。</p>
+<p><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-31/75470158.jpg" alt=""></p>
+<h4 id="1-3-基本概念"><a href="#1-3-基本概念" class="headerlink" title="1.3 基本概念"></a>1.3 基本概念</h4><ul>
+<li><strong>有监督学习(Supervised Learning)：</strong></li>
+</ul>
+<p>&emsp;根据已有的训练样本，通过不断计算，从样本中学习选择特征参数，对模型建立目标函数，从而对未知样本进行预测。</p>
+<p>&emsp;优点：可以有效利用先验数据对后验数据进行预测</p>
+<p>&emsp;缺点：训练数据人为收集，具有一定的主观性，预测结果只可能是训练数据中的类别，不会产生出新的类别。<br>&emsp;如神经网络、SVM、决策树等。</p>
+<ul>
+<li><strong>无监督学习(Unsupervised Learning)：</strong></li>
+</ul>
+<p>&emsp;对模型不事先进行先验知识学习，不对模型进行训练，使用未分类的样本数据直接进行分类的过程。</p>
+<p>&emsp;优点：人为干预较少，结果具有一定的客观性。</p>
+<p>&emsp;缺点：计算过程较为复杂。如聚类算法等。</p>
+<ul>
+<li><strong>输入与输出空间</strong></li>
+</ul>
+<p>&emsp;输入与输出所有可能取值的集合分别称为输入空间X和输出空间Y。输入空间和输出空间可以是有限集合，也可以是整个欧氏空间；</p>
+<p>&emsp;输入与输出空间可以是同一空间，也可以是不同空间。但通常输出空间远小于输入空间。</p>
+<ul>
+<li><strong>训练集(training set)</strong></li>
+</ul>
+<p>&emsp;从数据中学习得到模型的过程称为“学习”或“训练”，训练过程中使用的数据称为“训练样本”。训练样本由输入和输出对组成，所有的训练样本对构成了训练集，表示为：<br>&emsp;T={(x1,y1),(x2,y2),…,(xm,ym)}</p>
+<ul>
+<li><strong>假设空间Н(hypothesis space)</strong></li>
+</ul>
+<p>&emsp;学习的目的就是要找到一个由输入到输出映射（假设）最好的模型，由输入空间到输出空间所有映射的集合称为假设空间。</p>
+<p>&emsp;即：我们可以把学习过程看作为一个在所有假设组成的空间中进行搜索的过程，搜索目标是找到与训练集匹配的假设。</p>
+<ul>
+<li><strong>奥卡姆剃刀(Occam’s razor)原则</strong></li>
+</ul>
+<p>&emsp;奥卡姆剃刀原则是自然科学研究中一种常用和最基本的原则，即“若有多个假设与观察一致，则选用最简单的那个”。</p>
+<ul>
+<li><strong>回归(regression)和分类(classification)</strong></li>
+</ul>
+<p>&emsp;回归和分类是对不同预测任务的相应称法。</p>
+<p>&emsp;若我们要预测（输出）的结果是连续值，则此类学习任务称为回归；</p>
+<p>&emsp;若我们要预测（输出）的结果是离散值，则此类学习任务称为分类。</p>
+<p>&emsp;若问题输出结果只有二个类别，则通常称为二分类问题，否则为多分类问题。</p>
+<p>&emsp;回归包含线性回归和逻辑回归，线性回归等同于函数拟合，用于模型学习和连续值输出；逻辑回归可解决分类问题，输出离散值。</p>
+<h4 id="1-4-常用评价指标"><a href="#1-4-常用评价指标" class="headerlink" title="1.4 常用评价指标"></a>1.4 常用评价指标</h4><ul>
+<li><strong>错误率E</strong></li>
+</ul>
+<p>&emsp;输出错误的样本数占样本总数的比例</p>
+<p>&emsp;E=α/m</p>
+<p>&emsp;其中α为错分数，m为样本总数</p>
+<ul>
+<li><strong>正确率或称准确率</strong></li>
+</ul>
+<p>&emsp;Acc=1-E</p>
+<ul>
+<li><strong>误差(error)</strong></li>
+</ul>
+<p>&emsp;模型预测输出与样本真实输出之间的差异称为误差</p>
+<ul>
+<li><strong>经验(训练)误差</strong></li>
+</ul>
+<p>&emsp;模型在训练集上的误差称为经验或训练误差。</p>
+<ul>
+<li><strong>泛化误差(generalization error)</strong></li>
+</ul>
+<p>&emsp;模型在新样本上的误差称为泛化误差。所谓泛化是指从特殊到一般的过程，即从具体事实归纳出一般规律的过程。</p>
+<ul>
+<li><strong>方差和均方差</strong></li>
+</ul>
+<p>&emsp;方差又称均方误差是误差分析中比较常用的一种指标，其定义为：</p>
+<p>&emsp;在预测任务中，对于给定的数据集T={(x1,y1),(x2,y2),…,(xm,ym)}，f(x)为模型预测输出，y为样本真实输出，则二者之间的方差为：</p>
+<p><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-31/25040720.jpg" alt=""></p>
+<p>&emsp;对于连续域的情况：</p>
+<p><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-31/18348509.jpg" alt=""><br>&emsp;其中p(x)为概率密度函数</p>
+<p>&emsp;均方差(标准差)：<br><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-31/88574904.jpg" alt=""></p>
+<ul>
+<li><strong>过拟合(over-fitting)</strong></li>
+</ul>
+<p>&emsp;过拟合是指学习时选择模型所包含的参数过多，以至于出现模型对已知数据预测的很好，对未知数据预测得很差的现象。<br>和过拟合相对应的现象为欠拟合。</p>
+<ul>
+<li><strong>置信度(confidence level)</strong></li>
+</ul>
+<p>&emsp;置信度也称置信水平是指总体参数值落在样本统计值某一区间的概率，即对事件真实性的相信程度。</p>
+<ul>
+<li><strong>置信区间(confidence interval)</strong></li>
+</ul>
+<p>&emsp;置信区间是指在某个置信水平下，样本统计值与总体参数值间误差的范围。置信区间越大，置信水平就越高。</p>
+<h4 id="1-5-常用公式和函数"><a href="#1-5-常用公式和函数" class="headerlink" title="1.5 常用公式和函数"></a>1.5 常用公式和函数</h4><ul>
+<li><strong>欧氏距离(euclidean distance)</strong></li>
+</ul>
+<p>&emsp;对于平面上的二点P1(x1,y1)，P2(x2,y2)欧氏距离定义为：</p>
+<p><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-31/47654455.jpg" alt=""></p>
+<ul>
+<li><strong>曼哈顿距离(街区距离）</strong></li>
+</ul>
+<p><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-31/79251296.jpg" alt=""></p>
+<ul>
+<li><strong>闵可夫斯基距离</strong></li>
+</ul>
+<p>&emsp;对于二个n维的变量A(x1,x2,…,xn)和B(y1,y2,…yn)，闵氏距离为：<br><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-31/6772378.jpg" alt=""></p>
+<ul>
+<li><strong>海明距离</strong></li>
+</ul>
+<p>&emsp;在信息论中，二个字符串之间的海明距离是二个字符串对应位置的不同字符数。</p>
+<p>&emsp;如：A=(1011101)，B=(1001001)  </p>
+<p>&emsp;海明距离=2</p>
+<ul>
+<li><strong>杰卡德(Jaccard)相似度</strong></li>
+</ul>
+<p>&emsp;J(A,B) = |A∩B| / |A∪B|</p>
+<p>&emsp;其中A，B为集合</p>
+<p>&emsp;如网页相似度比较</p>
+<table>
+<thead>
+<tr>
+<th>文本编号</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>努力建设国家级自然保护区</td>
+</tr>
+<tr>
+<td>B</td>
+<td>保护自然保护区义不容辞</td>
+</tr>
+</tbody>
+</table>
+<p>&emsp;①分词处理：</p>
+<p>&emsp;A ={‘努力’，‘建设’，‘国家级’，‘自然保护区’｝<br>&emsp;B ={‘保护’，‘自然保护区’，‘义不容辞’｝</p>
+<p>&emsp;②计算相似度：</p>
+<p>&emsp;A∩B = ｛‘自然保护区’｝</p>
+<p>&emsp;A∪B ={‘努力’，‘建设’，‘国家级’，‘自然保护区’，‘保护’，‘义不容辞’｝</p>
+<p>&emsp;J(A,B) = 1/6 = 0.17</p>
+<ul>
+<li><strong>余弦相似度</strong></li>
+</ul>
+<p>&emsp;对于向量a(x1,y1)和b(x2,y2)的余弦值为：</p>
+<p><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-31/48984032.jpg" alt=""></p>
+<p>&emsp;对于n维时，若x=(x1,x2,…,xn)，y=(y1,y2,…,yn)</p>
+<p><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-31/5450049.jpg" alt=""></p>
+<p>&emsp;例：网页文本相似度计算</p>
+<table>
+<thead>
+<tr>
+<th>文本编号</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>数据价值是一种数据艺术</td>
+</tr>
+<tr>
+<td>B</td>
+<td>算法价值是一种算法艺术</td>
+</tr>
+</tbody>
+</table>
+<p>&emsp;① 分词处理：</p>
+<p>&emsp;A={‘数据’,‘价值’,‘是’,‘一种’,‘数据’,‘艺术’}</p>
+<p>&emsp;B={‘算法’,‘价值’,‘是’,‘一种’,‘算法’,‘艺术’}</p>
+<p>&emsp;② 计算并集</p>
+<p>&emsp;A∪B={‘数据’,‘价值’,‘是’,‘一种’,‘算法’,‘艺术’}</p>
+<p>&emsp;③ 词频计算：</p>
+<p>&emsp;A={数据(2),价值(1),是(1),一种(1),算法(0),艺术(1)}</p>
+<p>&emsp;B={数据(0),价值(1),是(1),一种(1),算法(2),艺术(1)}</p>
+<p>&emsp;④ 建立特征向量：</p>
+<p>&emsp;A=(2,1,1,1,0,1)</p>
+<p>&emsp;B=(0,1,1,1,2,1)</p>
+<p>&emsp;⑤ 相似度计算：</p>
+<p><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-31/98606200.jpg" alt=""></p>
+<p>&emsp;余弦相似度更侧重于方向问题。</p>
+<ul>
+<li><strong>先验概率</strong></li>
+</ul>
+<p>&emsp;事件A发生的概率记为P(A)，这个先验概率值可以用相对频率来近似。根据大数定律，当训练集包含足够多的独立同分布样本时P(A)可通过样本出现的频率来估算。</p>
+<ul>
+<li><strong>联合概率</strong></li>
+</ul>
+<p>&emsp;事件A和事件B同时发生的概率，记为P(A,B)。</p>
+<p>&emsp;若事件A和事件B相互独立，则：</p>
+<p>&emsp;P(A,B) = P(A) ×P(B)</p>
+<ul>
+<li><strong>条件概率(后验概率)</strong></li>
+</ul>
+<p>&emsp;在事件A发生的条件下，事件B发生的概率，记为P(B|A)</p>
+<p>&emsp;   P(B|A) = P(A,B)/P(A)</p>
+<ul>
+<li><strong>正态分布(高斯分布)</strong></li>
+</ul>
+<p>&emsp;连续型随机变量x的概率密度为：<br><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-31/89387456.jpg" alt=""></p>
+<ul>
+<li><p><strong>符号函数</strong><br><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-31/43467540.jpg" alt=""></p>
+</li>
+<li><p><strong>指示函数</strong><br><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-31/43262609.jpg" alt=""></p>
+</li>
+<li><p><strong>损失函数</strong></p>
+</li>
+</ul>
+<p>&emsp;损失函数也称代价函数，可用于度量模型预测错误的程度，它是一个非负实值函数。</p>
+<p>&emsp;令假设空间H中选取模型f作为决策函数，对于给定的输入x，由f(x)得到预测结果(输出)。这个输出值f(x)与真实值y可能一致也可能不一致，那么根据情况可选择一个损失函数来度量预测错误的程度，记为L(y,f(x))。</p>
+<p><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-31/44592326.jpg" alt=""></p>
+<p><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-31/59281355.jpg" alt=""></p>
+<ul>
+<li><strong>阶越函数（step function)</strong></li>
+</ul>
+<p><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-31/53816234.jpg" alt=""></p>
+<ul>
+<li><strong>Sigmoid函数（S型函数）</strong></li>
+</ul>
+<p><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-31/31160377.jpg" alt=""></p>
+<p><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-31/56738299.jpg" alt=""></p>
+<ul>
+<li><strong>正则化（regularizayion)</strong></li>
+</ul>
+<p>&emsp;用一组与原不适定问题相邻近的适定问题的解去逼近原问题的解的方法称为正则化方法。</p>
+<p>&emsp;不适定问题：很难求解的问题</p>
+<p>&emsp;正则化的目的：防止过拟合</p>
+<p>&emsp;正则化的本质：约束(限制)要优化的参数</p>
+<p>&emsp;正则化通过添加一些约束，使原问题解空间得到了压缩，简化了模型。</p>
+<p>&emsp;正则化公式：</p>
+<p>&emsp;<strong>L1正则：</strong></p>
+<p><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-31/31206558.jpg" alt=""></p>
+<p>&emsp;<strong>L2正则</strong></p>
+<p><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-31/88031435.jpg" alt=""></p>
+<p>&emsp;<strong>L1+ L2</strong></p>
+<p><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-31/7016574.jpg" alt=""></p>
+<p>其中第一项L（θ）是损失函数，第二项为正则化项或者称为惩罚项。</p>
+<h4 id="1-6-测试集组织"><a href="#1-6-测试集组织" class="headerlink" title="1.6 测试集组织"></a>1.6 测试集组织</h4><p>&emsp;模型性能好坏一个简单的评价方法可以用模型的错误率来衡量。我们构建的模型不是对已有样例的重新预测或分类，而是要对未来样例的预测或分类，即模型的泛化能力。通常我们可以通过实验测试来评估模型，这就需要一个测试集。</p>
+<p>&emsp;测试样例的组织：</p>
+<p>&emsp;假设已有m个样本D={x1,x2,…,xm}，从D中挑选部分样例组成训练集，再从D中挑选部分样例组成测试集。</p>
+<p>&emsp;问题：如何挑选？</p>
+<ul>
+<li><strong>留出法(hold-out)</strong></li>
+</ul>
+<p>&emsp;将D划分为二个不相交的集合S和T，其中D=S∪T，S∩T=Ф</p>
+<p>&emsp;如D包含了1000个样例，划分后，S包含700个训练样本，T包含了300个测试样本。如果模型在T上有90个样本预测错误，则错误率为：E=90/300=0.3，错误率为30%。</p>
+<p>&emsp;这种方法需注意的：</p>
+<p>&emsp;① 训练集/测试集的划分尽可能地保持数据分布的一致性，避免因样例划分过程引入额外的偏差。</p>
+<p>&emsp;② 存在多种划分组合，每种划分都对应了模型的评估性能，所以单次使用留出法得到的评估结果往往是不够稳定可靠的。改进的方法是采用若干次随机划分取平均值作为留出法的评估结果。</p>
+<p>&emsp;③ 划分时如果S较大接近于D时，用S训练出的模型更接近于用D训练出的模型，但此时T较小，评估结果可能不准确；若T较大时，用S训练出的模型与用D训练出的模型有较大的差别，将降低评估结果的真实性。通常划分的比例为2/3～4/5的样例作为训练集，其余作为测试集。</p>
+<ul>
+<li><strong>交叉验证法(cross validation)</strong></li>
+</ul>
+<p>&emsp;将样本数据集D划分为k个大小相似的互斥子集，即D=D1∪D2∪…∪Dk，其中：Di∩Dj=Ф  (i≠j)</p>
+<p>&emsp;划分时同留出法尽量保持每个子集数据一致性，然后每次用k-1个子集的并集作为训练集，剩余的一个子集作为测试集，这样共获得k组训练/测试集，相应地可进行k次训练和测试。用k次测试结果的平均值作为模型的性能评估值。<br><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-31/18829648.jpg" alt=""></p>
+<ul>
+<li><strong>自助法(bootstrapping)</strong></li>
+</ul>
+<p>&emsp;每次从D中随机挑选一个样例拷贝到D’中且该样例仍保留在D中，下次挑选时仍可能被选中。重复从D中挑选m个样例到D’中，此时D’中可能某个样例出现多次，而D中某些样例可能不在D’中。</p>
+<p>&emsp;估算样例在m次挑选中未被选中的概率为:</p>
+<p><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-31/67079978.jpg" alt=""></p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+   
+    
+
+    
+      
+    
+    
+    <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="YangJie 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="YangJie 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/机器学习/" rel="tag"><i class="fa fa-tag"></i> 机器学习</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/01/实用算法总结(一) 基本概念、线性表/" rel="next" title="实用算法总结(一) 基本概念、线性表">
+                <i class="fa fa-chevron-left"></i> 实用算法总结(一) 基本概念、线性表
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/01/02/实用算法总结(二) 栈和队列/" rel="prev" title="实用算法总结(二) 栈和队列">
+                实用算法总结(二) 栈和队列 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="YangJie">
+            
+              <p class="site-author-name" itemprop="name">YangJie</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/yjgddd" title="GitHub &rarr; https://github.com/yjgddd" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:2212371178@qq.com" title="E-Mail &rarr; mailto:2212371178@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#机器学习期末总结"><span class="nav-number">1.</span> <span class="nav-text">机器学习期末总结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一章-绪论"><span class="nav-number">1.1.</span> <span class="nav-text">第一章 绪论</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-机器学习的历史"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.1 机器学习的历史</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-什么是机器学习"><span class="nav-number">1.1.2.</span> <span class="nav-text">1.2  什么是机器学习</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-基本概念"><span class="nav-number">1.1.3.</span> <span class="nav-text">1.3 基本概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4-常用评价指标"><span class="nav-number">1.1.4.</span> <span class="nav-text">1.4 常用评价指标</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-5-常用公式和函数"><span class="nav-number">1.1.5.</span> <span class="nav-text">1.5 常用公式和函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-6-测试集组织"><span class="nav-number">1.1.6.</span> <span class="nav-text">1.6 测试集组织</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">YangJie</span>
+<!--
+  
+
+  
+</div>
+-->
+
+  <span class="post-meta-divider">|</span>
+
+
+
+</div>
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv" title="总访客量">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="site-pv" title="总访问量">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+      
+  
+  <script color="0,0,255" opacity="0.5" zindex="-1" count="99" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=6.6.0"></script>
+
+  <script src="/js/src/motion.js?v=6.6.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/src/affix.js?v=6.6.0"></script>
+
+  <script src="/js/src/schemes/pisces.js?v=6.6.0"></script>
+
+
+
+  
+  <script src="/js/src/scrollspy.js?v=6.6.0"></script>
+<script src="/js/src/post-details.js?v=6.6.0"></script>
+
+
+
+  
+
+
+  <script src="/js/src/bootstrap.js?v=6.6.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script>
+    
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+
+      Counter('get', '/classes/Counter', { where: JSON.stringify({ url }) })
+        .done(function ({ results }) {
+          if (results.length > 0) {
+            var counter = results[0];
+            
+            Counter('put', `/classes/Counter/${counter.objectId}`, JSON.stringify({ time: { "__op":"Increment", "amount":1 } }))
+            
+            .done(function () {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(counter.time + 1);
+            })
+            
+            .fail(function ({ responseJSON }) {
+                console.log('Failed to save Visitor num, with error message: ' + responseJSON.error);
+            })
+          } else {
+            
+              var $element = $(document.getElementById(url));
+              $element.find('.leancloud-visitors-count').text('Counter not initialized! See more at console err msg.');
+              console.error('ATTENTION! LeanCloud counter has security bug, see here how to solve it: https://github.com/theme-next/hexo-leancloud-counter-security. \n But you also can use LeanCloud without security, by set \'security\' option to \'false\'.');
+            
+          }
+        })
+      .fail(function ({ responseJSON }) {
+        console.log('LeanCloud Counter Error:' + responseJSON.code + " " + responseJSON.error);
+      });
+    }
+    
+
+    $(function() {
+      $.get('https://app-router.leancloud.cn/2/route?appId=' + "")
+        .done(function ({ api_server }) {
+          var Counter = function (method, url, data) {
+            return $.ajax({
+              method: method,
+              url: `https://${api_server}/1.1${url}`,
+              headers: {
+                'X-LC-Id': "",
+                'X-LC-Key': "",
+                'Content-Type': 'application/json',
+              },
+              data: data,
+            });
+          };
+          
+          addCount(Counter);
+          
+        })
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+  </script>
+   
+
+</body>
+</html>
