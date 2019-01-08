@@ -104,33 +104,40 @@
 
 
 
-  <meta name="description" content="scikit-learn是一个python的库，包含大量的机器学习算法。由于做kaggle上面的项目需要，使用到了这个库，但是需要注意的是scikit-learn的数据必须是numeric类型的。 安装前提:有python，且安装好了numpy库和scipy库，然后通过pip的方式安装如下： 1pip install -U sickit-learn 选择模型方法官网中有流程图，对于不同的场景需要">
-<meta name="keywords" content="机器学习">
+  <meta name="description" content="字符串：由零个或多个字符组成的有限序列。 字符串s=”a1a2…an”(n≥0) 串的长度：串中的字符数目n 空串：零个字符的串。即串的长度为0. 空格串：只包含空格的串。 逻辑结构：可认为是特殊的线性表。串中的元素只能是字符类型。 线性表：关注单个元素的操作 字符串：关注子串的操作：查找/插入/删除/替换子串. 存储结构：推荐顺序存储方式。 例如，存储串”good”，需要5个字节，但是其长度为4">
+<meta name="keywords" content="数据结构">
 <meta property="og:type" content="article">
-<meta property="og:title" content="scikit-learn学习笔记（一）">
-<meta property="og:url" content="http://yoursite.com/2018/12/23/skicit-learn学习笔记(一)/index.html">
+<meta property="og:title" content="实用算法总结（五）查找（字符串匹配算法KMP、BM）">
+<meta property="og:url" content="http://yoursite.com/2019/01/08/实用算法总结（五）查找（字符串匹配算法KMP、BM）/index.html">
 <meta property="og:site_name" content="YangJie&#39;s Blog">
-<meta property="og:description" content="scikit-learn是一个python的库，包含大量的机器学习算法。由于做kaggle上面的项目需要，使用到了这个库，但是需要注意的是scikit-learn的数据必须是numeric类型的。 安装前提:有python，且安装好了numpy库和scipy库，然后通过pip的方式安装如下： 1pip install -U sickit-learn 选择模型方法官网中有流程图，对于不同的场景需要">
+<meta property="og:description" content="字符串：由零个或多个字符组成的有限序列。 字符串s=”a1a2…an”(n≥0) 串的长度：串中的字符数目n 空串：零个字符的串。即串的长度为0. 空格串：只包含空格的串。 逻辑结构：可认为是特殊的线性表。串中的元素只能是字符类型。 线性表：关注单个元素的操作 字符串：关注子串的操作：查找/插入/删除/替换子串. 存储结构：推荐顺序存储方式。 例如，存储串”good”，需要5个字节，但是其长度为4">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-24/43326049.jpg">
-<meta property="og:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-24/5397077.jpg">
-<meta property="og:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-24/86534722.jpg">
-<meta property="og:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-24/89767176.jpg">
-<meta property="og:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-24/81228078.jpg">
-<meta property="og:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-24/31810772.jpg">
-<meta property="og:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-24/60766608.jpg">
-<meta property="og:updated_time" content="2019-01-02T12:05:37.789Z">
+<meta property="og:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/19-1-7/72192768.jpg">
+<meta property="og:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/19-1-7/26360975.jpg">
+<meta property="og:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/19-1-7/17784261.jpg">
+<meta property="og:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/19-1-7/27950872.jpg">
+<meta property="og:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/19-1-7/37567241.jpg">
+<meta property="og:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/19-1-7/30433634.jpg">
+<meta property="og:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/19-1-7/34438421.jpg">
+<meta property="og:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/19-1-7/55481245.jpg">
+<meta property="og:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/19-1-7/20816631.jpg">
+<meta property="og:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/19-1-7/57189292.jpg">
+<meta property="og:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/19-1-7/62377565.jpg">
+<meta property="og:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/19-1-7/19017017.jpg">
+<meta property="og:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/19-1-7/70297024.jpg">
+<meta property="og:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/19-1-7/27080309.jpg">
+<meta property="og:updated_time" content="2019-01-08T06:05:02.929Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="scikit-learn学习笔记（一）">
-<meta name="twitter:description" content="scikit-learn是一个python的库，包含大量的机器学习算法。由于做kaggle上面的项目需要，使用到了这个库，但是需要注意的是scikit-learn的数据必须是numeric类型的。 安装前提:有python，且安装好了numpy库和scipy库，然后通过pip的方式安装如下： 1pip install -U sickit-learn 选择模型方法官网中有流程图，对于不同的场景需要">
-<meta name="twitter:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-24/43326049.jpg">
+<meta name="twitter:title" content="实用算法总结（五）查找（字符串匹配算法KMP、BM）">
+<meta name="twitter:description" content="字符串：由零个或多个字符组成的有限序列。 字符串s=”a1a2…an”(n≥0) 串的长度：串中的字符数目n 空串：零个字符的串。即串的长度为0. 空格串：只包含空格的串。 逻辑结构：可认为是特殊的线性表。串中的元素只能是字符类型。 线性表：关注单个元素的操作 字符串：关注子串的操作：查找/插入/删除/替换子串. 存储结构：推荐顺序存储方式。 例如，存储串”good”，需要5个字节，但是其长度为4">
+<meta name="twitter:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/19-1-7/72192768.jpg">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/12/23/skicit-learn学习笔记(一)/">
+  <link rel="canonical" href="http://yoursite.com/2019/01/08/实用算法总结（五）查找（字符串匹配算法KMP、BM）/">
 
 
 
@@ -140,7 +147,7 @@
   };
 </script>
 
-  <title>scikit-learn学习笔记（一） | YangJie's Blog</title>
+  <title>实用算法总结（五）查找（字符串匹配算法KMP、BM） | YangJie's Blog</title>
   
 
 
@@ -364,7 +371,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/23/skicit-learn学习笔记(一)/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/08/实用算法总结（五）查找（字符串匹配算法KMP、BM）/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="YangJie">
@@ -381,7 +388,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">scikit-learn学习笔记（一）
+          <h1 class="post-title" itemprop="name headline">实用算法总结（五）查找（字符串匹配算法KMP、BM）
 
               
             
@@ -407,24 +414,12 @@
                 
               
 
-              <time title="创建时间：2018-12-23 16:24:49" itemprop="dateCreated datePublished" datetime="2018-12-23T16:24:49+08:00">2018-12-23</time>
+              <time title="创建时间：2019-01-08 14:04:11 / 修改时间：14:05:02" itemprop="dateCreated datePublished" datetime="2019-01-08T14:04:11+08:00">2019-01-08</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-01-02 20:05:37" itemprop="dateModified" datetime="2019-01-02T20:05:37+08:00">2019-01-02</time>
               
             
           </span>
@@ -441,7 +436,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/机器学习/" itemprop="url" rel="index"><span itemprop="name">机器学习</span></a></span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/数据结构/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a></span>
 
                 
                 
@@ -455,7 +450,7 @@
 
           
           
-             <span id="/2018/12/23/skicit-learn学习笔记(一)/" class="leancloud_visitors" data-flag-title="scikit-learn学习笔记（一）">
+             <span id="/2019/01/08/实用算法总结（五）查找（字符串匹配算法KMP、BM）/" class="leancloud_visitors" data-flag-title="实用算法总结（五）查找（字符串匹配算法KMP、BM）">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -483,40 +478,124 @@
       
       
       
-        <p> scikit-learn是一个python的库，包含大量的机器学习算法。由于做kaggle上面的项目需要，使用到了这个库，但是需要注意的是scikit-learn的数据必须是numeric类型的。</p>
-<h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><p>前提:有python，且安装好了numpy库和scipy库，然后通过pip的方式安装如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install -U sickit-learn</span><br></pre></td></tr></table></figure>
-<h4 id="选择模型方法"><a href="#选择模型方法" class="headerlink" title="选择模型方法"></a>选择模型方法</h4><p>官网中有流程图，对于不同的场景需要选择不同的机器学习模型，模型图如下：</p>
-<p><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-24/43326049.jpg" alt=""><br>图中蓝色的圆圈是判断，绿色的方框是可以选择的算法。</p>
-<p>算法分为了四大类：</p>
-<p>classfication(分类）、regression（回归）、clustering（聚类）、dimensionality reduction（数据降维）</p>
-<h4 id="数据集利用"><a href="#数据集利用" class="headerlink" title="数据集利用"></a>数据集利用</h4><p> scikit-learn中包含了很多技术集，可供学习。</p>
-<p> 比如iris数据集，中文名是安德森鸢尾花卉数据集，是一个给鸢尾花做分类的数据集，包含四个属性：</p>
-<p> 花萼长度、花萼宽度、花瓣长度、花瓣宽度</p>
-<p> 以及花的品种：山鸢尾、变色鸢尾、维吉尼亚鸢尾</p>
-<p> 根据四个属性预测出花的品种，是一个典型的分类问题，可以根据这个数据集，走一下sickit-learn的使用流程</p>
-<h4 id="使用流程"><a href="#使用流程" class="headerlink" title="使用流程"></a>使用流程</h4><p>以iris数据集为例子：</p>
+        <p>字符串：由零个或多个字符组成的有限序列。</p>
+<p>字符串s=”a1a2…an”(n≥0)</p>
+<p>串的长度：串中的字符数目n</p>
+<p>空串：零个字符的串。即串的长度为0.</p>
+<p>空格串：只包含空格的串。</p>
+<p>逻辑结构：可认为是特殊的线性表。串中的元素只能是字符类型。</p>
+<p>线性表：关注单个元素的操作</p>
+<p>字符串：关注子串的操作：查找/插入/删除/替换子串.</p>
+<p>存储结构：推荐顺序存储方式。</p>
+<p>例如，存储串”good”，需要5个字节，但是其长度为4。</p>
+<p>字符串查找场景：</p>
+<p>例如，在文本“fffffab cfe defe”中查找字符串“ff”</p>
+<p>本质：在字符线性表（主串或目标字符串T）中查找匹配的子表（子串或模式字符串P）。</p>
+<p>字符串查找（或模式匹配）算法：</p>
+<p>朴素的模式匹配算法、KMP算法（Knuth-Morris-Pratt)、BM算法（Boyer-Moore)</p>
+<h2 id="朴素的模式匹配算法"><a href="#朴素的模式匹配算法" class="headerlink" title="朴素的模式匹配算法"></a>朴素的模式匹配算法</h2><p><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/19-1-7/72192768.jpg" alt=""><br><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/19-1-7/26360975.jpg" alt=""><br><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/19-1-7/17784261.jpg" alt=""></p>
+<p>假设目标串T长度为n，模式串P长度为m.假定T中确实存在子串P（即假定模式匹配成功），则：</p>
 <ul>
-<li>导入数据集</li>
+<li>最好的情况下的近似时间复杂度为O(m)<br>比如，在”googlegood”中查找”google”.</li>
+<li>若每次不成功的匹配都发生在串P的首字符处，则平均情况下的近似时间复杂度为O(n+m)</li>
+<li>最坏的情况下的近似时间复杂度为O((n-m+1)*m).<br>比如，在“000…00001”中查找“0001”.</li>
 </ul>
-<p><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-24/5397077.jpg" alt=""></p>
+<p>朴素的模式匹配算法：需要进行回溯</p>
+<p>字符串查找算法中，最著名的两个算法：</p>
+<p>KMP算法（Knuth-Morris-Pratt)和BM算法（Boyer-Moore)</p>
 <ul>
-<li>查看数据格式 </li>
+<li>它们都是精确字符串匹配算法（区别于模糊匹配）。</li>
+<li>目标字符串中无需进行回溯。（都比朴素的模式匹配算法快）</li>
+<li>模式字符串的移动方向：从目标字符串的第一个字符开始，朝 目标字符串的尾部方向移动搜索匹配子串。</li>
+<li>匹配操作的方向：<ul>
+<li>KMP算法：每轮匹配时，采用从左向右进行字符的匹配比较。</li>
+<li>BM算法：每轮匹配时，采用从右向左进行字符的匹配比较。</li>
 </ul>
-<p><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-24/86534722.jpg" alt=""><br><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-24/89767176.jpg" alt=""><br>可以看出，每条数据有四个属性，标签一共有三类，用0、1、2表示。</p>
+</li>
+</ul>
+<h2 id="KMP算法"><a href="#KMP算法" class="headerlink" title="KMP算法"></a>KMP算法</h2><h3 id="KMP算法的主要思想"><a href="#KMP算法的主要思想" class="headerlink" title="KMP算法的主要思想"></a>KMP算法的主要思想</h3><p>将模式串P自身的重复规律保存到next数组中</p>
+<p><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/19-1-7/27950872.jpg" alt=""></p>
+<p>匹配过程：若某轮匹配失败，则利用next数组分别计算下一轮匹配时目标串和模式串的开始位置。</p>
+<p>若是T[i]≠P[j]导致当前轮的匹配失败，则按照下列规则开始下一轮匹配：</p>
 <ul>
-<li>划分数据集</li>
+<li>若next[j] ≠ 0，则将T[i..]与P[next[j]..]匹配；</li>
+<li>若next[j]==0，则将T[(i+1)..]与P[1..]匹配 。</li>
 </ul>
-<p>train_test_split可以随机划分数据集，要划分的是iris_X和iris_y，划分比例是训练数据80%,测试数据20%</p>
-<p><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-24/81228078.jpg" alt=""></p>
+<p>注意：在KMP算法中，模式串P的下标从1开始</p>
+<h3 id="next数组的计算示例"><a href="#next数组的计算示例" class="headerlink" title="next数组的计算示例"></a>next数组的计算示例</h3><p><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/19-1-7/37567241.jpg" alt=""></p>
+<p><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/19-1-7/30433634.jpg" alt=""></p>
+<p><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/19-1-7/34438421.jpg" alt=""></p>
+<p><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/19-1-7/55481245.jpg" alt=""></p>
+<h3 id="KMP算法的改进"><a href="#KMP算法的改进" class="headerlink" title="KMP算法的改进"></a>KMP算法的改进</h3><ul>
+<li>KMP算法什么情况下有改进的空间？</li>
+</ul>
+<p>&emsp;假设T[i] ≠P[j]导致失配。若P[j]==P[next[j]]，此时若向右移动模式串P，将T[i]与P[next[j]]对齐进行比较必然是无意义的，因为此时T[i]必定≠P[next[j]]。</p>
 <ul>
-<li>使用模型、预测、计算准确率</li>
+<li>如何改进？</li>
 </ul>
-<p>使用knn模型，至于此模型的原理，不是本文重点，不再解释。</p>
-<p><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-24/31810772.jpg" alt=""></p>
-<p>打印出的结果可以看到模型预测的结果不一定是完全准确的。可以通过以下方式计算模型的准确率：<br><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-24/60766608.jpg" alt=""></p>
-<p>训练数据准确率为96%左右，测试数据准确率为93%左右，说明使用knn做鸢尾花数据集的分类是一个不错的选择。</p>
-<h4 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h4><p><a href="https://morvanzhou.github.io/tutorials/machine-learning/sklearn/" target="_blank" rel="noopener">莫烦的学习网站</a></p>
+<p>&emsp;用nextval数组代替next数组。</p>
+<p>&emsp;nextval[1]=0;</p>
+<p>&emsp;for(j&gt;1;j&lt;=n;j++)</p>
+<p>&emsp;&emsp;&emsp;若P[j] == P[next[j]]，则==nextval[j]=nextval[next[j]];==（易错，是nextvall[next[j]],不是next[next[j]]）</p>
+<p>&emsp;&emsp;&emsp;若P[j]≠P[next[j]]，则nextval[j]=next[j];</p>
+<p>&emsp;若某轮匹配失败，则利用nextval数组计算下一轮匹配时的目标串和模式串的开始位置（类似next数组的应用）</p>
+<p><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/19-1-7/20816631.jpg" alt=""><br><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/19-1-7/57189292.jpg" alt=""></p>
+<h3 id="nextval数组计算示例"><a href="#nextval数组计算示例" class="headerlink" title="nextval数组计算示例"></a>nextval数组计算示例</h3><p><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/19-1-7/62377565.jpg" alt=""><br><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/19-1-7/19017017.jpg" alt=""></p>
+<p><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/19-1-7/70297024.jpg" alt=""></p>
+<p>nextval数组的应用：</p>
+<p>例：在目标串“aaaaaaacaaaaaaaab”中查找模式串“aaaaaaaab”的位置。<br>Step1：计算模式串的next数组：</p>
+<p><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/19-1-7/27080309.jpg" alt=""></p>
+<p>Step2：匹配过程。（2轮）</p>
+<h3 id="KMP和朴素模式匹配的比较"><a href="#KMP和朴素模式匹配的比较" class="headerlink" title="KMP和朴素模式匹配的比较"></a>KMP和朴素模式匹配的比较</h3><ul>
+<li>KMP近似时间复杂度为O(n+m),其中O(n)表示比较的时间，O(m)表示计算next数组的时间.<ul>
+<li>目标串中不存在回溯情况</li>
+<li>目标串中的每个字符，会比较1~2次；</li>
+</ul>
+</li>
+<li>仅当模式串与目标串之间存在许多“部分匹配（重复模式）”情况下，KMP算法才比朴素模式匹配算法更具优势。</li>
+<li>若每轮中模式串与目标串之间的不匹配都发生在模式串的第一个字符处，则KMP算法会退化到朴素模式匹配算法。因为nextval[1]=0;</li>
+</ul>
+<h2 id="BM算法（Boyer-Moore"><a href="#BM算法（Boyer-Moore" class="headerlink" title="BM算法（Boyer-Moore)"></a>BM算法（Boyer-Moore)</h2><p>BM算法是字符串查找算法中最著名的两个算法之一。是一种精确字符串匹配算法（区别于模糊匹配）。</p>
+<p>每轮匹配过程中，字符的匹配方向：采用<strong>从右向左</strong>进行字符的匹配比较。（与KMP算法的主要区别）</p>
+<p>若某轮匹配失败，则移动模式串，与目标串的下一轮开始匹配位置进行右对齐，然后开始下一轮的字符匹配。</p>
+<p>故，BM算法中的关键问题是，如何确定目标串中的下一轮匹配的开始位置？即，如何确定目标串中查找指针的移动距离？</p>
+<p>采用启发式方法：无需检查目标字符串中的所有字符</p>
+<h3 id="算法基本思想"><a href="#算法基本思想" class="headerlink" title="算法基本思想"></a>算法基本思想</h3><p>设目标串T，模式串为P。</p>
+<p>Step1：对于模式串P，计算CharJump[x]和MatchJump[k]。</p>
+<p>Step2: 将T与P进行左对齐。</p>
+<p>Step3: T与P进行从右向左的逐字符比较 ，直至找到一个不匹配字符或者P中所有字符都匹配成功。</p>
+<p>Step4: 若出现失配，即存在T[i]≠P[k]，此时坏字符x=T[i]，好后缀P’=P[(k+1) … (len(P)-1)]。</p>
+<p>按如下规则计算 </p>
+<p>目标串T中指针向右移动dist[i]：若此时T与P已有部分字符匹配（即<strong>存在“好后缀”</strong> ）时，BM算法将采用2种启发式方法（即坏字符规则 和好后缀规则 ），计算dist[i] =max(CharJump[x], MatchJump[k])。</p>
+<p>若<strong>不存在“好后缀”</strong>，则必定是在模式串P的最后一个字符处出现失配。此时应采用启发式方法1：</p>
+<p>跳过字符规则（“坏字符”规则），计算设置dist[i] =CharJump[x]。</p>
+<p>Step5: 若(i+dist[i])≤Len(T)-1，则移动模式字符串P，使之与T[i+dist[i]]右对齐，重复Step2；否则，认为T中不存在与P匹配的子串，返回匹配失败。</p>
+<h3 id="“坏字符规则”"><a href="#“坏字符规则”" class="headerlink" title="“坏字符规则”"></a>“坏字符规则”</h3><p>“坏字符”规则：假设坏字符为x=T[i]，</p>
+<p>Case1：如果坏字符x在模式P中没有出现，那么从字符x开始的Len(P)个字符显然不可能与P匹配成功，因此，可以使目标串中查找指针直接跳过Len(P) 个字符。 </p>
+<p>Case2：如果坏字符x在模式P中出现(假设P[j]==x)，则下一轮匹配开始时以字符P[j]进行对齐，即将目标串中查找指针移动CharJump[x].</p>
+<p>关键问题：计算CharJump[x]</p>
+<p>若x在P中出现，假设p[j]==x，则CharJump[x]=Len(P)-max(j)-1;</p>
+<p>否则， CharJump[x]=Len(P);</p>
+<p>例：若模式串为”abcd”，则</p>
+<p>CharJump[‘a’]=3</p>
+<p>CharJump[‘b’]=2</p>
+<p>CharJump[‘c’]=1</p>
+<p>CharJump[‘d’]=0</p>
+<p>CharJump[all others]=4</p>
+<p>例：若模式串为”abcadb”，则</p>
+<p>CharJump[‘a’]=2</p>
+<p>CharJump[‘b’]=0</p>
+<p>CharJump[‘c’]=3</p>
+<p>CharJump[‘d’]=1</p>
+<p>CharJump[all others]=6</p>
+<p>坏字符规则存在的问题：</p>
+<p>例：在“ecbcabebacab”中查找子串“ebacab”的位置。</p>
+<p>左对齐，失配的是第三个字符’b’。charjupm[‘b’]=0,移动距离=0（此时指针移动距离是无效值）</p>
+<p>若利用“坏字符”规则，目标串中查找指针的移动距离dist=0，那么此时失配处必定不是在模式串的最后一个字符处，即此时必定存在“好后缀”。</p>
+<p>可以利用好后缀规则进行修正，让指针动起来。</p>
+<h3 id="“好后缀”规则"><a href="#“好后缀”规则" class="headerlink" title="“好后缀”规则"></a>“好后缀”规则</h3><p>（待续）</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p>【1】中科大余艳玮老师实用算法课程</p>
+<p>【2】《编程珠玑(第2版)修订版》</p>
 
       
     </div>
@@ -569,7 +648,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/机器学习/" rel="tag"><i class="fa fa-tag"></i> 机器学习</a>
+            <a href="/tags/数据结构/" rel="tag"><i class="fa fa-tag"></i> 数据结构</a>
           
         </div>
       
@@ -582,15 +661,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/01/08/实用算法总结(四）查找（哈希、蛮力、二分）/" rel="next" title="实用算法总结(四）查找（哈希、蛮力、二分）">
+                <i class="fa fa-chevron-left"></i> 实用算法总结(四）查找（哈希、蛮力、二分）
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/12/25/排序算法总结/" rel="prev" title="排序算法总结">
-                排序算法总结 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -761,7 +840,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装"><span class="nav-number">1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#选择模型方法"><span class="nav-number">2.</span> <span class="nav-text">选择模型方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据集利用"><span class="nav-number">3.</span> <span class="nav-text">数据集利用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用流程"><span class="nav-number">4.</span> <span class="nav-text">使用流程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参考："><span class="nav-number">5.</span> <span class="nav-text">参考：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#朴素的模式匹配算法"><span class="nav-number">1.</span> <span class="nav-text">朴素的模式匹配算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#KMP算法"><span class="nav-number">2.</span> <span class="nav-text">KMP算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#KMP算法的主要思想"><span class="nav-number">2.1.</span> <span class="nav-text">KMP算法的主要思想</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#next数组的计算示例"><span class="nav-number">2.2.</span> <span class="nav-text">next数组的计算示例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#KMP算法的改进"><span class="nav-number">2.3.</span> <span class="nav-text">KMP算法的改进</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#nextval数组计算示例"><span class="nav-number">2.4.</span> <span class="nav-text">nextval数组计算示例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#KMP和朴素模式匹配的比较"><span class="nav-number">2.5.</span> <span class="nav-text">KMP和朴素模式匹配的比较</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BM算法（Boyer-Moore"><span class="nav-number">3.</span> <span class="nav-text">BM算法（Boyer-Moore)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#算法基本思想"><span class="nav-number">3.1.</span> <span class="nav-text">算法基本思想</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#“坏字符规则”"><span class="nav-number">3.2.</span> <span class="nav-text">“坏字符规则”</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#“好后缀”规则"><span class="nav-number">3.3.</span> <span class="nav-text">“好后缀”规则</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-number">4.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
             
 
           </div>

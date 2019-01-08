@@ -105,6 +105,7 @@
 
 
   <meta name="description" content="本文总结了查找算法，顺序是基于哈希表的查找、蛮力查找、二分查找 基于哈希表的查找Step1: 查找“槽” ： HashKey = H (key) Step2: 在每个槽上挂的线性表上查找  案例1统计出给定输入文本中每个单词的重复次数。 解题思路： 使用哈希表，使得相同单词聚集，统计次数。 案例2给定一个英语词典。假设有一些时间和空间可以在响应任何查询之前预先处理词典。请查找给定输入单词的所有变位">
+<meta name="keywords" content="数据结构">
 <meta property="og:type" content="article">
 <meta property="og:title" content="实用算法总结(四）查找（哈希、蛮力、二分）">
 <meta property="og:url" content="http://yoursite.com/2019/01/08/实用算法总结(四）查找（哈希、蛮力、二分）/index.html">
@@ -120,7 +121,7 @@
 <meta property="og:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/19-1-5/44873532.jpg">
 <meta property="og:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/19-1-5/76280833.jpg">
 <meta property="og:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/19-1-5/35099454.jpg">
-<meta property="og:updated_time" content="2019-01-08T05:35:04.782Z">
+<meta property="og:updated_time" content="2019-01-08T06:01:51.475Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="实用算法总结(四）查找（哈希、蛮力、二分）">
 <meta name="twitter:description" content="本文总结了查找算法，顺序是基于哈希表的查找、蛮力查找、二分查找 基于哈希表的查找Step1: 查找“槽” ： HashKey = H (key) Step2: 在每个槽上挂的线性表上查找  案例1统计出给定输入文本中每个单词的重复次数。 解题思路： 使用哈希表，使得相同单词聚集，统计次数。 案例2给定一个英语词典。假设有一些时间和空间可以在响应任何查询之前预先处理词典。请查找给定输入单词的所有变位">
@@ -408,7 +409,7 @@
                 
               
 
-              <time title="创建时间：2019-01-08 13:27:44 / 修改时间：13:35:04" itemprop="dateCreated datePublished" datetime="2019-01-08T13:27:44+08:00">2019-01-08</time>
+              <time title="创建时间：2019-01-08 13:27:44 / 修改时间：14:01:51" itemprop="dateCreated datePublished" datetime="2019-01-08T13:27:44+08:00">2019-01-08</time>
             
 
             
@@ -418,6 +419,24 @@
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/数据结构/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -475,7 +494,7 @@
 <p>3、挤压（squash)<br>将这些单词压缩为每个变位词类一行的形式</p>
 <h3 id="案例3"><a href="#案例3" class="headerlink" title="案例3"></a>案例3</h3><p>在成本低廉的隔日送达时代之前，商店允许顾客通过电话订购商品，并在几天后上门自取。商店的数据库使用客户的电话号码作为其检索的关键字（客户知道他们自己的电话号码，而且这些关键字几乎都是唯一的）。你如何组织商店的数据库，以允许高效的插入和检索操作？</p>
 <p><strong>解题思路：</strong></p>
-<p>商店将纸质订单表格放在10<em>10的箱数组中，使用客户电话号码的最后两位作为散列索引（每一位可以0-9个数字，两位数共有10 </em> 10=100个取值可能）。当客户打电话下订单时，将订单根据电话号码最后两位放到适当的箱子中，当客户来取商品时，在对应的箱子中顺序查找。（这就是经典的“用顺序搜索来解决冲突的开放散列”)</p>
+<p>商店将纸质订单表格放在10 <em> 10的箱数组中，使用客户电话号码的最后两位作为散列索引（每一位可以0-9个数字，两位数共有10 </em> 10=100个取值可能）。当客户打电话下订单时，将订单根据电话号码最后两位放到适当的箱子中，当客户来取商品时，在对应的箱子中顺序查找。（这就是经典的“用顺序搜索来解决冲突的开放散列”)</p>
 <p>电话号码最后两位数字非常接近于随机，因此是比较理想的散列函数，而最前面的两位数字则很不理想，为什么？</p>
 <p>这个很好理解，大部分电话号码第一位都是1，后面紧跟着运营商、城市等等，比如有很多156、183等等开头的电话号码，这样就造成大量的电话号码放在相同的箱子里，其他箱子很多都是空的，查找效率很低。</p>
 <h3 id="案例4"><a href="#案例4" class="headerlink" title="案例4"></a>案例4</h3><p>20世纪70年代末期，贝尔实验室开发出了“用户操作的电话号码簿辅助程序”，该程序允许雇员使用标准的按键电话在公司电话号码簿中查找电话号码。比如，要查找该系统的设计者 “Mike Lesk”的电话，则按“LESK<em>M</em>”（也就是“5375<em>6</em>”），随后，系统会输出他的电话号码。这样的服务现在随时可见。但是，该系统中出现的一个问题是，不同的名字可能具有相同的按键编码。在这个Lesk系统中，系统会询问用户更多的信息。如何实现一个以名字的按键编码为参数，并返回所有可能的匹配名字的函数？</p>
@@ -529,6 +548,7 @@
 <ul>
 <li>方案1</li>
 </ul>
+<p>&emsp;仅当字符串的第一个字符发生匹配时，才需要调用strncmp()函数；</p>
 <p>&emsp;但是，仍需对字符串的第一个字符至少执行两次比较：判断字符是否匹配；判断是否到文本的结尾处</p>
 <ul>
 <li>方案2：</li>
@@ -631,6 +651,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/数据结构/" rel="tag"><i class="fa fa-tag"></i> 数据结构</a>
+          
+        </div>
+      
 
       
       
@@ -649,6 +675,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/01/08/实用算法总结（五）查找（字符串匹配算法KMP、BM）/" rel="prev" title="实用算法总结（五）查找（字符串匹配算法KMP、BM）">
+                实用算法总结（五）查找（字符串匹配算法KMP、BM） <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -720,7 +750,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
