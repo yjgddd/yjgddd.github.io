@@ -104,24 +104,30 @@
 
 
 
-  <meta name="description" content="朴素贝叶斯假设令x=(x1,x2,…,xd)为d维属性向量，C=(c1,c2,…,ck)，其中ci表示第i个类的标记，则贝叶斯公式为： 1P(c_i|x)=P(x|c_i)P(c_i)/P(x) ∵ 每个公式中每个ci的条件概率分母一样 ∴ 实际计算时只需考虑分子的大小 在公式中,P(ci)很容易从训练集中得到，P(x|ci)表示从ci类中随机挑选一个样例其属性向量为x的概率，那么这个概率值能否如">
+  <meta name="description" content="朴素贝叶斯假设令x=(x1,x2,…,xd)为d维属性向量，C=(c1,c2,…,ck)，其中ci表示第i个类的标记，则贝叶斯公式为：  ∵ 每个公式中每个ci的条件概率分母一样 ∴ 实际计算时只需考虑分子的大小 在公式中,P(ci)很容易从训练集中得到，P(x|ci)表示从ci类中随机挑选一个样例其属性向量为x的概率，那么这个概率值能否如单属性情况用相对频率来估算？ 如果属性之间是相互独立的，即">
 <meta name="keywords" content="机器学习">
 <meta property="og:type" content="article">
 <meta property="og:title" content="机器学习总结（三）朴素贝叶斯">
 <meta property="og:url" content="http://yoursite.com/2019/01/08/机器学习总结（三）朴素贝叶斯/index.html">
 <meta property="og:site_name" content="YangJie&#39;s Blog">
-<meta property="og:description" content="朴素贝叶斯假设令x=(x1,x2,…,xd)为d维属性向量，C=(c1,c2,…,ck)，其中ci表示第i个类的标记，则贝叶斯公式为： 1P(c_i|x)=P(x|c_i)P(c_i)/P(x) ∵ 每个公式中每个ci的条件概率分母一样 ∴ 实际计算时只需考虑分子的大小 在公式中,P(ci)很容易从训练集中得到，P(x|ci)表示从ci类中随机挑选一个样例其属性向量为x的概率，那么这个概率值能否如">
+<meta property="og:description" content="朴素贝叶斯假设令x=(x1,x2,…,xd)为d维属性向量，C=(c1,c2,…,ck)，其中ci表示第i个类的标记，则贝叶斯公式为：  ∵ 每个公式中每个ci的条件概率分母一样 ∴ 实际计算时只需考虑分子的大小 在公式中,P(ci)很容易从训练集中得到，P(x|ci)表示从ci类中随机挑选一个样例其属性向量为x的概率，那么这个概率值能否如单属性情况用相对频率来估算？ 如果属性之间是相互独立的，即">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/19-1-8/43962558.jpg">
+<meta property="og:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/19-1-8/72593433.jpg">
+<meta property="og:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/19-1-8/95410972.jpg">
 <meta property="og:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/19-1-8/80069982.jpg">
 <meta property="og:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/19-1-8/96971228.jpg">
 <meta property="og:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/19-1-8/59654926.jpg">
+<meta property="og:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/19-1-8/39669046.jpg">
+<meta property="og:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/19-1-8/96898611.jpg">
 <meta property="og:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/19-1-8/36352096.jpg">
+<meta property="og:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/19-1-8/43962558.jpg">
 <meta property="og:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/19-1-8/38150367.jpg">
-<meta property="og:updated_time" content="2019-01-08T04:48:10.458Z">
+<meta property="og:updated_time" content="2019-01-08T04:54:58.599Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习总结（三）朴素贝叶斯">
-<meta name="twitter:description" content="朴素贝叶斯假设令x=(x1,x2,…,xd)为d维属性向量，C=(c1,c2,…,ck)，其中ci表示第i个类的标记，则贝叶斯公式为： 1P(c_i|x)=P(x|c_i)P(c_i)/P(x) ∵ 每个公式中每个ci的条件概率分母一样 ∴ 实际计算时只需考虑分子的大小 在公式中,P(ci)很容易从训练集中得到，P(x|ci)表示从ci类中随机挑选一个样例其属性向量为x的概率，那么这个概率值能否如">
-<meta name="twitter:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/19-1-8/80069982.jpg">
+<meta name="twitter:description" content="朴素贝叶斯假设令x=(x1,x2,…,xd)为d维属性向量，C=(c1,c2,…,ck)，其中ci表示第i个类的标记，则贝叶斯公式为：  ∵ 每个公式中每个ci的条件概率分母一样 ∴ 实际计算时只需考虑分子的大小 在公式中,P(ci)很容易从训练集中得到，P(x|ci)表示从ci类中随机挑选一个样例其属性向量为x的概率，那么这个概率值能否如单属性情况用相对频率来估算？ 如果属性之间是相互独立的，即">
+<meta name="twitter:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/19-1-8/43962558.jpg">
 
 
 
@@ -405,7 +411,7 @@
                 
               
 
-              <time title="创建时间：2019-01-08 12:37:54 / 修改时间：12:48:10" itemprop="dateCreated datePublished" datetime="2019-01-08T12:37:54+08:00">2019-01-08</time>
+              <time title="创建时间：2019-01-08 12:37:54 / 修改时间：12:54:58" itemprop="dateCreated datePublished" datetime="2019-01-08T12:37:54+08:00">2019-01-08</time>
             
 
             
@@ -470,14 +476,14 @@
       
       
         <h3 id="朴素贝叶斯假设"><a href="#朴素贝叶斯假设" class="headerlink" title="朴素贝叶斯假设"></a>朴素贝叶斯假设</h3><p>令x=(x1,x2,…,xd)为d维属性向量，C=(c1,c2,…,ck)，其中ci表示第i个类的标记，则贝叶斯公式为：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">P(c_i|x)=P(x|c_i)P(c_i)/P(x)</span><br></pre></td></tr></table></figure>
+<p><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/19-1-8/43962558.jpg" alt=""></p>
 <p>∵ 每个公式中每个ci的条件概率分母一样</p>
 <p>∴ 实际计算时只需考虑分子的大小</p>
 <p>在公式中,P(ci)很容易从训练集中得到，P(x|ci)表示从ci类中随机挑选一个样例其属性向量为x的概率，那么这个概率值能否如单属性情况用相对频率来估算？</p>
 <p>如果属性之间是相互独立的，即朴素贝叶斯假设，则此时P(x|cj)的计算公式为：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">P(x|c_j)= \prod_&#123;i=0&#125;^d \ P(x_i|c_j)</span><br></pre></td></tr></table></figure>
+<p><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/19-1-8/72593433.jpg" alt=""></p>
 <p>其中P(xi|cj)表示类别cj中样例x取第i个属性的概率，由此得到朴素贝叶斯概率为：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">h(x)=argmax(P(c_j)*  \prod_&#123;i=0&#125;^d \ P(x_i|c_j))</span><br></pre></td></tr></table></figure>
+<p><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/19-1-8/95410972.jpg" alt=""></p>
 <p>问题：属性之间不是相互独立的怎么办？</p>
 <p>事实上在很多实际应用中，属性之间存在关系，如物体重量与体积，年龄与出生日期等。</p>
 <p>case1: 可以忽略影响</p>
@@ -502,9 +508,8 @@
 <p>例：假设πhead=0.5，m=2</p>
 <p><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/19-1-8/96971228.jpg" alt=""></p>
 <h3 id="案例计算"><a href="#案例计算" class="headerlink" title="案例计算"></a>案例计算</h3><p>(统计学习方法第四章案例)<br><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/19-1-8/59654926.jpg" alt=""></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">P(Y=1)=\frac&#123;9 &#125;&#123; 15&#125; ,P(Y=-1)=\frac&#123;6 &#125;&#123; 15&#125;  </span><br><span class="line"></span><br><span class="line">P(x^1=2|Y=1)=\frac&#123;3 &#125;&#123;9&#125;,P(x^2=S|Y=1)=\frac&#123;1 &#125;&#123;9&#125;</span><br><span class="line"></span><br><span class="line">P(x^1=2|Y=-1)=\frac&#123;2 &#125;&#123;6&#125;,P(x^2=S|Y=-1)=\frac&#123;3 &#125;&#123;6&#125;</span><br><span class="line"></span><br><span class="line">P(Y=1)P(x^1=2|Y=1)P(x^2=S|Y=1)=\frac&#123;9 &#125;&#123; 15&#125;*\frac&#123;3 &#125;&#123;9&#125;*\frac&#123;1 &#125;&#123;9&#125;=\frac&#123;1 &#125;&#123;45&#125;</span><br><span class="line"></span><br><span class="line">P(Y=-1)P(x^1=2|Y=-1)P(x^2=S|Y=-1)=\frac&#123;6 &#125;&#123; 15&#125;*\frac&#123;2 &#125;&#123;6&#125;*\frac&#123;3 &#125;&#123;6&#125;=\frac&#123;1 &#125;&#123;15&#125;</span><br><span class="line"></span><br><span class="line">P(Y=-1)P(x^1=2|Y=-1)P(x^2=S|Y=-1)&gt;P(Y=1)P(x^1=2|Y=1)P(x^2=S|Y=1)</span><br></pre></td></tr></table></figure>
-<p>因此 Y=-1</p>
-<p>例子：上题，按照拉普拉斯估计概率，计算结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">P(Y=1)=\frac&#123;10 &#125;&#123; 17&#125; ,P(Y=-1)=\frac&#123;7&#125;&#123; 17&#125;  </span><br><span class="line"></span><br><span class="line">P(x^1=2|Y=1)=\frac&#123;4 &#125;&#123;12&#125;,P(x^2=S|Y=1)=\frac&#123;2 &#125;&#123;12&#125;</span><br><span class="line"></span><br><span class="line">P(x^1=2|Y=-1)=\frac&#123;3 &#125;&#123;9&#125;,P(x^2=S|Y=-1)=\frac&#123;4 &#125;&#123;9&#125;</span><br><span class="line"></span><br><span class="line">P(Y=1)P(x^1=2|Y=1)P(x^2=S|Y=1)=\frac&#123;10 &#125;&#123; 17&#125;*\frac&#123;4 &#125;&#123;12&#125;*\frac&#123;2 &#125;&#123;12&#125;=\frac&#123;5 &#125;&#123;153&#125;=0.0327</span><br><span class="line"></span><br><span class="line">P(Y=-1)P(x^1=2|Y=-1)P(x^2=S|Y=-1)=\frac&#123;7&#125;&#123; 17&#125;  *\frac&#123;3 &#125;&#123;9&#125;*\frac&#123;4 &#125;&#123;9&#125;=\frac&#123;28 &#125;&#123;459&#125;=0.0610</span><br><span class="line"></span><br><span class="line">P(Y=-1)P(x^1=2|Y=-1)P(x^2=S|Y=-1)&gt;P(Y=1)P(x^1=2|Y=1)P(x^2=S|Y=1)</span><br></pre></td></tr></table></figure></p>
+<p><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/19-1-8/39669046.jpg" alt=""><br>因此 Y=-1</p>
+<p>例子：上题，按照拉普拉斯估计概率，计算结果：<br><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/19-1-8/96898611.jpg" alt=""></p>
 <p>因此Y=-1</p>
 <h3 id="连续属性情况"><a href="#连续属性情况" class="headerlink" title="连续属性情况"></a>连续属性情况</h3><p>在许多实际应用中，属性的取值是从连续域中取值的，再想用相对频率来估算概率值就不现实了，因为连续域中取值可以有无穷多个，每个值的概率都趋于无穷小。</p>
 <h4 id="离散化方法"><a href="#离散化方法" class="headerlink" title="离散化方法"></a>离散化方法</h4><p>把连续域划分为多个区间进行离散化。如原始域为(10,100)可离散化为区间：(0,10],(10,20],…,(90,100)，每个区间分别用b1,b2,…,b10表示。</p>
@@ -515,7 +520,7 @@
 <p>其中：P(ci)由训练集中第ci类的相对频率估算</p>
 <p>p(x)是从所有训练集样本中得到的概率密度函数</p>
 <p>p(x|ci)是从训练集中属于第ci类的样本中得到的概率密度函数，在属性之间相互独立的假设下，在x处的概率密度函数为：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">P(x|c_j)= \prod_&#123;i=0&#125;^d \ P(x_i|c_j)</span><br></pre></td></tr></table></figure>
+<p><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/19-1-8/43962558.jpg" alt=""></p>
 <p>② 高斯钟形函数</p>
 <p>许多实际问题均服从正态分布(高斯分布)，所以一种近似计算概率密度函数方法为高斯函数。</p>
 <p><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/19-1-8/38150367.jpg" alt=""></p>
