@@ -118,7 +118,7 @@
 <meta property="og:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/19-1-7/52153973.jpg">
 <meta property="og:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/19-1-7/80828998.jpg">
 <meta property="og:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/19-1-7/64386062.jpg">
-<meta property="og:updated_time" content="2019-01-15T08:37:42.665Z">
+<meta property="og:updated_time" content="2019-01-15T08:38:22.716Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习总结（二）k近邻法">
 <meta name="twitter:description" content="基本原理k近邻是一种基本分类和回归方法，其工作机制非常简单：基于某种距离度量找出训练集中与其最靠近的k个训练样例，然后基于这k个邻居的信息进行预测或分类。通常在分类任务中使用投票法，在回归任务中使用平均法，也可根据距离远近进行加权平均或加权投票。 kNN是一种称为懒惰学习方法，它没有明显的训练(学习)过程，在训练阶段仅仅是保存样本，因此训练开销为0。 三要素：k值选择、距离度量、分类决策规则 当训">
@@ -423,7 +423,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-01-15 16:37:42" itemprop="dateModified" datetime="2019-01-15T16:37:42+08:00">2019-01-15</time>
+                <time title="修改时间：2019-01-15 16:38:22" itemprop="dateModified" datetime="2019-01-15T16:38:22+08:00">2019-01-15</time>
               
             
           </span>
@@ -505,11 +505,16 @@
 <p>通常划分空间的切分点可选择训练样例点在选定坐标轴上的中位数(中间位置的一个数或最中间二个数的平均值)，这样得到的kd树为平衡的kd树，但平衡的kd树在搜索时的效率未必是最优的。</p>
 <h4 id="构造平衡kd树算法"><a href="#构造平衡kd树算法" class="headerlink" title="构造平衡kd树算法"></a>构造平衡kd树算法</h4><p>输入：k维空间训练集D={x1,x2,…,xm}，其中xi=(x1(i),x2(i),…,xd(i))</p>
 <p>输出：kd树</p>
+<p>过程：</p>
 <ul>
-<li>创建根结点，对应于包含D的k维空间的超矩形区域</li>
-<li>选择x1(x的第一个属性)为坐标轴，以D中所有样例的x1坐标的中位数为切分点，将根结点对应的超矩形区域切分为二个子区域。切分由通过切分点并垂直于坐标轴x1的超平面实现。</li>
-<li>生成左右二个子结点，左子结点对应于坐标x1小于切分点的子区域，右子结点对应于坐标x1大于切分点的子区域，将落在切分超平面上的训练数据点保存在根结点上。</li>
-<li>递归划分过程，直至子区域没有样例点为止。</li>
+<li><p>创建根结点，对应于包含D的k维空间的超矩形区域</p>
+</li>
+<li><p>选择x1(x的第一个属性)为坐标轴，以D中所有样例的x1坐标的中位数为切分点，将根结点对应的超矩形区域切分为二个子区域。切分由通过切分点并垂直于坐标轴x1的超平面实现。</p>
+</li>
+<li><p>生成左右二个子结点，左子结点对应于坐标x1小于切分点的子区域，右子结点对应于坐标x1大于切分点的子区域，将落在切分超平面上的训练数据点保存在根结点上。</p>
+</li>
+<li><p>递归划分过程，直至子区域没有样例点为止。</p>
+</li>
 </ul>
 <p>例：D={(2,3),(5,4),(9,6),(4,7),(8,1),(7,2)}，构造平衡的kd树。<br><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/19-1-7/83592145.jpg" alt=""></p>
 <h4 id="kd树kNN搜索"><a href="#kd树kNN搜索" class="headerlink" title="kd树kNN搜索"></a>kd树kNN搜索</h4><p>以最近邻(k=1)为例，同样的方法可以应用到kNN。</p>
