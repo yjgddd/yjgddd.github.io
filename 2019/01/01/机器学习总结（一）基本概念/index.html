@@ -135,7 +135,7 @@
 <meta property="og:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-31/7016574.jpg">
 <meta property="og:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-31/18829648.jpg">
 <meta property="og:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-31/67079978.jpg">
-<meta property="og:updated_time" content="2019-01-15T06:26:00.780Z">
+<meta property="og:updated_time" content="2019-01-15T07:04:26.661Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习总结（一）基本概念">
 <meta name="twitter:description" content="机器学习的历史（略） 什么是机器学习对于给定的任务T，在合理的性能度量方案P的前提下，某计算机程序可以自主学习任务T的经验E，随着提供合适、优质、大量的经验E，该程序对于任务T的性能逐步提高。 所谓机器学习更通俗的说就是：我们使用计算机设计一个系统，使它能够根据提供的训练数据按照一定的方式来学习，随着训练次数的增加，该系统可以在性能上不断学习和改进，通过参数优化的学习模型，能够用于预测相关问题的输">
@@ -440,7 +440,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-01-15 14:26:00" itemprop="dateModified" datetime="2019-01-15T14:26:00+08:00">2019-01-15</time>
+                <time title="修改时间：2019-01-15 15:04:26" itemprop="dateModified" datetime="2019-01-15T15:04:26+08:00">2019-01-15</time>
               
             
           </span>
@@ -575,7 +575,7 @@
 <ul>
 <li><strong>过拟合(over-fitting)</strong></li>
 </ul>
-<p>&emsp;过拟合是指学习时选择模型所包含的参数过多，以至于出现模型对已知数据预测的很好，对未知数据预测得很差的现象。<br>和过拟合相对应的现象为欠拟合。</p>
+<p>&emsp;过拟合是指学习时选择模型所包含的参数过多，以至于出现模型对已知数据预测的很好，对未知数据预测得很差的现象。和过拟合相对应的现象为欠拟合。</p>
 <ul>
 <li><strong>置信度(confidence level)</strong></li>
 </ul>
@@ -584,29 +584,14 @@
 <li><strong>置信区间(confidence interval)</strong></li>
 </ul>
 <p>&emsp;置信区间是指在某个置信水平下，样本统计值与总体参数值间误差的范围。置信区间越大，置信水平就越高。</p>
-<h3 id="常用公式和函数"><a href="#常用公式和函数" class="headerlink" title="常用公式和函数"></a>常用公式和函数</h3><ul>
-<li><strong>欧氏距离(euclidean distance)</strong></li>
-</ul>
-<p>&emsp;对于平面上的二点P1(x1,y1)，P2(x2,y2)欧氏距离定义为：</p>
+<h3 id="常用公式和函数"><a href="#常用公式和函数" class="headerlink" title="常用公式和函数"></a>常用公式和函数</h3><h4 id="欧氏距离-euclidean-distance"><a href="#欧氏距离-euclidean-distance" class="headerlink" title="欧氏距离(euclidean distance)"></a>欧氏距离(euclidean distance)</h4><p>&emsp;对于平面上的二点P1(x1,y1)，P2(x2,y2)欧氏距离定义为：</p>
 <p><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-31/47654455.jpg" alt=""></p>
-<ul>
-<li><strong>曼哈顿距离(街区距离）</strong></li>
-</ul>
-<p><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-31/79251296.jpg" alt=""></p>
-<ul>
-<li><strong>闵可夫斯基距离</strong></li>
-</ul>
-<p>&emsp;对于二个n维的变量A(x1,x2,…,xn)和B(y1,y2,…yn)，闵氏距离为：<br><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-31/6772378.jpg" alt=""></p>
-<ul>
-<li><strong>海明距离</strong></li>
-</ul>
-<p>&emsp;在信息论中，二个字符串之间的海明距离是二个字符串对应位置的不同字符数。</p>
+<h4 id="曼哈顿距离-街区距离"><a href="#曼哈顿距离-街区距离" class="headerlink" title="曼哈顿距离(街区距离)"></a>曼哈顿距离(街区距离)</h4><p><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-31/79251296.jpg" alt=""></p>
+<h4 id="闵可夫斯基距离"><a href="#闵可夫斯基距离" class="headerlink" title="闵可夫斯基距离"></a>闵可夫斯基距离</h4><p>&emsp;对于二个n维的变量A(x1,x2,…,xn)和B(y1,y2,…yn)，闵氏距离为：<br><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-31/6772378.jpg" alt=""></p>
+<h4 id="海明距离"><a href="#海明距离" class="headerlink" title="海明距离"></a>海明距离</h4><p>&emsp;在信息论中，二个字符串之间的海明距离是二个字符串对应位置的不同字符数。</p>
 <p>&emsp;如：A=(1011101)，B=(1001001)  </p>
 <p>&emsp;海明距离=2</p>
-<ul>
-<li><strong>杰卡德(Jaccard)相似度</strong></li>
-</ul>
-<p>&emsp;J(A,B) = |A∩B| / |A∪B|</p>
+<h4 id="杰卡德-Jaccard-相似度"><a href="#杰卡德-Jaccard-相似度" class="headerlink" title="杰卡德(Jaccard)相似度"></a>杰卡德(Jaccard)相似度</h4><p>&emsp;J(A,B) = |A∩B| / |A∪B|</p>
 <p>&emsp;其中A，B为集合</p>
 <p>&emsp;如网页相似度比较</p>
 <table>
@@ -633,10 +618,7 @@
 <p>&emsp;A∩B = ｛‘自然保护区’｝</p>
 <p>&emsp;A∪B ={‘努力’，‘建设’，‘国家级’，‘自然保护区’，‘保护’，‘义不容辞’｝</p>
 <p>&emsp;J(A,B) = 1/6 = 0.17</p>
-<ul>
-<li><strong>余弦相似度</strong></li>
-</ul>
-<p>&emsp;对于向量a(x1,y1)和b(x2,y2)的余弦值为：</p>
+<h4 id="余弦相似度"><a href="#余弦相似度" class="headerlink" title="余弦相似度"></a>余弦相似度</h4><p>&emsp;对于向量a(x1,y1)和b(x2,y2)的余弦值为：</p>
 <p><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-31/48984032.jpg" alt=""></p>
 <p>&emsp;对于n维时，若x=(x1,x2,…,xn)，y=(y1,y2,…,yn)</p>
 <p><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-31/5450049.jpg" alt=""></p>
@@ -673,50 +655,23 @@
 <p>&emsp;⑤ 相似度计算：</p>
 <p><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-31/98606200.jpg" alt=""></p>
 <p>&emsp;余弦相似度更侧重于方向问题。</p>
-<ul>
-<li><strong>先验概率</strong></li>
-</ul>
-<p>&emsp;事件A发生的概率记为P(A)，这个先验概率值可以用相对频率来近似。根据大数定律，当训练集包含足够多的独立同分布样本时P(A)可通过样本出现的频率来估算。</p>
-<ul>
-<li><strong>联合概率</strong></li>
-</ul>
-<p>&emsp;事件A和事件B同时发生的概率，记为P(A,B)。</p>
+<h4 id="先验概率"><a href="#先验概率" class="headerlink" title="先验概率"></a>先验概率</h4><p>&emsp;事件A发生的概率记为P(A)，这个先验概率值可以用相对频率来近似。根据大数定律，当训练集包含足够多的独立同分布样本时P(A)可通过样本出现的频率来估算。</p>
+<h4 id="联合概率"><a href="#联合概率" class="headerlink" title="联合概率"></a>联合概率</h4><p>&emsp;事件A和事件B同时发生的概率，记为P(A,B)。</p>
 <p>&emsp;若事件A和事件B相互独立，则：</p>
 <p>&emsp;P(A,B) = P(A) ×P(B)</p>
-<ul>
-<li><strong>条件概率(后验概率)</strong></li>
-</ul>
-<p>&emsp;在事件A发生的条件下，事件B发生的概率，记为P(B|A)</p>
+<h4 id="条件概率-后验概率"><a href="#条件概率-后验概率" class="headerlink" title="条件概率(后验概率)"></a>条件概率(后验概率)</h4><p>&emsp;在事件A发生的条件下，事件B发生的概率，记为P(B|A)</p>
 <p>&emsp;   P(B|A) = P(A,B)/P(A)</p>
-<ul>
-<li><strong>正态分布(高斯分布)</strong></li>
-</ul>
-<p>&emsp;连续型随机变量x的概率密度为：<br><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-31/89387456.jpg" alt=""></p>
-<ul>
-<li><p><strong>符号函数</strong><br><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-31/43467540.jpg" alt=""></p>
-</li>
-<li><p><strong>指示函数</strong><br><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-31/43262609.jpg" alt=""></p>
-</li>
-<li><p><strong>损失函数</strong></p>
-</li>
-</ul>
-<p>&emsp;损失函数也称代价函数，可用于度量模型预测错误的程度，它是一个非负实值函数。</p>
+<h4 id="正态分布-高斯分布"><a href="#正态分布-高斯分布" class="headerlink" title="正态分布(高斯分布)"></a>正态分布(高斯分布)</h4><p>&emsp;连续型随机变量x的概率密度为：<br><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-31/89387456.jpg" alt=""></p>
+<h4 id="符号函数"><a href="#符号函数" class="headerlink" title="符号函数"></a>符号函数</h4><p><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-31/43467540.jpg" alt=""></p>
+<h4 id="指示函数"><a href="#指示函数" class="headerlink" title="指示函数"></a>指示函数</h4><p><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-31/43262609.jpg" alt=""></p>
+<h4 id="损失函数"><a href="#损失函数" class="headerlink" title="损失函数"></a>损失函数</h4><p>&emsp;损失函数也称代价函数，可用于度量模型预测错误的程度，它是一个非负实值函数。</p>
 <p>&emsp;令假设空间H中选取模型f作为决策函数，对于给定的输入x，由f(x)得到预测结果(输出)。这个输出值f(x)与真实值y可能一致也可能不一致，那么根据情况可选择一个损失函数来度量预测错误的程度，记为L(y,f(x))。</p>
 <p><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-31/44592326.jpg" alt=""></p>
 <p><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-31/59281355.jpg" alt=""></p>
-<ul>
-<li><strong>阶越函数（step function)</strong></li>
-</ul>
-<p><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-31/53816234.jpg" alt=""></p>
-<ul>
-<li><strong>Sigmoid函数（S型函数）</strong></li>
-</ul>
-<p><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-31/31160377.jpg" alt=""></p>
+<h4 id="阶越函数（step-function"><a href="#阶越函数（step-function" class="headerlink" title="阶越函数（step function)"></a>阶越函数（step function)</h4><p><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-31/53816234.jpg" alt=""></p>
+<h4 id="Sigmoid函数（S型函数）"><a href="#Sigmoid函数（S型函数）" class="headerlink" title="Sigmoid函数（S型函数）"></a>Sigmoid函数（S型函数）</h4><p><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-31/31160377.jpg" alt=""></p>
 <p><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-31/56738299.jpg" alt=""></p>
-<ul>
-<li><strong>正则化（regularizayion)</strong></li>
-</ul>
-<p>&emsp;用一组与原不适定问题相邻近的适定问题的解去逼近原问题的解的方法称为正则化方法。</p>
+<h4 id="正则化（regularizayion"><a href="#正则化（regularizayion" class="headerlink" title="正则化（regularizayion)"></a>正则化（regularizayion)</h4><p>&emsp;用一组与原不适定问题相邻近的适定问题的解去逼近原问题的解的方法称为正则化方法。</p>
 <p>&emsp;不适定问题：很难求解的问题</p>
 <p>&emsp;正则化的目的：防止过拟合</p>
 <p>&emsp;正则化的本质：约束(限制)要优化的参数</p>
@@ -733,24 +688,15 @@
 <p>&emsp;测试样例的组织：</p>
 <p>&emsp;假设已有m个样本D={x1,x2,…,xm}，从D中挑选部分样例组成训练集，再从D中挑选部分样例组成测试集。</p>
 <p>&emsp;问题：如何挑选？</p>
-<ul>
-<li><strong>留出法(hold-out)</strong></li>
-</ul>
-<p>&emsp;将D划分为二个不相交的集合S和T，其中D=S∪T，S∩T=Ф</p>
+<h4 id="留出法-hold-out"><a href="#留出法-hold-out" class="headerlink" title="留出法(hold-out)"></a>留出法(hold-out)</h4><p>&emsp;将D划分为二个不相交的集合S和T，其中D=S∪T，S∩T=Ф</p>
 <p>&emsp;如D包含了1000个样例，划分后，S包含700个训练样本，T包含了300个测试样本。如果模型在T上有90个样本预测错误，则错误率为：E=90/300=0.3，错误率为30%。</p>
 <p>&emsp;这种方法需注意的：</p>
 <p>&emsp;① 训练集/测试集的划分尽可能地保持数据分布的一致性，避免因样例划分过程引入额外的偏差。</p>
 <p>&emsp;② 存在多种划分组合，每种划分都对应了模型的评估性能，所以单次使用留出法得到的评估结果往往是不够稳定可靠的。改进的方法是采用若干次随机划分取平均值作为留出法的评估结果。</p>
 <p>&emsp;③ 划分时如果S较大接近于D时，用S训练出的模型更接近于用D训练出的模型，但此时T较小，评估结果可能不准确；若T较大时，用S训练出的模型与用D训练出的模型有较大的差别，将降低评估结果的真实性。通常划分的比例为2/3～4/5的样例作为训练集，其余作为测试集。</p>
-<ul>
-<li><strong>交叉验证法(cross validation)</strong></li>
-</ul>
-<p>&emsp;将样本数据集D划分为k个大小相似的互斥子集，即D=D1∪D2∪…∪Dk，其中：Di∩Dj=Ф  (i≠j)</p>
+<h4 id="交叉验证法-cross-validation"><a href="#交叉验证法-cross-validation" class="headerlink" title="交叉验证法(cross validation)**"></a>交叉验证法(cross validation)**</h4><p>&emsp;将样本数据集D划分为k个大小相似的互斥子集，即D=D1∪D2∪…∪Dk，其中：Di∩Dj=Ф  (i≠j)</p>
 <p>&emsp;划分时同留出法尽量保持每个子集数据一致性，然后每次用k-1个子集的并集作为训练集，剩余的一个子集作为测试集，这样共获得k组训练/测试集，相应地可进行k次训练和测试。用k次测试结果的平均值作为模型的性能评估值。<br><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-31/18829648.jpg" alt=""></p>
-<ul>
-<li><strong>自助法(bootstrapping)</strong></li>
-</ul>
-<p>&emsp;每次从D中随机挑选一个样例拷贝到D’中且该样例仍保留在D中，下次挑选时仍可能被选中。重复从D中挑选m个样例到D’中，此时D’中可能某个样例出现多次，而D中某些样例可能不在D’中。</p>
+<h4 id="自助法-bootstrapping"><a href="#自助法-bootstrapping" class="headerlink" title="自助法(bootstrapping)"></a>自助法(bootstrapping)</h4><p>&emsp;每次从D中随机挑选一个样例拷贝到D’中且该样例仍保留在D中，下次挑选时仍可能被选中。重复从D中挑选m个样例到D’中，此时D’中可能某个样例出现多次，而D中某些样例可能不在D’中。</p>
 <p>&emsp;估算样例在m次挑选中未被选中的概率为:</p>
 <p><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-31/67079978.jpg" alt=""></p>
 <h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p>【1】中科大张曙老师机器学习课程</p>
@@ -1003,7 +949,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#机器学习的历史"><span class="nav-number">1.</span> <span class="nav-text">机器学习的历史</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是机器学习"><span class="nav-number">2.</span> <span class="nav-text">什么是机器学习</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本概念"><span class="nav-number">3.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用评价指标"><span class="nav-number">4.</span> <span class="nav-text">常用评价指标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用公式和函数"><span class="nav-number">5.</span> <span class="nav-text">常用公式和函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#测试集组织"><span class="nav-number">6.</span> <span class="nav-text">测试集组织</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考资料"><span class="nav-number">7.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#机器学习的历史"><span class="nav-number">1.</span> <span class="nav-text">机器学习的历史</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是机器学习"><span class="nav-number">2.</span> <span class="nav-text">什么是机器学习</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本概念"><span class="nav-number">3.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用评价指标"><span class="nav-number">4.</span> <span class="nav-text">常用评价指标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用公式和函数"><span class="nav-number">5.</span> <span class="nav-text">常用公式和函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#欧氏距离-euclidean-distance"><span class="nav-number">5.1.</span> <span class="nav-text">欧氏距离(euclidean distance)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#曼哈顿距离-街区距离"><span class="nav-number">5.2.</span> <span class="nav-text">曼哈顿距离(街区距离)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#闵可夫斯基距离"><span class="nav-number">5.3.</span> <span class="nav-text">闵可夫斯基距离</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#海明距离"><span class="nav-number">5.4.</span> <span class="nav-text">海明距离</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#杰卡德-Jaccard-相似度"><span class="nav-number">5.5.</span> <span class="nav-text">杰卡德(Jaccard)相似度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#余弦相似度"><span class="nav-number">5.6.</span> <span class="nav-text">余弦相似度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#先验概率"><span class="nav-number">5.7.</span> <span class="nav-text">先验概率</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#联合概率"><span class="nav-number">5.8.</span> <span class="nav-text">联合概率</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#条件概率-后验概率"><span class="nav-number">5.9.</span> <span class="nav-text">条件概率(后验概率)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#正态分布-高斯分布"><span class="nav-number">5.10.</span> <span class="nav-text">正态分布(高斯分布)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#符号函数"><span class="nav-number">5.11.</span> <span class="nav-text">符号函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#指示函数"><span class="nav-number">5.12.</span> <span class="nav-text">指示函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#损失函数"><span class="nav-number">5.13.</span> <span class="nav-text">损失函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#阶越函数（step-function"><span class="nav-number">5.14.</span> <span class="nav-text">阶越函数（step function)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Sigmoid函数（S型函数）"><span class="nav-number">5.15.</span> <span class="nav-text">Sigmoid函数（S型函数）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#正则化（regularizayion"><span class="nav-number">5.16.</span> <span class="nav-text">正则化（regularizayion)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#测试集组织"><span class="nav-number">6.</span> <span class="nav-text">测试集组织</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#留出法-hold-out"><span class="nav-number">6.1.</span> <span class="nav-text">留出法(hold-out)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#交叉验证法-cross-validation"><span class="nav-number">6.2.</span> <span class="nav-text">交叉验证法(cross validation)**</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#自助法-bootstrapping"><span class="nav-number">6.3.</span> <span class="nav-text">自助法(bootstrapping)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考资料"><span class="nav-number">7.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
             
 
           </div>
