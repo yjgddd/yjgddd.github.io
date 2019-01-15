@@ -135,7 +135,7 @@
 <meta property="og:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-31/7016574.jpg">
 <meta property="og:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-31/18829648.jpg">
 <meta property="og:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-31/67079978.jpg">
-<meta property="og:updated_time" content="2019-01-15T07:04:26.661Z">
+<meta property="og:updated_time" content="2019-01-15T07:08:54.721Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习总结（一）基本概念">
 <meta name="twitter:description" content="机器学习的历史（略） 什么是机器学习对于给定的任务T，在合理的性能度量方案P的前提下，某计算机程序可以自主学习任务T的经验E，随着提供合适、优质、大量的经验E，该程序对于任务T的性能逐步提高。 所谓机器学习更通俗的说就是：我们使用计算机设计一个系统，使它能够根据提供的训练数据按照一定的方式来学习，随着训练次数的增加，该系统可以在性能上不断学习和改进，通过参数优化的学习模型，能够用于预测相关问题的输">
@@ -440,7 +440,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-01-15 15:04:26" itemprop="dateModified" datetime="2019-01-15T15:04:26+08:00">2019-01-15</time>
+                <time title="修改时间：2019-01-15 15:08:54" itemprop="dateModified" datetime="2019-01-15T15:08:54+08:00">2019-01-15</time>
               
             
           </span>
@@ -503,87 +503,39 @@
 <h3 id="什么是机器学习"><a href="#什么是机器学习" class="headerlink" title="什么是机器学习"></a>什么是机器学习</h3><p>对于给定的<strong>任务T</strong>，在合理的<strong>性能度量方案P</strong>的前提下，某计算机程序可以自主学习任务T的<strong>经验E</strong>，随着提供合适、优质、大量的经验E，该程序对于任务T的性能逐步提高。</p>
 <p>所谓机器学习更通俗的说就是：我们使用计算机设计一个系统，使它能够根据提供的训练数据按照一定的方式来学习，随着训练次数的增加，该系统可以在性能上不断学习和改进，通过参数优化的学习模型，能够用于预测相关问题的输出。</p>
 <p><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-31/75470158.jpg" alt=""></p>
-<h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><ul>
-<li><strong>有监督学习(Supervised Learning)：</strong></li>
-</ul>
-<p>&emsp;根据已有的训练样本，通过不断计算，从样本中学习选择特征参数，对模型建立目标函数，从而对未知样本进行预测。</p>
+<h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><h4 id="有监督学习-Supervised-Learning-："><a href="#有监督学习-Supervised-Learning-：" class="headerlink" title="有监督学习(Supervised Learning)："></a>有监督学习(Supervised Learning)：</h4><p>&emsp;根据已有的训练样本，通过不断计算，从样本中学习选择特征参数，对模型建立目标函数，从而对未知样本进行预测。</p>
 <p>&emsp;优点：可以有效利用先验数据对后验数据进行预测</p>
 <p>&emsp;缺点：训练数据人为收集，具有一定的主观性，预测结果只可能是训练数据中的类别，不会产生出新的类别。<br>&emsp;如神经网络、SVM、决策树等。</p>
-<ul>
-<li><strong>无监督学习(Unsupervised Learning)：</strong></li>
-</ul>
-<p>&emsp;对模型不事先进行先验知识学习，不对模型进行训练，使用未分类的样本数据直接进行分类的过程。</p>
+<h4 id="无监督学习-Unsupervised-Learning-："><a href="#无监督学习-Unsupervised-Learning-：" class="headerlink" title="无监督学习(Unsupervised Learning)："></a>无监督学习(Unsupervised Learning)：</h4><p>&emsp;对模型不事先进行先验知识学习，不对模型进行训练，使用未分类的样本数据直接进行分类的过程。</p>
 <p>&emsp;优点：人为干预较少，结果具有一定的客观性。</p>
 <p>&emsp;缺点：计算过程较为复杂。如聚类算法等。</p>
-<ul>
-<li><strong>输入与输出空间</strong></li>
-</ul>
-<p>&emsp;输入与输出所有可能取值的集合分别称为输入空间X和输出空间Y。输入空间和输出空间可以是有限集合，也可以是整个欧氏空间；</p>
+<h4 id="输入与输出空间"><a href="#输入与输出空间" class="headerlink" title="输入与输出空间"></a>输入与输出空间</h4><p>&emsp;输入与输出所有可能取值的集合分别称为输入空间X和输出空间Y。输入空间和输出空间可以是有限集合，也可以是整个欧氏空间；</p>
 <p>&emsp;输入与输出空间可以是同一空间，也可以是不同空间。但通常输出空间远小于输入空间。</p>
-<ul>
-<li><strong>训练集(training set)</strong></li>
-</ul>
-<p>&emsp;从数据中学习得到模型的过程称为“学习”或“训练”，训练过程中使用的数据称为“训练样本”。训练样本由输入和输出对组成，所有的训练样本对构成了训练集，表示为：<br>&emsp;T={(x1,y1),(x2,y2),…,(xm,ym)}</p>
-<ul>
-<li><strong>假设空间Н(hypothesis space)</strong></li>
-</ul>
-<p>&emsp;学习的目的就是要找到一个由输入到输出映射（假设）最好的模型，由输入空间到输出空间所有映射的集合称为假设空间。</p>
+<h4 id="训练集-training-set"><a href="#训练集-training-set" class="headerlink" title="训练集(training set)"></a>训练集(training set)</h4><p>&emsp;从数据中学习得到模型的过程称为“学习”或“训练”，训练过程中使用的数据称为“训练样本”。训练样本由输入和输出对组成，所有的训练样本对构成了训练集，表示为：<br>&emsp;T={(x1,y1),(x2,y2),…,(xm,ym)}</p>
+<h4 id="假设空间Н-hypothesis-space"><a href="#假设空间Н-hypothesis-space" class="headerlink" title="假设空间Н(hypothesis space)"></a>假设空间Н(hypothesis space)</h4><p>&emsp;学习的目的就是要找到一个由输入到输出映射（假设）最好的模型，由输入空间到输出空间所有映射的集合称为假设空间。</p>
 <p>&emsp;即：我们可以把学习过程看作为一个在所有假设组成的空间中进行搜索的过程，搜索目标是找到与训练集匹配的假设。</p>
-<ul>
-<li><strong>奥卡姆剃刀(Occam’s razor)原则</strong></li>
-</ul>
-<p>&emsp;奥卡姆剃刀原则是自然科学研究中一种常用和最基本的原则，即“若有多个假设与观察一致，则选用最简单的那个”。</p>
-<ul>
-<li><strong>回归(regression)和分类(classification)</strong></li>
-</ul>
-<p>&emsp;回归和分类是对不同预测任务的相应称法。</p>
+<h4 id="奥卡姆剃刀-Occam’s-razor-原则"><a href="#奥卡姆剃刀-Occam’s-razor-原则" class="headerlink" title="奥卡姆剃刀(Occam’s razor)原则"></a>奥卡姆剃刀(Occam’s razor)原则</h4><p>&emsp;奥卡姆剃刀原则是自然科学研究中一种常用和最基本的原则，即“若有多个假设与观察一致，则选用最简单的那个”。</p>
+<h4 id="回归-regression-和分类-classification"><a href="#回归-regression-和分类-classification" class="headerlink" title="回归(regression)和分类(classification)"></a>回归(regression)和分类(classification)</h4><p>&emsp;回归和分类是对不同预测任务的相应称法。</p>
 <p>&emsp;若我们要预测（输出）的结果是连续值，则此类学习任务称为回归；</p>
 <p>&emsp;若我们要预测（输出）的结果是离散值，则此类学习任务称为分类。</p>
 <p>&emsp;若问题输出结果只有二个类别，则通常称为二分类问题，否则为多分类问题。</p>
 <p>&emsp;回归包含线性回归和逻辑回归，线性回归等同于函数拟合，用于模型学习和连续值输出；逻辑回归可解决分类问题，输出离散值。</p>
-<h3 id="常用评价指标"><a href="#常用评价指标" class="headerlink" title="常用评价指标"></a>常用评价指标</h3><ul>
-<li><strong>错误率E</strong></li>
-</ul>
-<p>&emsp;输出错误的样本数占样本总数的比例</p>
+<h3 id="常用评价指标"><a href="#常用评价指标" class="headerlink" title="常用评价指标"></a>常用评价指标</h3><h4 id="错误率E"><a href="#错误率E" class="headerlink" title="错误率E"></a>错误率E</h4><p>&emsp;输出错误的样本数占样本总数的比例</p>
 <p>&emsp;E=α/m</p>
 <p>&emsp;其中α为错分数，m为样本总数</p>
-<ul>
-<li><strong>正确率或称准确率</strong></li>
-</ul>
-<p>&emsp;Acc=1-E</p>
-<ul>
-<li><strong>误差(error)</strong></li>
-</ul>
-<p>&emsp;模型预测输出与样本真实输出之间的差异称为误差</p>
-<ul>
-<li><strong>经验(训练)误差</strong></li>
-</ul>
-<p>&emsp;模型在训练集上的误差称为经验或训练误差。</p>
-<ul>
-<li><strong>泛化误差(generalization error)</strong></li>
-</ul>
-<p>&emsp;模型在新样本上的误差称为泛化误差。所谓泛化是指从特殊到一般的过程，即从具体事实归纳出一般规律的过程。</p>
-<ul>
-<li><strong>方差和均方差</strong></li>
-</ul>
-<p>&emsp;方差又称均方误差是误差分析中比较常用的一种指标，其定义为：</p>
+<h4 id="正确率或称准确率"><a href="#正确率或称准确率" class="headerlink" title="正确率或称准确率"></a>正确率或称准确率</h4><p>&emsp;Acc=1-E</p>
+<h4 id="误差-error"><a href="#误差-error" class="headerlink" title="误差(error)"></a>误差(error)</h4><p>&emsp;模型预测输出与样本真实输出之间的差异称为误差</p>
+<h4 id="经验-训练-误差"><a href="#经验-训练-误差" class="headerlink" title="经验(训练)误差"></a>经验(训练)误差</h4><p>&emsp;模型在训练集上的误差称为经验或训练误差。</p>
+<h4 id="泛化误差-generalization-error"><a href="#泛化误差-generalization-error" class="headerlink" title="泛化误差(generalization error)"></a>泛化误差(generalization error)</h4><p>&emsp;模型在新样本上的误差称为泛化误差。所谓泛化是指从特殊到一般的过程，即从具体事实归纳出一般规律的过程。</p>
+<h4 id="方差和均方差"><a href="#方差和均方差" class="headerlink" title="方差和均方差"></a>方差和均方差</h4><p>&emsp;方差又称均方误差是误差分析中比较常用的一种指标，其定义为：</p>
 <p>&emsp;在预测任务中，对于给定的数据集T={(x1,y1),(x2,y2),…,(xm,ym)}，f(x)为模型预测输出，y为样本真实输出，则二者之间的方差为：</p>
 <p><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-31/25040720.jpg" alt=""></p>
 <p>&emsp;对于连续域的情况：</p>
 <p><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-31/18348509.jpg" alt=""><br>&emsp;其中p(x)为概率密度函数</p>
 <p>&emsp;均方差(标准差)：<br><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-31/88574904.jpg" alt=""></p>
-<ul>
-<li><strong>过拟合(over-fitting)</strong></li>
-</ul>
-<p>&emsp;过拟合是指学习时选择模型所包含的参数过多，以至于出现模型对已知数据预测的很好，对未知数据预测得很差的现象。和过拟合相对应的现象为欠拟合。</p>
-<ul>
-<li><strong>置信度(confidence level)</strong></li>
-</ul>
-<p>&emsp;置信度也称置信水平是指总体参数值落在样本统计值某一区间的概率，即对事件真实性的相信程度。</p>
-<ul>
-<li><strong>置信区间(confidence interval)</strong></li>
-</ul>
-<p>&emsp;置信区间是指在某个置信水平下，样本统计值与总体参数值间误差的范围。置信区间越大，置信水平就越高。</p>
+<h4 id="过拟合-over-fitting"><a href="#过拟合-over-fitting" class="headerlink" title="过拟合(over-fitting)"></a>过拟合(over-fitting)</h4><p>&emsp;过拟合是指学习时选择模型所包含的参数过多，以至于出现模型对已知数据预测的很好，对未知数据预测得很差的现象。和过拟合相对应的现象为欠拟合。</p>
+<h4 id="置信度-confidence-level"><a href="#置信度-confidence-level" class="headerlink" title="置信度(confidence level)"></a>置信度(confidence level)</h4><p>&emsp;置信度也称置信水平是指总体参数值落在样本统计值某一区间的概率，即对事件真实性的相信程度。</p>
+<h4 id="置信区间-confidence-interval"><a href="#置信区间-confidence-interval" class="headerlink" title="置信区间(confidence interval)"></a>置信区间(confidence interval)</h4><p>&emsp;置信区间是指在某个置信水平下，样本统计值与总体参数值间误差的范围。置信区间越大，置信水平就越高。</p>
 <h3 id="常用公式和函数"><a href="#常用公式和函数" class="headerlink" title="常用公式和函数"></a>常用公式和函数</h3><h4 id="欧氏距离-euclidean-distance"><a href="#欧氏距离-euclidean-distance" class="headerlink" title="欧氏距离(euclidean distance)"></a>欧氏距离(euclidean distance)</h4><p>&emsp;对于平面上的二点P1(x1,y1)，P2(x2,y2)欧氏距离定义为：</p>
 <p><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-31/47654455.jpg" alt=""></p>
 <h4 id="曼哈顿距离-街区距离"><a href="#曼哈顿距离-街区距离" class="headerlink" title="曼哈顿距离(街区距离)"></a>曼哈顿距离(街区距离)</h4><p><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-31/79251296.jpg" alt=""></p>
@@ -949,7 +901,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#机器学习的历史"><span class="nav-number">1.</span> <span class="nav-text">机器学习的历史</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是机器学习"><span class="nav-number">2.</span> <span class="nav-text">什么是机器学习</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本概念"><span class="nav-number">3.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用评价指标"><span class="nav-number">4.</span> <span class="nav-text">常用评价指标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用公式和函数"><span class="nav-number">5.</span> <span class="nav-text">常用公式和函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#欧氏距离-euclidean-distance"><span class="nav-number">5.1.</span> <span class="nav-text">欧氏距离(euclidean distance)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#曼哈顿距离-街区距离"><span class="nav-number">5.2.</span> <span class="nav-text">曼哈顿距离(街区距离)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#闵可夫斯基距离"><span class="nav-number">5.3.</span> <span class="nav-text">闵可夫斯基距离</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#海明距离"><span class="nav-number">5.4.</span> <span class="nav-text">海明距离</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#杰卡德-Jaccard-相似度"><span class="nav-number">5.5.</span> <span class="nav-text">杰卡德(Jaccard)相似度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#余弦相似度"><span class="nav-number">5.6.</span> <span class="nav-text">余弦相似度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#先验概率"><span class="nav-number">5.7.</span> <span class="nav-text">先验概率</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#联合概率"><span class="nav-number">5.8.</span> <span class="nav-text">联合概率</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#条件概率-后验概率"><span class="nav-number">5.9.</span> <span class="nav-text">条件概率(后验概率)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#正态分布-高斯分布"><span class="nav-number">5.10.</span> <span class="nav-text">正态分布(高斯分布)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#符号函数"><span class="nav-number">5.11.</span> <span class="nav-text">符号函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#指示函数"><span class="nav-number">5.12.</span> <span class="nav-text">指示函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#损失函数"><span class="nav-number">5.13.</span> <span class="nav-text">损失函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#阶越函数（step-function"><span class="nav-number">5.14.</span> <span class="nav-text">阶越函数（step function)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Sigmoid函数（S型函数）"><span class="nav-number">5.15.</span> <span class="nav-text">Sigmoid函数（S型函数）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#正则化（regularizayion"><span class="nav-number">5.16.</span> <span class="nav-text">正则化（regularizayion)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#测试集组织"><span class="nav-number">6.</span> <span class="nav-text">测试集组织</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#留出法-hold-out"><span class="nav-number">6.1.</span> <span class="nav-text">留出法(hold-out)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#交叉验证法-cross-validation"><span class="nav-number">6.2.</span> <span class="nav-text">交叉验证法(cross validation)**</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#自助法-bootstrapping"><span class="nav-number">6.3.</span> <span class="nav-text">自助法(bootstrapping)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考资料"><span class="nav-number">7.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#机器学习的历史"><span class="nav-number">1.</span> <span class="nav-text">机器学习的历史</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是机器学习"><span class="nav-number">2.</span> <span class="nav-text">什么是机器学习</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本概念"><span class="nav-number">3.</span> <span class="nav-text">基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#有监督学习-Supervised-Learning-："><span class="nav-number">3.1.</span> <span class="nav-text">有监督学习(Supervised Learning)：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#无监督学习-Unsupervised-Learning-："><span class="nav-number">3.2.</span> <span class="nav-text">无监督学习(Unsupervised Learning)：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#输入与输出空间"><span class="nav-number">3.3.</span> <span class="nav-text">输入与输出空间</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#训练集-training-set"><span class="nav-number">3.4.</span> <span class="nav-text">训练集(training set)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#假设空间Н-hypothesis-space"><span class="nav-number">3.5.</span> <span class="nav-text">假设空间Н(hypothesis space)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#奥卡姆剃刀-Occam’s-razor-原则"><span class="nav-number">3.6.</span> <span class="nav-text">奥卡姆剃刀(Occam’s razor)原则</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#回归-regression-和分类-classification"><span class="nav-number">3.7.</span> <span class="nav-text">回归(regression)和分类(classification)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用评价指标"><span class="nav-number">4.</span> <span class="nav-text">常用评价指标</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#错误率E"><span class="nav-number">4.1.</span> <span class="nav-text">错误率E</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#正确率或称准确率"><span class="nav-number">4.2.</span> <span class="nav-text">正确率或称准确率</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#误差-error"><span class="nav-number">4.3.</span> <span class="nav-text">误差(error)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#经验-训练-误差"><span class="nav-number">4.4.</span> <span class="nav-text">经验(训练)误差</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#泛化误差-generalization-error"><span class="nav-number">4.5.</span> <span class="nav-text">泛化误差(generalization error)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方差和均方差"><span class="nav-number">4.6.</span> <span class="nav-text">方差和均方差</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#过拟合-over-fitting"><span class="nav-number">4.7.</span> <span class="nav-text">过拟合(over-fitting)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#置信度-confidence-level"><span class="nav-number">4.8.</span> <span class="nav-text">置信度(confidence level)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#置信区间-confidence-interval"><span class="nav-number">4.9.</span> <span class="nav-text">置信区间(confidence interval)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用公式和函数"><span class="nav-number">5.</span> <span class="nav-text">常用公式和函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#欧氏距离-euclidean-distance"><span class="nav-number">5.1.</span> <span class="nav-text">欧氏距离(euclidean distance)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#曼哈顿距离-街区距离"><span class="nav-number">5.2.</span> <span class="nav-text">曼哈顿距离(街区距离)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#闵可夫斯基距离"><span class="nav-number">5.3.</span> <span class="nav-text">闵可夫斯基距离</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#海明距离"><span class="nav-number">5.4.</span> <span class="nav-text">海明距离</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#杰卡德-Jaccard-相似度"><span class="nav-number">5.5.</span> <span class="nav-text">杰卡德(Jaccard)相似度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#余弦相似度"><span class="nav-number">5.6.</span> <span class="nav-text">余弦相似度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#先验概率"><span class="nav-number">5.7.</span> <span class="nav-text">先验概率</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#联合概率"><span class="nav-number">5.8.</span> <span class="nav-text">联合概率</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#条件概率-后验概率"><span class="nav-number">5.9.</span> <span class="nav-text">条件概率(后验概率)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#正态分布-高斯分布"><span class="nav-number">5.10.</span> <span class="nav-text">正态分布(高斯分布)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#符号函数"><span class="nav-number">5.11.</span> <span class="nav-text">符号函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#指示函数"><span class="nav-number">5.12.</span> <span class="nav-text">指示函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#损失函数"><span class="nav-number">5.13.</span> <span class="nav-text">损失函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#阶越函数（step-function"><span class="nav-number">5.14.</span> <span class="nav-text">阶越函数（step function)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Sigmoid函数（S型函数）"><span class="nav-number">5.15.</span> <span class="nav-text">Sigmoid函数（S型函数）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#正则化（regularizayion"><span class="nav-number">5.16.</span> <span class="nav-text">正则化（regularizayion)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#测试集组织"><span class="nav-number">6.</span> <span class="nav-text">测试集组织</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#留出法-hold-out"><span class="nav-number">6.1.</span> <span class="nav-text">留出法(hold-out)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#交叉验证法-cross-validation"><span class="nav-number">6.2.</span> <span class="nav-text">交叉验证法(cross validation)**</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#自助法-bootstrapping"><span class="nav-number">6.3.</span> <span class="nav-text">自助法(bootstrapping)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考资料"><span class="nav-number">7.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
             
 
           </div>
