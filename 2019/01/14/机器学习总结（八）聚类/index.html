@@ -104,25 +104,33 @@
 
 
 
-  <meta name="description" content="本文对排序算法做一次总结和梳理，主要思想+实例+代码实现+时间空间复杂度分析 基于比较的排序算法交换类排序 冒泡排序  基本思想连续的扫描待排序的记录；每趟扫描时，都会移动最大的记录，使之更接近于序列的尾部，像气泡一样缓缓上升。 若某趟扫描过程中没有执行任何交换，则表明记录是有序的，因而需终止排序。 如何移动最大的记录，使之更接近于序列的尾部？ 将当前记录与下一条记录进行比较，若当前记录&amp;gt;下">
-<meta name="keywords" content="数据结构">
+  <meta name="description" content="聚类定义在无监督学习中，训练样本的类标信息是未知的，目标是通过对无类标训练样例的学习来揭示数据内在的性质和规律，为进一步的数据分析提供支持。其中聚类方法就是此类学习中最广泛应用的一种方法。 即，聚类就是将大量无标注的数据集，按数据的内在相似性将数据集划分为多个类别，使类别内的数据相似度较大而类别间的数据相似度较小。 聚类方法试图将数据集中的样本划分为若干个不相交的子集，每个子集成为一个簇(clus">
+<meta name="keywords" content="机器学习">
 <meta property="og:type" content="article">
-<meta property="og:title" content="排序算法总结">
-<meta property="og:url" content="http://yoursite.com/2018/12/25/排序算法总结/index.html">
+<meta property="og:title" content="机器学习总结（八）聚类">
+<meta property="og:url" content="http://yoursite.com/2019/01/14/机器学习总结（八）聚类/index.html">
 <meta property="og:site_name" content="YangJie&#39;s Blog">
-<meta property="og:description" content="本文对排序算法做一次总结和梳理，主要思想+实例+代码实现+时间空间复杂度分析 基于比较的排序算法交换类排序 冒泡排序  基本思想连续的扫描待排序的记录；每趟扫描时，都会移动最大的记录，使之更接近于序列的尾部，像气泡一样缓缓上升。 若某趟扫描过程中没有执行任何交换，则表明记录是有序的，因而需终止排序。 如何移动最大的记录，使之更接近于序列的尾部？ 将当前记录与下一条记录进行比较，若当前记录&amp;gt;下">
+<meta property="og:description" content="聚类定义在无监督学习中，训练样本的类标信息是未知的，目标是通过对无类标训练样例的学习来揭示数据内在的性质和规律，为进一步的数据分析提供支持。其中聚类方法就是此类学习中最广泛应用的一种方法。 即，聚类就是将大量无标注的数据集，按数据的内在相似性将数据集划分为多个类别，使类别内的数据相似度较大而类别间的数据相似度较小。 聚类方法试图将数据集中的样本划分为若干个不相交的子集，每个子集成为一个簇(clus">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-01-02T12:06:02.169Z">
+<meta property="og:image" content="https://blogyj-1257960554.cos.ap-beijing.myqcloud.com/blog/1.png">
+<meta property="og:image" content="https://blogyj-1257960554.cos.ap-beijing.myqcloud.com/blog/2.png">
+<meta property="og:image" content="https://blogyj-1257960554.cos.ap-beijing.myqcloud.com/blog/3.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/01/15/FzK8v6.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/01/15/FzKtbD.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/01/15/FzKB8I.md.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/01/15/FzKIx0.png">
+<meta property="og:updated_time" content="2019-01-15T04:15:18.113Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="排序算法总结">
-<meta name="twitter:description" content="本文对排序算法做一次总结和梳理，主要思想+实例+代码实现+时间空间复杂度分析 基于比较的排序算法交换类排序 冒泡排序  基本思想连续的扫描待排序的记录；每趟扫描时，都会移动最大的记录，使之更接近于序列的尾部，像气泡一样缓缓上升。 若某趟扫描过程中没有执行任何交换，则表明记录是有序的，因而需终止排序。 如何移动最大的记录，使之更接近于序列的尾部？ 将当前记录与下一条记录进行比较，若当前记录&amp;gt;下">
+<meta name="twitter:title" content="机器学习总结（八）聚类">
+<meta name="twitter:description" content="聚类定义在无监督学习中，训练样本的类标信息是未知的，目标是通过对无类标训练样例的学习来揭示数据内在的性质和规律，为进一步的数据分析提供支持。其中聚类方法就是此类学习中最广泛应用的一种方法。 即，聚类就是将大量无标注的数据集，按数据的内在相似性将数据集划分为多个类别，使类别内的数据相似度较大而类别间的数据相似度较小。 聚类方法试图将数据集中的样本划分为若干个不相交的子集，每个子集成为一个簇(clus">
+<meta name="twitter:image" content="https://blogyj-1257960554.cos.ap-beijing.myqcloud.com/blog/1.png">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/12/25/排序算法总结/">
+  <link rel="canonical" href="http://yoursite.com/2019/01/14/机器学习总结（八）聚类/">
 
 
 
@@ -132,7 +140,7 @@
   };
 </script>
 
-  <title>排序算法总结 | YangJie's Blog</title>
+  <title>机器学习总结（八）聚类 | YangJie's Blog</title>
   
 
 
@@ -356,7 +364,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/25/排序算法总结/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/14/机器学习总结（八）聚类/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="YangJie">
@@ -373,7 +381,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">排序算法总结
+          <h1 class="post-title" itemprop="name headline">机器学习总结（八）聚类
 
               
             
@@ -399,7 +407,7 @@
                 
               
 
-              <time title="创建时间：2018-12-25 10:04:48" itemprop="dateCreated datePublished" datetime="2018-12-25T10:04:48+08:00">2018-12-25</time>
+              <time title="创建时间：2019-01-14 21:44:57" itemprop="dateCreated datePublished" datetime="2019-01-14T21:44:57+08:00">2019-01-14</time>
             
 
             
@@ -416,7 +424,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-01-02 20:06:02" itemprop="dateModified" datetime="2019-01-02T20:06:02+08:00">2019-01-02</time>
+                <time title="修改时间：2019-01-15 12:15:18" itemprop="dateModified" datetime="2019-01-15T12:15:18+08:00">2019-01-15</time>
               
             
           </span>
@@ -433,7 +441,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/数据结构/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a></span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/机器学习/" itemprop="url" rel="index"><span itemprop="name">机器学习</span></a></span>
 
                 
                 
@@ -447,7 +455,7 @@
 
           
           
-             <span id="/2018/12/25/排序算法总结/" class="leancloud_visitors" data-flag-title="排序算法总结">
+             <span id="/2019/01/14/机器学习总结（八）聚类/" class="leancloud_visitors" data-flag-title="机器学习总结（八）聚类">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -475,48 +483,153 @@
       
       
       
-        <p>本文对排序算法做一次总结和梳理，主要思想+实例+代码实现+时间空间复杂度分析</p>
-<h2 id="基于比较的排序算法"><a href="#基于比较的排序算法" class="headerlink" title="基于比较的排序算法"></a>基于比较的排序算法</h2><h3 id="交换类排序"><a href="#交换类排序" class="headerlink" title="交换类排序"></a>交换类排序</h3><ul>
-<li><h4 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h4></li>
-</ul>
-<h5 id="基本思想"><a href="#基本思想" class="headerlink" title="基本思想"></a>基本思想</h5><p>连续的扫描待排序的记录；<br>每趟扫描时，都会移动最大的记录，使之更接近于序列的尾部，像气泡一样缓缓上升。</p>
-<p>若某趟扫描过程中没有执行任何交换，则表明记录是有序的，因而需终止排序。</p>
-<p>如何移动最大的记录，使之更接近于序列的尾部？</p>
-<p>将当前记录与下一条记录进行比较，若当前记录&gt;下一条记录，则交换两条记录的位置。</p>
-<h5 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h5><p>5 4 3 6 1 从小到大排序</p>
-<p>第一趟：从头到尾，两两比较，不符合前小后大，就交换位置。</p>
-<p>5和4比较，5比4大，交换位置，接着5和3比较，5比3大，交换位置，5再和6比较，不交换，6和1比较，6比1大，两者交换位置，一趟排序下来，变为</p>
-<p>4 3 5 1 6 </p>
-<p>此时最大的数字6，已经像气泡一样上升到了最后，它的位置就已经确定，下次比较，就只需要对前面4个数字进行排序</p>
-<p>第二趟：</p>
-<p>4和3比较，交换，4再和5比较，不交换，5和1比较，交换，此趟结束，那么一趟排序下来，变为了</p>
-<p>3 4 1 5 6</p>
-<p>5也升到了最后，也就是一次排序有一个数字到达了最终位置，第一趟是最后一个数，第二趟是倒数第二个数，因此下次只用对前面的数进行排序。</p>
-<p>第三趟：</p>
-<p>只用对3 4 1 排序，排序下来变为</p>
-<p>3 1 4 5 6</p>
-<p>第四趟：</p>
-<p>只用对 3 1排序</p>
-<p>1 3 4 5 6</p>
-<p>第五趟:只有一个1，排序完成</p>
-<p>最终就是 1 3 4 5 6</p>
-<h5 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h5><p>整个排序过程可以用两层循环完成，代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">void BubbleSort(int *a, int length)</span><br><span class="line">&#123;</span><br><span class="line">    int i,temp,flag;</span><br><span class="line">	for (i = 0;i &lt; length - 1;i++)</span><br><span class="line">	&#123;</span><br><span class="line">	    flag=0;</span><br><span class="line">		for (int j = 0;j &lt; length - i - 1;j++)</span><br><span class="line">		&#123;</span><br><span class="line">			if (a[j] &gt; a[j + 1])</span><br><span class="line">			&#123;</span><br><span class="line">				temp = a[j];</span><br><span class="line">				a[j] = a[j + 1];</span><br><span class="line">				a[j + 1] = temp;</span><br><span class="line">				flag=1;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		if(flag==0) break;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li><h4 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h4></li>
-</ul>
-<h3 id="选择类排序"><a href="#选择类排序" class="headerlink" title="选择类排序"></a>选择类排序</h3><ul>
-<li><h4 id="简单选择排序"><a href="#简单选择排序" class="headerlink" title="简单选择排序"></a>简单选择排序</h4></li>
-<li><h4 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h4></li>
-</ul>
-<h3 id="插入类排序"><a href="#插入类排序" class="headerlink" title="插入类排序"></a>插入类排序</h3><ul>
-<li><h4 id="直接插入排序"><a href="#直接插入排序" class="headerlink" title="直接插入排序"></a>直接插入排序</h4></li>
-<li><h4 id="折半插入排序"><a href="#折半插入排序" class="headerlink" title="折半插入排序"></a>折半插入排序</h4></li>
-<li><h4 id="希尔排序"><a href="#希尔排序" class="headerlink" title="希尔排序"></a>希尔排序</h4></li>
-</ul>
-<h2 id="基于某种映射函数的排序算法"><a href="#基于某种映射函数的排序算法" class="headerlink" title="基于某种映射函数的排序算法"></a>基于某种映射函数的排序算法</h2><ul>
-<li><h4 id="桶排序"><a href="#桶排序" class="headerlink" title="桶排序"></a>桶排序</h4></li>
-<li><h4 id="基数排序"><a href="#基数排序" class="headerlink" title="基数排序"></a>基数排序</h4></li>
-</ul>
+        <h3 id="聚类定义"><a href="#聚类定义" class="headerlink" title="聚类定义"></a>聚类定义</h3><p>在无监督学习中，训练样本的类标信息是未知的，目标是通过对无类标训练样例的学习来揭示数据内在的性质和规律，为进一步的数据分析提供支持。其中聚类方法就是此类学习中最广泛应用的一种方法。</p>
+<p>即，聚类就是将大量无标注的数据集，按数据的内在相似性将数据集划分为多个类别，使类别内的数据相似度较大而类别间的数据相似度较小。</p>
+<p>聚类方法试图将数据集中的样本划分为若干个不相交的子集，每个子集成为一个簇(cluster)。通过划分，每个簇可能对应了一些潜在的概念(类别)。</p>
+<p>聚类的基本思想：</p>
+<p>给定一个有m个对象的数据集，构造数据的k个簇，k≤m。满足如下条件：</p>
+<p>●每个簇至少包含一个对象</p>
+<p>●每个对象属于且仅属于一个簇</p>
+<p>假设样本集D={x1,x2,…,xm}包含了m个样本</p>
+<p>聚类算法将数据D划分为k个不相交的簇</p>
+<h3 id="最短距离法"><a href="#最短距离法" class="headerlink" title="最短距离法"></a>最短距离法</h3><p>最短距离法通过计算样本之间的距离，然后将距离值最小的样本进行合并的过程。</p>
+<p>具体步骤如下：<br>定义样本之间的距离计算方式</p>
+<p>计算初始样本二二之间的距离，构造距离矩阵</p>
+<p>根据距离矩阵，合并最小值对应的二个样本为一个新样本</p>
+<p>更新距离矩阵，重复2，3步骤，直至所有样本合并为一个样本</p>
+<p>距离计算的方式有：最短距离、最大距离、平均距离</p>
+<p>其中，最短距离为两个簇中的最近样本距离，最大距离为两个簇中的最远距离</p>
+<p>如：一维数据：2，3，6，8，10，11</p>
+<p>假设采用街区距离</p>
+<p>距离矩阵为：</p>
+<p><img src="https://blogyj-1257960554.cos.ap-beijing.myqcloud.com/blog/1.png" alt=""><br>∵样本2，3和10，11之间的距离均为1</p>
+<p>∴ 合并样本2和3为新样本{2,3}，合并样 本10和11为新样本{10,11}</p>
+<p>更新矩阵</p>
+<p><img src="https://blogyj-1257960554.cos.ap-beijing.myqcloud.com/blog/2.png" alt=""></p>
+<p>∵ 样本6，8和{10,11}，8之间的距离均为2</p>
+<p>∴ 合并样本6，8和{10,11}为新样本{6,8,{10,11}}</p>
+<p>更新距离矩阵</p>
+<p><img src="https://blogyj-1257960554.cos.ap-beijing.myqcloud.com/blog/3.png" alt=""></p>
+<p>最后合并为一个新样本{ {2,3},6,8,{10,11} }，聚类个数可根据实际情况确定。如定义二个聚类，则结果为：{2,3}和{6,8,{10,11}}。</p>
+<h3 id="重心聚类法"><a href="#重心聚类法" class="headerlink" title="重心聚类法"></a>重心聚类法</h3><p>重心聚类法首先确定每个簇的重心，而重心可取簇中所有样本的平均值，然后计算各个簇重心之间的距离，得到一个距离矩阵。后续步骤如同最短距离法。初始时，所有样本分别为一个簇，重心即为该样本自身，距离计算可采用欧氏距离。</p>
+<h3 id="动态聚类法"><a href="#动态聚类法" class="headerlink" title="动态聚类法"></a>动态聚类法</h3><p>首先按粗粒度方式将样本划分为若干个簇，然后再逐步调整样本所属聚簇，即计算所有样本到簇中心点的距离，取最小距离为该样本的所属簇，中心点通常取簇样本的平均值。通过不断的调整过程，直到所有样本所属的簇不再变化为止。</p>
+<table>
+<thead>
+<tr>
+<th>姓名</th>
+<th>对A的评分</th>
+<th>对B的评分</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>甲</td>
+<td>5</td>
+<td>3</td>
+<td></td>
+</tr>
+<tr>
+<td>乙</td>
+<td>-1</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>丙</td>
+<td>1</td>
+<td>-2</td>
+<td></td>
+</tr>
+<tr>
+<td>丁</td>
+<td>-3</td>
+<td>-2</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>根据评分将他们分为二类。</p>
+<p>首先随机将甲已分为一类，丙丁分为一类。</p>
+<p>计算二类中心点。</p>
+<table>
+<thead>
+<tr>
+<th>姓名</th>
+<th>对A的评分</th>
+<th>对B的评分</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>一聚类（甲乙）</td>
+<td>(5-1)/2=2</td>
+<td>(3+1)/2=2</td>
+<td></td>
+</tr>
+<tr>
+<td>二聚类（丙丁）</td>
+<td>(1-3)/2= -1</td>
+<td>(-2-2)/2=-2</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>计算甲、已、丙、丁到中心点的距离，调整聚类的样本。</p>
+<p>更新各中心点</p>
+<table>
+<thead>
+<tr>
+<th>姓名</th>
+<th>对A的评分</th>
+<th>对B的评分</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>一聚类（甲）</td>
+<td>5</td>
+<td>5</td>
+<td></td>
+</tr>
+<tr>
+<td>二聚类（乙丙丁）</td>
+<td>(-1+1-3)/3= -1</td>
+<td>(1-2-2)/3=-1</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>重新计算甲、已、丙、丁到二个中心点的距离，调整聚类中的样本</p>
+<p>∵ 已没有一个消费者需要调整所属的簇类</p>
+<p>∴ 聚类过程结束，甲为一类，乙丙丁为一类</p>
+<h3 id="K-means聚类算法"><a href="#K-means聚类算法" class="headerlink" title="K-means聚类算法"></a>K-means聚类算法</h3><h4 id="k-means算法"><a href="#k-means算法" class="headerlink" title="k-means算法"></a>k-means算法</h4><p>对m个样本初始化选择k个点作为聚类中心点，然后分别计算所有样本到k个中心点的距离，并把该样本加入到最近中心点对应的聚类。所有样本加入到k个聚簇后，更新k个中心点，调整样本的聚簇，不断重复此过程直到中心点不再变化或到达事先设定的迭代次数为止。</p>
+<p>设样本集D={x1,x2,…,xm}，由k均值算法划分D后得到k个聚簇为：C={C1,C2,…,Ck}。令μi为聚簇Ci的中心点。</p>
+<p>即：<img src="https://s2.ax1x.com/2019/01/15/FzK8v6.png" alt="FzK8v6.png"></p>
+<p>聚类的结果就是要平方误差最小：<br><img src="https://s2.ax1x.com/2019/01/15/FzKtbD.png" alt="FzKtbD.png"></p>
+<p>过程：</p>
+<p><a href="https://imgchr.com/i/FzKB8I" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/01/15/FzKB8I.md.png" alt="FzKB8I.md.png"></a></p>
+<h4 id="K-Means-算法"><a href="#K-Means-算法" class="headerlink" title="K-Means++算法"></a>K-Means++算法</h4><p>在k-Means算法的基础上通过改进初始中心点的选择方法而衍生出了k-Means++算法。</p>
+<p>K-Means++算法在选择初始中心点之前，对所有样本数据进行一次计算，使得初始聚类中心点之间的距离尽可能的远。这样做的目的是减少迭代的次数，减小计算量。</p>
+<p>具体步骤为：随机选一个点作为第一个中心点，然后计算所有样本到该点的距离，挑选一个距离较远的样本作为第二个中心点，如此选出k个中心点。</p>
+<h4 id="k值的选择"><a href="#k值的选择" class="headerlink" title="k值的选择"></a>k值的选择</h4><p>对于非监督学习，训练数据是没有类别标注的，那么除了极少数情况，我们无法知道数据应该被分为几类。而且对于k-Means算法，给定一个聚类个数k，算法总能将数据分为k类。</p>
+<p>与线性回归模型类似，k-Means模型也是以平方损失来评估模型的，即每个类别中所有数据的预测值均为聚类中心，样本到聚类中心的距离之和最小化。但与线性回归模型不同的是k-Means模型的损失评估与具体聚类个数k相关，k值越大则损失越小。</p>
+<p>所以从某种角度来看，k值代表了聚类模型的复杂度，和其他机器学习模型类似，模型越复杂，对训练数据的预测效果越好，但也容易引起过拟合，因此需要平衡聚类个数k和模型损失之间的关系。</p>
+<p>在实际应用中，一种常采用的平衡方法称为<strong>elbow method</strong>：</p>
+<p>当聚类个数k小于真实的类别个数时，随着k值的增加，模型的损失下降很快；当聚类个数k值超过真实值后，虽然模型的损失会继续下降，但下降的速度会明显减缓，而这个转折点就是最佳的k值。<br>elbow method虽然非常直观，但很难用数学公式去量化，因此这种方法使用起来随意性较大。为了解决这个问题，学术界提出了一种数学上更为严谨的方法 <strong>silhouette analysis(轮廓分析)</strong> 来确定聚类个数k值，即：</p>
+<p>假设对于一个聚类结果，a表示一个类别内部所有数据到聚类中心的距离平方和，b表示数据到其他最近聚类中心的距离平方和，则定义轮廓系数s为：<br><img src="https://s2.ax1x.com/2019/01/15/FzKIx0.png" alt="FzKIx0.png"></p>
+<p>s的取值范围是[-1,1]。当s=1时候，表示聚类的结果达到了最佳状态，而当s=-1时，表示聚类的结果是最差的状态，可以证明s的取值和k值没有直接的关联性，因此s的取值越大说明聚类结果就越好。</p>
+<h4 id="k-means聚类算法总结"><a href="#k-means聚类算法总结" class="headerlink" title="k-means聚类算法总结"></a>k-means聚类算法总结</h4><p>优点：</p>
+<p>● 是解决聚类问题的一种经典算法。简单、快捷</p>
+<p>● 对处理大数据集，算法保持可伸缩性和高效率</p>
+<p>● 当簇近似为高斯分布时效果较好</p>
+<p>● 可作为其他聚类方法的基础算法 </p>
+<p>缺点：</p>
+<p>●在簇的平均值可被定义的情况下才能使用，可能不适用于某些应用用欧氏距离度量数据间的相似度，要求数据在各个维度上是均质的</p>
+<p>●必须事先给出k值，且对初值敏感，对于不同的初始值，可能导致不同的结果(不稳定)</p>
+<p>●不适合大小差别很大的簇</p>
+<p>●对噪声和孤立点数据敏感</p>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p>【1】中科大张曙老师机器学习课程</p>
+<p>【2】 统计学习方法</p>
 
       
     </div>
@@ -569,7 +682,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/数据结构/" rel="tag"><i class="fa fa-tag"></i> 数据结构</a>
+            <a href="/tags/机器学习/" rel="tag"><i class="fa fa-tag"></i> 机器学习</a>
           
         </div>
       
@@ -582,8 +695,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/12/23/skicit-learn学习笔记(一)/" rel="next" title="scikit-learn学习笔记（一）">
-                <i class="fa fa-chevron-left"></i> scikit-learn学习笔记（一）
+              <a href="/2019/01/14/机器学习总结（七）集成学习/" rel="next" title="机器学习总结（七）集成学习">
+                <i class="fa fa-chevron-left"></i> 机器学习总结（七）集成学习
               </a>
             
           </div>
@@ -591,10 +704,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/01/01/实用算法总结(一) 基本概念、线性表/" rel="prev" title="实用算法总结(一) 基本概念、线性表">
-                实用算法总结(一) 基本概念、线性表 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -765,7 +874,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基于比较的排序算法"><span class="nav-number">1.</span> <span class="nav-text">基于比较的排序算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#交换类排序"><span class="nav-number">1.1.</span> <span class="nav-text">交换类排序</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#冒泡排序"><span class="nav-number">1.1.1.</span> <span class="nav-text">冒泡排序</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#基本思想"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">基本思想</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#实例"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">实例</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#实现代码"><span class="nav-number">1.1.1.3.</span> <span class="nav-text">实现代码</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#快速排序"><span class="nav-number">1.1.2.</span> <span class="nav-text">快速排序</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#选择类排序"><span class="nav-number">1.2.</span> <span class="nav-text">选择类排序</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#简单选择排序"><span class="nav-number">1.2.1.</span> <span class="nav-text">简单选择排序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#堆排序"><span class="nav-number">1.2.2.</span> <span class="nav-text">堆排序</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#插入类排序"><span class="nav-number">1.3.</span> <span class="nav-text">插入类排序</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#直接插入排序"><span class="nav-number">1.3.1.</span> <span class="nav-text">直接插入排序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#折半插入排序"><span class="nav-number">1.3.2.</span> <span class="nav-text">折半插入排序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#希尔排序"><span class="nav-number">1.3.3.</span> <span class="nav-text">希尔排序</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基于某种映射函数的排序算法"><span class="nav-number">2.</span> <span class="nav-text">基于某种映射函数的排序算法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#桶排序"><span class="nav-number">2.0.1.</span> <span class="nav-text">桶排序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基数排序"><span class="nav-number">2.0.2.</span> <span class="nav-text">基数排序</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#聚类定义"><span class="nav-number">1.</span> <span class="nav-text">聚类定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最短距离法"><span class="nav-number">2.</span> <span class="nav-text">最短距离法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重心聚类法"><span class="nav-number">3.</span> <span class="nav-text">重心聚类法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#动态聚类法"><span class="nav-number">4.</span> <span class="nav-text">动态聚类法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#K-means聚类算法"><span class="nav-number">5.</span> <span class="nav-text">K-means聚类算法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#k-means算法"><span class="nav-number">5.1.</span> <span class="nav-text">k-means算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#K-Means-算法"><span class="nav-number">5.2.</span> <span class="nav-text">K-Means++算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#k值的选择"><span class="nav-number">5.3.</span> <span class="nav-text">k值的选择</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#k-means聚类算法总结"><span class="nav-number">5.4.</span> <span class="nav-text">k-means聚类算法总结</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考资料"><span class="nav-number">6.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
             
 
           </div>
