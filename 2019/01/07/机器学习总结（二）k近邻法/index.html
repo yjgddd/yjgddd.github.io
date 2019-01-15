@@ -118,7 +118,7 @@
 <meta property="og:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/19-1-7/52153973.jpg">
 <meta property="og:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/19-1-7/80828998.jpg">
 <meta property="og:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/19-1-7/64386062.jpg">
-<meta property="og:updated_time" content="2019-01-07T13:10:28.857Z">
+<meta property="og:updated_time" content="2019-01-15T08:36:43.334Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习总结（二）k近邻法">
 <meta name="twitter:description" content="基本原理k近邻是一种基本分类和回归方法，其工作机制非常简单：基于某种距离度量找出训练集中与其最靠近的k个训练样例，然后基于这k个邻居的信息进行预测或分类。通常在分类任务中使用投票法，在回归任务中使用平均法，也可根据距离远近进行加权平均或加权投票。 kNN是一种称为懒惰学习方法，它没有明显的训练(学习)过程，在训练阶段仅仅是保存样本，因此训练开销为0。 三要素：k值选择、距离度量、分类决策规则 当训">
@@ -406,12 +406,24 @@
                 
               
 
-              <time title="创建时间：2019-01-07 20:58:26 / 修改时间：21:10:28" itemprop="dateCreated datePublished" datetime="2019-01-07T20:58:26+08:00">2019-01-07</time>
+              <time title="创建时间：2019-01-07 20:58:26" itemprop="dateCreated datePublished" datetime="2019-01-07T20:58:26+08:00">2019-01-07</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-01-15 16:36:43" itemprop="dateModified" datetime="2019-01-15T16:36:43+08:00">2019-01-15</time>
               
             
           </span>
@@ -482,17 +494,16 @@
 <p>如果选择较大的k值，相对于用较大范围内的训练样例进行预测。优点是可以减少学习误差，缺点是与输入样本较远的(不相似)的训练样例也会对预测起作用，使预测出错。</p>
 <p>k值增加意味着模型变得简单。特别地，如果k=m，那么无论输入是什么，测试结果都取训练集中最多类的标记，显然不可取。<br>在实际应用中，k值一般取一个较小的数值，通常为奇数，或采用交叉验证法来选取最优的k值。</p>
 <h4 id="分类决策规则"><a href="#分类决策规则" class="headerlink" title="分类决策规则"></a>分类决策规则</h4><p>kNN法中分类决策规则往往采用多数(投票)表决，即由输入样例的k个近邻类别多数所决定。</p>
-<h3 id="构造kd树"><a href="#构造kd树" class="headerlink" title="构造kd树"></a>构造kd树</h3><p>实现kNN时，主要考虑的问题是如何对训练数据进行快速k近邻搜索，这对于特征空间的维数及训练集很大时尤为重要。<br>kNN法最简单的实现方式为线性扫描，这时要计算预测样例与每一个训练样例之间的距离，当训练集很大时，计算非常耗时，实际不可行。</p>
+<h3 id="构造kd树"><a href="#构造kd树" class="headerlink" title="构造kd树"></a>构造kd树</h3><p>实现kNN时，主要考虑的问题是如何对训练数据进行快速k近邻搜索，这对于特征空间的维数及训练集很大时尤为重要。</p>
+<p>kNN法最简单的实现方式为线性扫描，这时要计算预测样例与每一个训练样例之间的距离，当训练集很大时，计算非常耗时，实际不可行。</p>
 <p>应用kd树结构可以减少计算距离的次数，从而达到k近邻搜索的效率。</p>
-<p>① 构造kd树</p>
-<p>kd树是一种对k维空间中样例点的存储方式,可以对其进行快速检索的二叉树结构。构造kd树相对于不断地用垂直于坐标轴的超平面将k维空间切分，构成一系列的k维超矩形区域。kd树的每个结点对应于一个k维超矩形区域。</p>
-<p><strong>构造kd树的方法为：</strong></p>
+<h4 id="构造kd树-1"><a href="#构造kd树-1" class="headerlink" title="构造kd树"></a>构造kd树</h4><p>kd树是一种对k维空间中样例点的存储方式,可以对其进行快速检索的二叉树结构。构造kd树相对于不断地用垂直于坐标轴的超平面将k维空间切分，构成一系列的k维超矩形区域。kd树的每个结点对应于一个k维超矩形区域。</p>
+<p>构造kd树的方法为：</p>
 <p>首先创建根结点，使根结点对应于k维空间中包含所有训练样例的超矩形区域，然后在这超矩形区域上选择一个坐标轴(属性)和在此坐标轴上的一个切分点,确定一个超平面。</p>
 <p>这个超平面通过选定的切分点并垂直于选定的坐标轴，将当前超矩形区域切分为左右二个子区域(子结点)。</p>
 <p>递归划分过程，直到子区域内没有训练样例时终止，终止时的结点为叶结点。</p>
 <p>通常划分空间的切分点可选择训练样例点在选定坐标轴上的中位数(中间位置的一个数或最中间二个数的平均值)，这样得到的kd树为平衡的kd树，但平衡的kd树在搜索时的效率未必是最优的。</p>
-<p>② 构造平衡kd树算法</p>
-<p>输入：k维空间训练集D={x1,x2,…,xm}<br>其中xi=(x1(i),x2(i),…,xd(i))</p>
+<h4 id="构造平衡kd树算法"><a href="#构造平衡kd树算法" class="headerlink" title="构造平衡kd树算法"></a>构造平衡kd树算法</h4><p>输入：k维空间训练集D={x1,x2,…,xm}<br>其中xi=(x1(i),x2(i),…,xd(i))</p>
 <p>输出：kd树</p>
 <ul>
 <li>创建根结点，对应于包含D的k维空间的超矩形区域</li>
@@ -501,7 +512,7 @@
 <li>递归划分过程，直至子区域没有样例点为止。</li>
 </ul>
 <p>例：D={(2,3),(5,4),(9,6),(4,7),(8,1),(7,2)}，构造平衡的kd树。<br><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/19-1-7/83592145.jpg" alt=""></p>
-<p>③ kd树kNN搜索<br>以最近邻(k=1)为例，同样的方法可以应用到kNN。</p>
+<h4 id="kd树kNN搜索"><a href="#kd树kNN搜索" class="headerlink" title="kd树kNN搜索"></a>kd树kNN搜索</h4><p>以最近邻(k=1)为例，同样的方法可以应用到kNN。</p>
 <p>kd树最近邻算法如下：</p>
 <p>输入：已建立的kd树，目标样例为x</p>
 <p>输出：x的最近邻</p>
@@ -788,7 +799,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本原理"><span class="nav-number">1.</span> <span class="nav-text">基本原理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#距离度量"><span class="nav-number">1.1.</span> <span class="nav-text">距离度量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#k值的选择"><span class="nav-number">1.2.</span> <span class="nav-text">k值的选择</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分类决策规则"><span class="nav-number">1.3.</span> <span class="nav-text">分类决策规则</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#构造kd树"><span class="nav-number">2.</span> <span class="nav-text">构造kd树</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#加权最近邻"><span class="nav-number">3.</span> <span class="nav-text">加权最近邻</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可能存在的问题"><span class="nav-number">4.</span> <span class="nav-text">可能存在的问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考资料"><span class="nav-number">5.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本原理"><span class="nav-number">1.</span> <span class="nav-text">基本原理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#距离度量"><span class="nav-number">1.1.</span> <span class="nav-text">距离度量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#k值的选择"><span class="nav-number">1.2.</span> <span class="nav-text">k值的选择</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分类决策规则"><span class="nav-number">1.3.</span> <span class="nav-text">分类决策规则</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#构造kd树"><span class="nav-number">2.</span> <span class="nav-text">构造kd树</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#构造kd树-1"><span class="nav-number">2.1.</span> <span class="nav-text">构造kd树</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#构造平衡kd树算法"><span class="nav-number">2.2.</span> <span class="nav-text">构造平衡kd树算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#kd树kNN搜索"><span class="nav-number">2.3.</span> <span class="nav-text">kd树kNN搜索</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#加权最近邻"><span class="nav-number">3.</span> <span class="nav-text">加权最近邻</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可能存在的问题"><span class="nav-number">4.</span> <span class="nav-text">可能存在的问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考资料"><span class="nav-number">5.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
             
 
           </div>
