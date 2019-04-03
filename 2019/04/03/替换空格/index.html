@@ -104,25 +104,25 @@
 
 
 
-  <meta name="description" content="数据类型原始类型六种：Object number string boolean null undefined Object是对象类型，包括function、Array、Date等 “==”和“ ===”“===”是严格等于，要求数据类型和值都相等 1234567null===nullundefined=undefinedNaN≠NaN //注意new Object≠new Object “==”是">
-<meta name="keywords" content="JavaScript">
+  <meta name="description" content="题目描述请实现一个函数，将一个字符串中的每个空格替换成“%20”。例如，当字符串为We Are Happy.则经过替换之后的字符串为We%20Are%20Happy。 解题思路可以用vector来挨个保存字符串中的字符，遇到空格则保存“%20”，最后再把vector中的字符串复制到原字符串中。(也可以用string) 但是更优的解法是，先统计空格的个数，确定替换后字符串的长度，再从后往前替换，这样">
+<meta name="keywords" content="刷题">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript笔记（一）">
-<meta property="og:url" content="http://yoursite.com/2019/03/04/JavaScript深入浅出笔记（一）/index.html">
+<meta property="og:title" content="替换空格">
+<meta property="og:url" content="http://yoursite.com/2019/04/03/替换空格/index.html">
 <meta property="og:site_name" content="YangJie&#39;s Blog">
-<meta property="og:description" content="数据类型原始类型六种：Object number string boolean null undefined Object是对象类型，包括function、Array、Date等 “==”和“ ===”“===”是严格等于，要求数据类型和值都相等 1234567null===nullundefined=undefinedNaN≠NaN //注意new Object≠new Object “==”是">
+<meta property="og:description" content="题目描述请实现一个函数，将一个字符串中的每个空格替换成“%20”。例如，当字符串为We Are Happy.则经过替换之后的字符串为We%20Are%20Happy。 解题思路可以用vector来挨个保存字符串中的字符，遇到空格则保存“%20”，最后再把vector中的字符串复制到原字符串中。(也可以用string) 但是更优的解法是，先统计空格的个数，确定替换后字符串的长度，再从后往前替换，这样">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-04T03:07:11.445Z">
+<meta property="og:updated_time" content="2019-04-03T08:59:11.422Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaScript笔记（一）">
-<meta name="twitter:description" content="数据类型原始类型六种：Object number string boolean null undefined Object是对象类型，包括function、Array、Date等 “==”和“ ===”“===”是严格等于，要求数据类型和值都相等 1234567null===nullundefined=undefinedNaN≠NaN //注意new Object≠new Object “==”是">
+<meta name="twitter:title" content="替换空格">
+<meta name="twitter:description" content="题目描述请实现一个函数，将一个字符串中的每个空格替换成“%20”。例如，当字符串为We Are Happy.则经过替换之后的字符串为We%20Are%20Happy。 解题思路可以用vector来挨个保存字符串中的字符，遇到空格则保存“%20”，最后再把vector中的字符串复制到原字符串中。(也可以用string) 但是更优的解法是，先统计空格的个数，确定替换后字符串的长度，再从后往前替换，这样">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/03/04/JavaScript深入浅出笔记（一）/">
+  <link rel="canonical" href="http://yoursite.com/2019/04/03/替换空格/">
 
 
 
@@ -132,7 +132,7 @@
   };
 </script>
 
-  <title>JavaScript笔记（一） | YangJie's Blog</title>
+  <title>替换空格 | YangJie's Blog</title>
   
 
 
@@ -356,7 +356,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/04/JavaScript深入浅出笔记（一）/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/03/替换空格/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="YangJie">
@@ -373,7 +373,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">JavaScript笔记（一）
+          <h1 class="post-title" itemprop="name headline">替换空格
 
               
             
@@ -399,7 +399,7 @@
                 
               
 
-              <time title="创建时间：2019-03-04 10:33:11 / 修改时间：11:07:11" itemprop="dateCreated datePublished" datetime="2019-03-04T10:33:11+08:00">2019-03-04</time>
+              <time title="创建时间：2019-04-03 16:58:16 / 修改时间：16:59:11" itemprop="dateCreated datePublished" datetime="2019-04-03T16:58:16+08:00">2019-04-03</time>
             
 
             
@@ -421,7 +421,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/前端/" itemprop="url" rel="index"><span itemprop="name">前端</span></a></span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/剑指offer/" itemprop="url" rel="index"><span itemprop="name">剑指offer</span></a></span>
 
                 
                 
@@ -435,7 +435,7 @@
 
           
           
-             <span id="/2019/03/04/JavaScript深入浅出笔记（一）/" class="leancloud_visitors" data-flag-title="JavaScript笔记（一）">
+             <span id="/2019/04/03/替换空格/" class="leancloud_visitors" data-flag-title="替换空格">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -463,48 +463,11 @@
       
       
       
-        <h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><h3 id="原始类型"><a href="#原始类型" class="headerlink" title="原始类型"></a>原始类型</h3><p>六种：Object number string boolean null undefined</p>
-<p>Object是对象类型，包括function、Array、Date等</p>
-<h3 id="“-”和“-”"><a href="#“-”和“-”" class="headerlink" title="“==”和“ ===”"></a>“==”和“ ===”</h3><p>“===”是严格等于，要求数据类型和值都相等</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">null===null</span><br><span class="line"></span><br><span class="line">undefined=undefined</span><br><span class="line"></span><br><span class="line">NaN≠NaN //注意</span><br><span class="line"></span><br><span class="line">new Object≠new Object</span><br></pre></td></tr></table></figure>
-<p>“==”是等于，先进行类型转换,再进行比较</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">null=undefined</span><br><span class="line"></span><br><span class="line">number== string //string转为number 1==&quot;1.0&quot; true</span><br><span class="line"></span><br><span class="line">boolean==? //先把boolean转为number 比如1==true</span><br><span class="line"></span><br><span class="line">object==number/string //先把对象类型转为基本类型</span><br><span class="line"></span><br><span class="line">new String（“hi&quot;)==&quot;hi&quot; //true</span><br></pre></td></tr></table></figure>
-<h3 id="类型检测"><a href="#类型检测" class="headerlink" title="类型检测"></a>类型检测</h3><h4 id="typeof"><a href="#typeof" class="headerlink" title="typeof"></a>typeof</h4><p>typeof 适合基本类型及function检测，遇到null失效：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">typeof null //&quot;object&quot;</span><br><span class="line"></span><br><span class="line">typeof NaN //&quot;number&quot;</span><br></pre></td></tr></table></figure>
-<h4 id="toString-NaN"><a href="#toString-NaN" class="headerlink" title="{}.toString"></a>{}.toString</h4><p>通过{}.toString拿到，适合内置对象和基本类型，遇到null和undefined失效（IE678等返回[object Object])</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Object.prototype.toString.app([]);//&quot;[object Array]&quot;</span><br></pre></td></tr></table></figure>
-<h4 id="instanceof"><a href="#instanceof" class="headerlink" title="instanceof"></a>instanceof</h4><p>适合自定义对象，也可以用来检测原生对象，在不同iframe和window间检测时失效</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[1,2] instanceof Array===true</span><br><span class="line"></span><br><span class="line">new object() instance of Array===false</span><br></pre></td></tr></table></figure>
-<h2 id="表达式"><a href="#表达式" class="headerlink" title="表达式"></a>表达式</h2><h3 id="原始表达式"><a href="#原始表达式" class="headerlink" title="原始表达式"></a>原始表达式</h3><p>常量,直接量 3,14 “test”</p>
-<p>关键字 null this true </p>
-<p>变量 i,j,k</p>
-<h3 id="复合表达式"><a href="#复合表达式" class="headerlink" title="复合表达式"></a>复合表达式</h3><p>10*20</p>
-<h3 id="数组，对象的初始化表达式"><a href="#数组，对象的初始化表达式" class="headerlink" title="数组，对象的初始化表达式"></a>数组，对象的初始化表达式</h3><p>[1,2,3]</p>
-<p>[1,4]</p>
-<p>{x:1,y:2}</p>
-<h3 id="函数表达式"><a href="#函数表达式" class="headerlink" title="函数表达式"></a>函数表达式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var a=function()&#123;&#125;;</span><br><span class="line"></span><br><span class="line">(function()&#123;console.log(&quot;hello world&quot;)&#125;)();//立即调用</span><br></pre></td></tr></table></figure>
-<h3 id="属性访问表达式"><a href="#属性访问表达式" class="headerlink" title="属性访问表达式"></a>属性访问表达式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var o=&#123;x:1&#125;；</span><br><span class="line"></span><br><span class="line">o.x</span><br><span class="line"></span><br><span class="line">o[&quot;x&quot;]</span><br></pre></td></tr></table></figure>
-<h3 id="调用表达式"><a href="#调用表达式" class="headerlink" title="调用表达式"></a>调用表达式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fun();</span><br></pre></td></tr></table></figure>
-<h3 id="对象创建表达式"><a href="#对象创建表达式" class="headerlink" title="对象创建表达式"></a>对象创建表达式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">new Func(1,2);</span><br><span class="line"></span><br><span class="line">new Object;</span><br></pre></td></tr></table></figure>
-<h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><h3 id="常见运算符"><a href="#常见运算符" class="headerlink" title="常见运算符"></a>常见运算符</h3><p>一元：+num</p>
-<p>二元：a+b</p>
-<p>三元：c?a:b</p>
-<p>按照功能分：赋值、比较、算术、位、逻辑、字符串、特殊</p>
-<h3 id="特殊运算符"><a href="#特殊运算符" class="headerlink" title="特殊运算符"></a>特殊运算符</h3><p>条件运算符 c?a:b</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var val=true?1:2;// val=1</span><br></pre></td></tr></table></figure>
-<p>逗号运算符 a,b</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var val=(1,2,3);//val=3,每个表达式都会计算，最后取最右边的值</span><br></pre></td></tr></table></figure>
-<p>删除对象的属性 delete obj.x;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">var obj=&#123;x:1&#125;;</span><br><span class="line"></span><br><span class="line">obj.x;//1</span><br><span class="line"></span><br><span class="line">delete obj.x;</span><br><span class="line"></span><br><span class="line">obj.x;//undefined</span><br><span class="line"></span><br><span class="line">//另一种情况：</span><br><span class="line"></span><br><span class="line">var obj=&#123;&#125;;</span><br><span class="line"></span><br><span class="line">Object.definedProperty(obj,&apos;x&apos;&#123; </span><br><span class="line"></span><br><span class="line">configurable:false,//true的时候才能删除。</span><br><span class="line"></span><br><span class="line">value:1</span><br><span class="line"></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">delete obj.x;//false</span><br><span class="line"></span><br><span class="line">obj.x;//1</span><br></pre></td></tr></table></figure>
-<p>运算符instanceof typeof：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#125; instanceof Object; //true</span><br><span class="line"></span><br><span class="line">typeof 100===&apos;number&apos; //true</span><br></pre></td></tr></table></figure>
-<p>运算符new:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function Foo()&#123;&#125;</span><br><span class="line"></span><br><span class="line">Foo.prototype.x=1;</span><br><span class="line"></span><br><span class="line">var obj=new Foo();</span><br><span class="line"></span><br><span class="line">obj.x;//1</span><br><span class="line"></span><br><span class="line">obj.hasOwnProperty(&apos;x&apos;);//false，不是对象的属性</span><br><span class="line"></span><br><span class="line">obj._proto_hasOwnProperty(&apos;x&apos;);//true,对象原型上的属性</span><br></pre></td></tr></table></figure>
-<p>运算符this:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">this;//windows(浏览器)</span><br><span class="line"></span><br><span class="line">var obj=&#123;</span><br><span class="line">    </span><br><span class="line">    func:function()&#123;return this;&#125;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">obj.func();//obj</span><br></pre></td></tr></table></figure>
-<p>运算符void:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">void 0 //undefined</span><br></pre></td></tr></table></figure>
-<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="https://www.imooc.com/learn/277" target="_blank" rel="noopener">JavaScript深入浅出</a></p>
+        <h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>请实现一个函数，将一个字符串中的每个空格替换成“%20”。例如，当字符串为We Are Happy.则经过替换之后的字符串为We%20Are%20Happy。</p>
+<h1 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h1><p>可以用vector来挨个保存字符串中的字符，遇到空格则保存“%20”，最后再把vector中的字符串复制到原字符串中。(也可以用string)</p>
+<p>但是更优的解法是，先统计空格的个数，确定替换后字符串的长度，再从后往前替换，这样每个字符最多移动一次，降低时间复杂度</p>
+<h1 id="用vector的解法"><a href="#用vector的解法" class="headerlink" title="用vector的解法"></a>用vector的解法</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">	void replaceSpace(char *str,int length) &#123;</span><br><span class="line">         int i;</span><br><span class="line">         vector &lt;char&gt; s;</span><br><span class="line">         for(i=0;i&lt;length;i++)</span><br><span class="line">         &#123;</span><br><span class="line">             if(str[i]==&apos; &apos;)&#123;</span><br><span class="line">                 s.push_back(&apos;%&apos;);</span><br><span class="line">                 s.push_back(&apos;2&apos;);</span><br><span class="line">                 s.push_back(&apos;0&apos;);</span><br><span class="line">             &#125;</span><br><span class="line">             else s.push_back(str[i]);</span><br><span class="line">         &#125;</span><br><span class="line">        for(i=0;i&lt;s.size();i++)</span><br><span class="line">        str[i]=s[i];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h1 id="更优解"><a href="#更优解" class="headerlink" title="更优解"></a>更优解</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">	void replaceSpace(char *str,int length) &#123;</span><br><span class="line">         int i,len=length;</span><br><span class="line">         for(i=0;i&lt;length;i++)</span><br><span class="line">         if(str[i]==&apos; &apos;) len+=2;//一个空格多两个字符</span><br><span class="line">         len--;//最后一个元素的位置</span><br><span class="line">         for(i=length-1;i&gt;=0;i--)</span><br><span class="line">         &#123;</span><br><span class="line">             if(i==len) break;</span><br><span class="line">             if(str[i]!=&apos; &apos;) str[len--]=str[i];</span><br><span class="line">             else&#123;</span><br><span class="line">                 str[len--]=&apos;0&apos;;</span><br><span class="line">                 str[len--]=&apos;2&apos;;</span><br><span class="line">                 str[len--]=&apos;%&apos;;</span><br><span class="line">             &#125;</span><br><span class="line">         &#125;</span><br><span class="line"> 	&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -557,7 +520,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/JavaScript/" rel="tag"><i class="fa fa-tag"></i> JavaScript</a>
+            <a href="/tags/刷题/" rel="tag"><i class="fa fa-tag"></i> 刷题</a>
           
         </div>
       
@@ -570,8 +533,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/01/14/机器学习总结（七）集成学习/" rel="next" title="机器学习总结（七）集成学习">
-                <i class="fa fa-chevron-left"></i> 机器学习总结（七）集成学习
+              <a href="/2019/04/03/剑指offer-二维数组中的查找/" rel="next" title="剑指offer-二维数组中的查找">
+                <i class="fa fa-chevron-left"></i> 剑指offer-二维数组中的查找
               </a>
             
           </div>
@@ -579,10 +542,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/03/04/JavaScript深入浅出笔记（二）/" rel="prev" title="JavaScript笔记（二）">
-                JavaScript笔记（二） <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -763,7 +722,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据类型"><span class="nav-number">1.</span> <span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#原始类型"><span class="nav-number">1.1.</span> <span class="nav-text">原始类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#“-”和“-”"><span class="nav-number">1.2.</span> <span class="nav-text">“==”和“ ===”</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类型检测"><span class="nav-number">1.3.</span> <span class="nav-text">类型检测</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#typeof"><span class="nav-number">1.3.1.</span> <span class="nav-text">typeof</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#toString-NaN"><span class="nav-number">1.3.2.</span> <span class="nav-text">{}.toString</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#instanceof"><span class="nav-number">1.3.3.</span> <span class="nav-text">instanceof</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表达式"><span class="nav-number">2.</span> <span class="nav-text">表达式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#原始表达式"><span class="nav-number">2.1.</span> <span class="nav-text">原始表达式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#复合表达式"><span class="nav-number">2.2.</span> <span class="nav-text">复合表达式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数组，对象的初始化表达式"><span class="nav-number">2.3.</span> <span class="nav-text">数组，对象的初始化表达式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数表达式"><span class="nav-number">2.4.</span> <span class="nav-text">函数表达式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性访问表达式"><span class="nav-number">2.5.</span> <span class="nav-text">属性访问表达式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#调用表达式"><span class="nav-number">2.6.</span> <span class="nav-text">调用表达式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对象创建表达式"><span class="nav-number">2.7.</span> <span class="nav-text">对象创建表达式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运算符"><span class="nav-number">3.</span> <span class="nav-text">运算符</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#常见运算符"><span class="nav-number">3.1.</span> <span class="nav-text">常见运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特殊运算符"><span class="nav-number">3.2.</span> <span class="nav-text">特殊运算符</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-number">4.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#题目描述"><span class="nav-number">1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解题思路"><span class="nav-number">2.</span> <span class="nav-text">解题思路</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#用vector的解法"><span class="nav-number">3.</span> <span class="nav-text">用vector的解法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#更优解"><span class="nav-number">4.</span> <span class="nav-text">更优解</span></a></li></ol></div>
             
 
           </div>
