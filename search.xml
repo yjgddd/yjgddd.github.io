@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[替换空格]]></title>
-    <url>%2F2019%2F04%2F03%2F%E6%9B%BF%E6%8D%A2%E7%A9%BA%E6%A0%BC%2F</url>
+    <title><![CDATA[剑指offer-替换空格]]></title>
+    <url>%2F2019%2F04%2F03%2F%E5%89%91%E6%8C%87offer-%E6%9B%BF%E6%8D%A2%E7%A9%BA%E6%A0%BC%2F</url>
     <content type="text"><![CDATA[题目描述请实现一个函数，将一个字符串中的每个空格替换成“%20”。例如，当字符串为We Are Happy.则经过替换之后的字符串为We%20Are%20Happy。 解题思路可以用vector来挨个保存字符串中的字符，遇到空格则保存“%20”，最后再把vector中的字符串复制到原字符串中。(也可以用string) 但是更优的解法是，先统计空格的个数，确定替换后字符串的长度，再从后往前替换，这样每个字符最多移动一次，降低时间复杂度 用vector的解法123456789101112131415161718class Solution &#123;public: void replaceSpace(char *str,int length) &#123; int i; vector &lt;char&gt; s; for(i=0;i&lt;length;i++) &#123; if(str[i]==&apos; &apos;)&#123; s.push_back(&apos;%&apos;); s.push_back(&apos;2&apos;); s.push_back(&apos;0&apos;); &#125; else s.push_back(str[i]); &#125; for(i=0;i&lt;s.size();i++) str[i]=s[i]; &#125;&#125;; 更优解12345678910111213141516171819class Solution &#123;public: void replaceSpace(char *str,int length) &#123; int i,len=length; for(i=0;i&lt;length;i++) if(str[i]==&apos; &apos;) len+=2;//一个空格多两个字符 len--;//最后一个元素的位置 for(i=length-1;i&gt;=0;i--) &#123; if(i==len) break; if(str[i]!=&apos; &apos;) str[len--]=str[i]; else&#123; str[len--]=&apos;0&apos;; str[len--]=&apos;2&apos;; str[len--]=&apos;%&apos;; &#125; &#125; &#125;&#125;;]]></content>
       <categories>
         <category>剑指offer</category>
