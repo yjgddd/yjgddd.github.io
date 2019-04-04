@@ -8,19 +8,18 @@
         <category>剑指offer</category>
       </categories>
       <tags>
-        <tag>刷题</tag>
         <tag>递归</tag>
       </tags>
   </entry>
   <entry>
     <title><![CDATA[剑指offer-斐波那契数列]]></title>
     <url>%2F2019%2F04%2F04%2F%E5%89%91%E6%8C%87offer-%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97%2F</url>
-    <content type="text"><![CDATA[题目链接牛客网剑指offer-斐波那契数列 题目描述大家都知道斐波那契数列，现在要求输入一个整数n，请你输出斐波那契数列的第n项（从0开始，第0项为0）。n&lt;=39 解题思路斐波那契数列：0,1,1,2,3,5,8… 递归的典型题目，从n=3开始是其前两项的和，因此n==0时候返回0，n==1以及n==2时候返回1，n&gt;=2时候返回Fibonacci(n-1)+Fibonacci(n-2）12345678class Solution &#123;public: int Fibonacci(int n) &#123; if(n==0) return 0; else if(n&lt;=2) return 1; else return Fibonacci(n-1)+Fibonacci(n-2); &#125;&#125;;]]></content>
+    <content type="text"><![CDATA[题目链接牛客网剑指offer-斐波那契数列 题目描述大家都知道斐波那契数列，现在要求输入一个整数n，请你输出斐波那契数列的第n项（从0开始，第0项为0）。 n&lt;=39 解题思路斐波那契数列：0,1,1,2,3,5,8… 递归的典型题目，从n=3开始是其前两项的和，因此n==0时候返回0，n==1以及n==2时候返回1，n&gt;=2时候返回Fibonacci(n-1)+Fibonacci(n-2）12345678class Solution &#123;public: int Fibonacci(int n) &#123; if(n==0) return 0; else if(n&lt;=2) return 1; else return Fibonacci(n-1)+Fibonacci(n-2); &#125;&#125;;]]></content>
       <categories>
         <category>剑指offer</category>
       </categories>
       <tags>
-        <tag>刷题 递归</tag>
+        <tag>递归</tag>
       </tags>
   </entry>
   <entry>
@@ -31,7 +30,7 @@
         <category>剑指offer</category>
       </categories>
       <tags>
-        <tag>刷题 位运算</tag>
+        <tag>位运算</tag>
       </tags>
   </entry>
   <entry>
@@ -42,7 +41,8 @@
         <category>剑指offer</category>
       </categories>
       <tags>
-        <tag>刷题</tag>
+        <tag>二叉树</tag>
+        <tag>递归</tag>
       </tags>
   </entry>
   <entry>
@@ -53,7 +53,8 @@
         <category>剑指offer</category>
       </categories>
       <tags>
-        <tag>刷题</tag>
+        <tag>栈</tag>
+        <tag>链表</tag>
       </tags>
   </entry>
   <entry>
@@ -64,7 +65,6 @@
         <category>剑指offer</category>
       </categories>
       <tags>
-        <tag>刷题</tag>
         <tag>字符串</tag>
       </tags>
   </entry>
@@ -76,7 +76,7 @@
         <category>剑指offer</category>
       </categories>
       <tags>
-        <tag>刷题</tag>
+        <tag>查找</tag>
       </tags>
   </entry>
   <entry>
