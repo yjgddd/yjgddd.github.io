@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[剑指offer-斐波那契数列]]></title>
+    <url>%2F2019%2F04%2F04%2F%E5%89%91%E6%8C%87offer-%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97%2F</url>
+    <content type="text"><![CDATA[题目描述大家都知道斐波那契数列，现在要求输入一个整数n，请你输出斐波那契数列的第n项（从0开始，第0项为0）。n&lt;=39 解题思路斐波那契数列：0,1,1,2,3,5,8… 递归的典型题目，从n=3开始是其前两项的和，因此n==0时候返回0，n==1以及n==2时候返回1，n&gt;=2时候返回Fibonacci(n-1)+Fibonacci(n-2）12345678class Solution &#123;public: int Fibonacci(int n) &#123; if(n==0) return 0; else if(n&lt;=2) return 1; else return Fibonacci(n-1)+Fibonacci(n-2); &#125;&#125;;]]></content>
+      <categories>
+        <category>剑指offer</category>
+      </categories>
+      <tags>
+        <tag>刷题</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[剑指offer-不用加减乘除做加法]]></title>
     <url>%2F2019%2F04%2F04%2F%E5%89%91%E6%8C%87offer-%E4%B8%8D%E7%94%A8%E5%8A%A0%E5%87%8F%E4%B9%98%E9%99%A4%E5%81%9A%E5%8A%A0%E6%B3%95%2F</url>
     <content type="text"><![CDATA[题目描述写一个函数，求两个整数之和，要求在函数体内不得使用+、-、*、/四则运算符号。 解题思路step1: num1和num2按位抑或，只有两个数的对应二进制位只有一个是1，才会产生1，即可以求得不产生进位的和 step2: num1和num2按位与，可以得到两个数的二进制位都是1，必然产生进位，按为与的结果左移一位，就是需要的进位,不为0则需要加在返回值上 step3: 如果仍然有进位，即(num1&amp;num2)&lt;&lt;1不为0，那么重复step1和step2 Tips: &lt;&lt;(位移操作符)比&amp;(位与操作符）优先级高，要带上括号 C++代码123456789101112131415//将num1作为最终的返回值，即两个数的和，num2作为进位检查标志class Solution &#123;public: int Add(int num1, int num2) &#123; int temp; while(num2) &#123; temp=num1^num2;//temp是两个数无进位和 num2=(num1&amp;num2)&lt;&lt;1;//num2是进位,如果num2不为0，那么还需要加上进位,即再继续进行抑或操作 num1=temp;//循环结束后num1是最终结果 &#125; return num1; &#125;&#125;;]]></content>
