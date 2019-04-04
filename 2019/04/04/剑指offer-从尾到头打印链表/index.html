@@ -104,33 +104,25 @@
 
 
 
-  <meta name="description" content="scikit-learn是一个python的库，包含大量的机器学习算法。由于做kaggle上面的项目需要，使用到了这个库，但是需要注意的是scikit-learn的数据必须是numeric类型的。 安装前提:有python，且安装好了numpy库和scipy库，然后通过pip的方式安装如下： 1pip install -U sickit-learn 选择模型方法官网中有流程图，对于不同的场景需要">
-<meta name="keywords" content="机器学习">
+  <meta name="description" content="题目描述输入一个链表，按链表值从尾到头的顺序返回一个ArrayList。 解题思路可以用栈，先从头到尾将链表结点值保存在一个栈中，再出栈保存在需要返回的ArrayList,根据栈的先进后出特点，返回的即链表从尾到头 C++代码123456789101112131415161718192021222324252627/***  struct ListNode &amp;#123;*        int v">
+<meta name="keywords" content="刷题">
 <meta property="og:type" content="article">
-<meta property="og:title" content="scikit-learn学习笔记（一）">
-<meta property="og:url" content="http://yangjie.gq/2018/12/23/skicit-learn学习笔记(一)/index.html">
+<meta property="og:title" content="剑指offer-从尾到头打印链表">
+<meta property="og:url" content="http://yangjie.gq/2019/04/04/剑指offer-从尾到头打印链表/index.html">
 <meta property="og:site_name" content="YangJie&#39;s Blog">
-<meta property="og:description" content="scikit-learn是一个python的库，包含大量的机器学习算法。由于做kaggle上面的项目需要，使用到了这个库，但是需要注意的是scikit-learn的数据必须是numeric类型的。 安装前提:有python，且安装好了numpy库和scipy库，然后通过pip的方式安装如下： 1pip install -U sickit-learn 选择模型方法官网中有流程图，对于不同的场景需要">
+<meta property="og:description" content="题目描述输入一个链表，按链表值从尾到头的顺序返回一个ArrayList。 解题思路可以用栈，先从头到尾将链表结点值保存在一个栈中，再出栈保存在需要返回的ArrayList,根据栈的先进后出特点，返回的即链表从尾到头 C++代码123456789101112131415161718192021222324252627/***  struct ListNode &amp;#123;*        int v">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-24/43326049.jpg">
-<meta property="og:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-24/5397077.jpg">
-<meta property="og:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-24/86534722.jpg">
-<meta property="og:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-24/89767176.jpg">
-<meta property="og:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-24/81228078.jpg">
-<meta property="og:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-24/31810772.jpg">
-<meta property="og:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-24/60766608.jpg">
-<meta property="og:updated_time" content="2019-01-02T12:05:37.789Z">
+<meta property="og:updated_time" content="2019-04-04T07:36:51.602Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="scikit-learn学习笔记（一）">
-<meta name="twitter:description" content="scikit-learn是一个python的库，包含大量的机器学习算法。由于做kaggle上面的项目需要，使用到了这个库，但是需要注意的是scikit-learn的数据必须是numeric类型的。 安装前提:有python，且安装好了numpy库和scipy库，然后通过pip的方式安装如下： 1pip install -U sickit-learn 选择模型方法官网中有流程图，对于不同的场景需要">
-<meta name="twitter:image" content="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-24/43326049.jpg">
+<meta name="twitter:title" content="剑指offer-从尾到头打印链表">
+<meta name="twitter:description" content="题目描述输入一个链表，按链表值从尾到头的顺序返回一个ArrayList。 解题思路可以用栈，先从头到尾将链表结点值保存在一个栈中，再出栈保存在需要返回的ArrayList,根据栈的先进后出特点，返回的即链表从尾到头 C++代码123456789101112131415161718192021222324252627/***  struct ListNode &amp;#123;*        int v">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yangjie.gq/2018/12/23/skicit-learn学习笔记(一)/">
+  <link rel="canonical" href="http://yangjie.gq/2019/04/04/剑指offer-从尾到头打印链表/">
 
 
 
@@ -140,7 +132,7 @@
   };
 </script>
 
-  <title>scikit-learn学习笔记（一） | YangJie's Blog</title>
+  <title>剑指offer-从尾到头打印链表 | YangJie's Blog</title>
   
 
 
@@ -364,7 +356,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yangjie.gq/2018/12/23/skicit-learn学习笔记(一)/">
+    <link itemprop="mainEntityOfPage" href="http://yangjie.gq/2019/04/04/剑指offer-从尾到头打印链表/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="YangJie">
@@ -381,7 +373,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">scikit-learn学习笔记（一）
+          <h1 class="post-title" itemprop="name headline">剑指offer-从尾到头打印链表
 
               
             
@@ -407,24 +399,12 @@
                 
               
 
-              <time title="创建时间：2018-12-23 16:24:49" itemprop="dateCreated datePublished" datetime="2018-12-23T16:24:49+08:00">2018-12-23</time>
+              <time title="创建时间：2019-04-04 15:35:50 / 修改时间：15:36:51" itemprop="dateCreated datePublished" datetime="2019-04-04T15:35:50+08:00">2019-04-04</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-01-02 20:05:37" itemprop="dateModified" datetime="2019-01-02T20:05:37+08:00">2019-01-02</time>
               
             
           </span>
@@ -441,7 +421,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/机器学习/" itemprop="url" rel="index"><span itemprop="name">机器学习</span></a></span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/剑指offer/" itemprop="url" rel="index"><span itemprop="name">剑指offer</span></a></span>
 
                 
                 
@@ -455,7 +435,7 @@
 
           
           
-             <span id="/2018/12/23/skicit-learn学习笔记(一)/" class="leancloud_visitors" data-flag-title="scikit-learn学习笔记（一）">
+             <span id="/2019/04/04/剑指offer-从尾到头打印链表/" class="leancloud_visitors" data-flag-title="剑指offer-从尾到头打印链表">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -483,40 +463,9 @@
       
       
       
-        <p> scikit-learn是一个python的库，包含大量的机器学习算法。由于做kaggle上面的项目需要，使用到了这个库，但是需要注意的是scikit-learn的数据必须是numeric类型的。</p>
-<h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><p>前提:有python，且安装好了numpy库和scipy库，然后通过pip的方式安装如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install -U sickit-learn</span><br></pre></td></tr></table></figure>
-<h4 id="选择模型方法"><a href="#选择模型方法" class="headerlink" title="选择模型方法"></a>选择模型方法</h4><p>官网中有流程图，对于不同的场景需要选择不同的机器学习模型，模型图如下：</p>
-<p><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-24/43326049.jpg" alt=""><br>图中蓝色的圆圈是判断，绿色的方框是可以选择的算法。</p>
-<p>算法分为了四大类：</p>
-<p>classfication(分类）、regression（回归）、clustering（聚类）、dimensionality reduction（数据降维）</p>
-<h4 id="数据集利用"><a href="#数据集利用" class="headerlink" title="数据集利用"></a>数据集利用</h4><p> scikit-learn中包含了很多技术集，可供学习。</p>
-<p> 比如iris数据集，中文名是安德森鸢尾花卉数据集，是一个给鸢尾花做分类的数据集，包含四个属性：</p>
-<p> 花萼长度、花萼宽度、花瓣长度、花瓣宽度</p>
-<p> 以及花的品种：山鸢尾、变色鸢尾、维吉尼亚鸢尾</p>
-<p> 根据四个属性预测出花的品种，是一个典型的分类问题，可以根据这个数据集，走一下sickit-learn的使用流程</p>
-<h4 id="使用流程"><a href="#使用流程" class="headerlink" title="使用流程"></a>使用流程</h4><p>以iris数据集为例子：</p>
-<ul>
-<li>导入数据集</li>
-</ul>
-<p><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-24/5397077.jpg" alt=""></p>
-<ul>
-<li>查看数据格式 </li>
-</ul>
-<p><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-24/86534722.jpg" alt=""><br><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-24/89767176.jpg" alt=""><br>可以看出，每条数据有四个属性，标签一共有三类，用0、1、2表示。</p>
-<ul>
-<li>划分数据集</li>
-</ul>
-<p>train_test_split可以随机划分数据集，要划分的是iris_X和iris_y，划分比例是训练数据80%,测试数据20%</p>
-<p><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-24/81228078.jpg" alt=""></p>
-<ul>
-<li>使用模型、预测、计算准确率</li>
-</ul>
-<p>使用knn模型，至于此模型的原理，不是本文重点，不再解释。</p>
-<p><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-24/31810772.jpg" alt=""></p>
-<p>打印出的结果可以看到模型预测的结果不一定是完全准确的。可以通过以下方式计算模型的准确率：<br><img src="http://yjgddd-image.oss-cn-beijing.aliyuncs.com/18-12-24/60766608.jpg" alt=""></p>
-<p>训练数据准确率为96%左右，测试数据准确率为93%左右，说明使用knn做鸢尾花数据集的分类是一个不错的选择。</p>
-<h4 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h4><p><a href="https://morvanzhou.github.io/tutorials/machine-learning/sklearn/" target="_blank" rel="noopener">莫烦的学习网站</a></p>
+        <h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>输入一个链表，按链表值从尾到头的顺序返回一个ArrayList。</p>
+<h1 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h1><p>可以用栈，先从头到尾将链表结点值保存在一个栈中，再出栈保存在需要返回的ArrayList,根据栈的先进后出特点，返回的即链表从尾到头</p>
+<h1 id="C-代码"><a href="#C-代码" class="headerlink" title="C++代码"></a>C++代码</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">*  struct ListNode &#123;</span><br><span class="line">*        int val;</span><br><span class="line">*        struct ListNode *next;</span><br><span class="line">*        ListNode(int x) :</span><br><span class="line">*              val(x), next(NULL) &#123;</span><br><span class="line">*        &#125;</span><br><span class="line">*  &#125;;</span><br><span class="line">*/</span><br><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    vector&lt;int&gt; printListFromTailToHead(ListNode* head) &#123;</span><br><span class="line">        vector &lt;int&gt; Array;</span><br><span class="line">        stack &lt;int&gt; stk;</span><br><span class="line">        while(head!=NULL)</span><br><span class="line">        &#123;</span><br><span class="line">            stk.push(head-&gt;val);</span><br><span class="line">            head=head-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        while(!stk.empty())</span><br><span class="line">        &#123;</span><br><span class="line">            Array.push_back(stk.top());</span><br><span class="line">            stk.pop();</span><br><span class="line">        &#125;</span><br><span class="line">        return Array;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -569,7 +518,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/机器学习/" rel="tag"><i class="fa fa-tag"></i> 机器学习</a>
+            <a href="/tags/刷题/" rel="tag"><i class="fa fa-tag"></i> 刷题</a>
           
         </div>
       
@@ -582,15 +531,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/04/03/剑指offer-替换空格/" rel="next" title="剑指offer-替换空格">
+                <i class="fa fa-chevron-left"></i> 剑指offer-替换空格
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/12/25/排序算法总结/" rel="prev" title="排序算法总结">
-                排序算法总结 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -771,7 +720,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装"><span class="nav-number">1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#选择模型方法"><span class="nav-number">2.</span> <span class="nav-text">选择模型方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据集利用"><span class="nav-number">3.</span> <span class="nav-text">数据集利用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用流程"><span class="nav-number">4.</span> <span class="nav-text">使用流程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参考："><span class="nav-number">5.</span> <span class="nav-text">参考：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#题目描述"><span class="nav-number">1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解题思路"><span class="nav-number">2.</span> <span class="nav-text">解题思路</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#C-代码"><span class="nav-number">3.</span> <span class="nav-text">C++代码</span></a></li></ol></div>
             
 
           </div>

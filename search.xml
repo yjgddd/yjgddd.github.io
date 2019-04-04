@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[剑指offer-从尾到头打印链表]]></title>
+    <url>%2F2019%2F04%2F04%2F%E5%89%91%E6%8C%87offer-%E4%BB%8E%E5%B0%BE%E5%88%B0%E5%A4%B4%E6%89%93%E5%8D%B0%E9%93%BE%E8%A1%A8%2F</url>
+    <content type="text"><![CDATA[题目描述输入一个链表，按链表值从尾到头的顺序返回一个ArrayList。 解题思路可以用栈，先从头到尾将链表结点值保存在一个栈中，再出栈保存在需要返回的ArrayList,根据栈的先进后出特点，返回的即链表从尾到头 C++代码123456789101112131415161718192021222324252627/*** struct ListNode &#123;* int val;* struct ListNode *next;* ListNode(int x) :* val(x), next(NULL) &#123;* &#125;* &#125;;*/class Solution &#123;public: vector&lt;int&gt; printListFromTailToHead(ListNode* head) &#123; vector &lt;int&gt; Array; stack &lt;int&gt; stk; while(head!=NULL) &#123; stk.push(head-&gt;val); head=head-&gt;next; &#125; while(!stk.empty()) &#123; Array.push_back(stk.top()); stk.pop(); &#125; return Array; &#125;&#125;;]]></content>
+      <categories>
+        <category>剑指offer</category>
+      </categories>
+      <tags>
+        <tag>刷题</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[剑指offer-替换空格]]></title>
     <url>%2F2019%2F04%2F03%2F%E5%89%91%E6%8C%87offer-%E6%9B%BF%E6%8D%A2%E7%A9%BA%E6%A0%BC%2F</url>
     <content type="text"><![CDATA[题目描述请实现一个函数，将一个字符串中的每个空格替换成“%20”。例如，当字符串为We Are Happy.则经过替换之后的字符串为We%20Are%20Happy。 解题思路可以用vector来挨个保存字符串中的字符，遇到空格则保存“%20”，最后再把vector中的字符串复制到原字符串中。(也可以用string) 但是更优的解法是，先统计空格的个数，确定替换后字符串的长度，再从后往前替换，这样每个字符最多移动一次，降低时间复杂度 用vector的解法123456789101112131415161718class Solution &#123;public: void replaceSpace(char *str,int length) &#123; int i; vector &lt;char&gt; s; for(i=0;i&lt;length;i++) &#123; if(str[i]==&apos; &apos;)&#123; s.push_back(&apos;%&apos;); s.push_back(&apos;2&apos;); s.push_back(&apos;0&apos;); &#125; else s.push_back(str[i]); &#125; for(i=0;i&lt;s.size();i++) str[i]=s[i]; &#125;&#125;; 更优解12345678910111213141516171819class Solution &#123;public: void replaceSpace(char *str,int length) &#123; int i,len=length; for(i=0;i&lt;length;i++) if(str[i]==&apos; &apos;) len+=2;//一个空格多两个字符 len--;//最后一个元素的位置 for(i=length-1;i&gt;=0;i--) &#123; if(i==len) break; if(str[i]!=&apos; &apos;) str[len--]=str[i]; else&#123; str[len--]=&apos;0&apos;; str[len--]=&apos;2&apos;; str[len--]=&apos;%&apos;; &#125; &#125; &#125;&#125;;]]></content>
