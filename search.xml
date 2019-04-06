@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[剑指offer-用两个栈实现队列]]></title>
+    <url>%2F2019%2F04%2F06%2F%E5%89%91%E6%8C%87offer-%E7%94%A8%E4%B8%A4%E4%B8%AA%E6%A0%88%E5%AE%9E%E7%8E%B0%E9%98%9F%E5%88%97%2F</url>
+    <content type="text"><![CDATA[题目链接牛客网剑指offer-用两个栈实现队列 题目描述用两个栈来实现一个队列，完成队列的Push和Pop操作。 队列中的元素为int类型。 解题思路队列的特点是先进先出，而栈的特点的先进后出。用两个栈来实现一个队列，队列插入结点，可以stack1进行入栈操作，队列删除结点，可以将stack1的所有结点依次入栈stack2,此时在对stack2进行出栈操作，此时出栈的即是队列的第一个结点。如果还要进行出栈操作，每次都要判断stack2是否不为空，如果stack2不为空，那么删除队列结点即对stack2进行出栈操作，因为stack2的栈顶始终是队列的队头，如果stack2为空，那么依然是将stack1的所有结点依次入栈stack2,再取stack2的栈顶。 C++代码123456789101112131415161718192021222324252627class Solution&#123;public: void push(int node) &#123; stack1.push(node); &#125; int pop() &#123; int t; if(!stack2.empty()) &#123;t=stack2.top();stack2.pop();&#125; else &#123; while(!stack1.empty()) &#123; stack2.push(stack1.top()); stack1.pop(); &#125; t=stack2.top(); stack2.pop(); &#125; return t; &#125;private: stack&lt;int&gt; stack1; stack&lt;int&gt; stack2;&#125;;]]></content>
+      <categories>
+        <category>剑指offer</category>
+      </categories>
+      <tags>
+        <tag>栈</tag>
+        <tag>队列</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[剑指offer-二叉树的下一个结点]]></title>
     <url>%2F2019%2F04%2F06%2F%E5%89%91%E6%8C%87offer-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E4%B8%8B%E4%B8%80%E4%B8%AA%E7%BB%93%E7%82%B9%2F</url>
     <content type="text"><![CDATA[题目链接牛客网剑指offer-二叉树的下一个结点 题目描述给定一个二叉树和其中的一个点，请找出中序遍历顺序的下一个结点并且返回。注意，树中的结点不仅包含左右子结点，同时包含指向父结点的指针。 解题思路三种情况分析： 1、该结点为空，返回NULL 2、如果该结点的右子树不为空，则右子树的最左子结点即为中序遍历的下一个结点。 3、如果右子树为空，则找该结点的父节点，如果当前结点是父结点的左子结点，则下一个结点即其左结点，否则不断向上遍历，直到找到一个是它父亲结点的左子结点的结点，如果这样的结点存在，那么它的父亲结点就是我们要找到下一个结点，如果遍历到根节点仍然不存在，则结点没有下一个结点，返回NULL。 C++代码12345678910111213141516171819202122232425262728293031323334353637/*struct TreeLinkNode &#123; int val; struct TreeLinkNode *left; struct TreeLinkNode *right; struct TreeLinkNode *next; TreeLinkNode(int x) :val(x), left(NULL), right(NULL), next(NULL) &#123; &#125;&#125;;*/class Solution &#123;public: TreeLinkNode* GetNext(TreeLinkNode* pNode) &#123; TreeLinkNode* pNext=NULL; if(pNode==NULL) return NULL; if(pNode-&gt;right!=NULL)//右子树不为空 &#123; pNext=pNode-&gt;right; while(pNext-&gt;left!=NULL) pNext=pNext-&gt;left;//找右子树的最左结点 &#125; else if(pNode-&gt;next!=NULL)//父节点不为空 &#123; TreeLinkNode* pCurrent=pNode; TreeLinkNode* pParent=pNode-&gt;next; while(pParent!=NULL&amp;&amp;pParent-&gt;right==pCurrent)//找是父亲结点左结点的结点 &#123; pCurrent=pParent; pParent=pParent-&gt;next; &#125; pNext=pParent;//返回该结点的父亲结点 &#125; return pNext; &#125;&#125;;]]></content>
