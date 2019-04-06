@@ -112,7 +112,7 @@
 <meta property="og:site_name" content="YangJie&#39;s Blog">
 <meta property="og:description" content="题目链接牛客网剑指offer-重建二叉树 题目描述输入某二叉树的前序遍历和中序遍历的结果，请重建出该二叉树。假设输入的前序遍历和中序遍历的结果中都不含重复的数字。例如输入前序遍历序列{1,2,4,7,3,5,6,8}和中序遍历序列{4,7,2,1,5,3,8,6}，则重建二叉树并返回。 解题思路前序遍历的第一个结点是根结点，在中序遍历中找到该结点，则在中序遍历找到的根节点的左边所有数字即左子树上的">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-06T04:22:05.540Z">
+<meta property="og:updated_time" content="2019-04-06T04:25:34.003Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="剑指offer-重建二叉树">
 <meta name="twitter:description" content="题目链接牛客网剑指offer-重建二叉树 题目描述输入某二叉树的前序遍历和中序遍历的结果，请重建出该二叉树。假设输入的前序遍历和中序遍历的结果中都不含重复的数字。例如输入前序遍历序列{1,2,4,7,3,5,6,8}和中序遍历序列{4,7,2,1,5,3,8,6}，则重建二叉树并返回。 解题思路前序遍历的第一个结点是根结点，在中序遍历中找到该结点，则在中序遍历找到的根节点的左边所有数字即左子树上的">
@@ -399,7 +399,7 @@
                 
               
 
-              <time title="创建时间：2019-04-06 12:21:01 / 修改时间：12:22:05" itemprop="dateCreated datePublished" datetime="2019-04-06T12:21:01+08:00">2019-04-06</time>
+              <time title="创建时间：2019-04-06 12:21:01 / 修改时间：12:25:34" itemprop="dateCreated datePublished" datetime="2019-04-06T12:21:01+08:00">2019-04-06</time>
             
 
             
@@ -465,8 +465,8 @@
       
         <h1 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h1><p><a href="https://www.nowcoder.com/practice/8a19cbe657394eeaac2f6ea9b0f6fcf6?tpId=13&amp;tqId=11157&amp;tPage=1&amp;rp=1&amp;ru=/ta/coding-interviews&amp;qru=/ta/coding-interviews/question-ranking" target="_blank" rel="noopener">牛客网剑指offer-重建二叉树</a></p>
 <h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>输入某二叉树的前序遍历和中序遍历的结果，请重建出该二叉树。假设输入的前序遍历和中序遍历的结果中都不含重复的数字。<br>例如输入前序遍历序列{1,2,4,7,3,5,6,8}和中序遍历序列{4,7,2,1,5,3,8,6}，则重建二叉树并返回。</p>
-<h1 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h1><p>前序遍历的第一个结点是根结点，在中序遍历中找到该结点，则在中序遍历找到的根节点的左边所有数字即左子树上的结点，右边所有数字即右子树上的所有结点，且可以<br>知道左右子树结点的个数，在前序遍历中，在根结点后相同左子树结点个数是左子树的先序遍历，再往后找相同右子树结点数目即右子树的前序遍历。因此可以得到左子树<br>的前序遍历和中序遍历、右子树的前序遍历和中序遍历。那么递归调用构造树函数即可。</p>
-<h1 id="C-代码"><a href="#C-代码" class="headerlink" title="C++代码"></a>C++代码</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Definition for binary tree</span><br><span class="line"> * struct TreeNode &#123;</span><br><span class="line"> *     int val;</span><br><span class="line"> *     TreeNode *left;</span><br><span class="line"> *     TreeNode *right;</span><br><span class="line"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125;</span><br><span class="line"> * &#125;;</span><br><span class="line"> */</span><br><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    TreeNode* reConstructBinaryTree(vector&lt;int&gt; pre,vector&lt;int&gt; vin) &#123;</span><br><span class="line">         if(pre.empty()||vin.empty()||pre.size()!=vin.size()) return NULL;</span><br><span class="line">         else return costruct(pre,vin,0,0,vin.size()-1);</span><br><span class="line">    &#125;</span><br><span class="line">    //构造函数，参数依次为前序遍历序列、中序遍历序列、前序遍历的起点、中序遍历的起点、中序遍历的终点，递归调用的参数变化易错</span><br><span class="line">    TreeNode* costruct(vector&lt;int&gt; pre,vector&lt;int&gt; vin,int prestr,int instr,int inend)&#123;</span><br><span class="line">        if(instr&gt;inend) return NULL;</span><br><span class="line">        TreeNode* root=new TreeNode(pre[prestr]);</span><br><span class="line">        for(int i=instr;i&lt;=inend;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            if(vin[i]==pre[prestr]) //找到中序遍历中的跟结点</span><br><span class="line">            &#123;</span><br><span class="line">                root-&gt;left=costruct(pre,vin,prestr+1,instr,i-1);//递归构造左子树</span><br><span class="line">                root-&gt;right=costruct(pre,vin,prestr+i-instr+1,i+1,inend);//递归构造右子树</span><br><span class="line">                break;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return root;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h1 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h1><p>前序遍历的第一个结点是根结点，在中序遍历中找到该结点，则在中序遍历找到的根节点的左边所有数字即左子树上的结点，右边所有数字即右子树上的所有结点，且可以知道左右子树结点的个数，在前序遍历中，在根结点后相同左子树结点个数是左子树的先序遍历，再往后找相同右子树结点数目即右子树的前序遍历。因此可以得到左子树的前序遍历和中序遍历、右子树的前序遍历和中序遍历。那么递归调用构造树函数即可。</p>
+<h1 id="C-代码"><a href="#C-代码" class="headerlink" title="C++代码"></a>C++代码</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Definition for binary tree</span><br><span class="line"> * struct TreeNode &#123;</span><br><span class="line"> *     int val;</span><br><span class="line"> *     TreeNode *left;</span><br><span class="line"> *     TreeNode *right;</span><br><span class="line"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125;</span><br><span class="line"> * &#125;;</span><br><span class="line"> */</span><br><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    TreeNode* reConstructBinaryTree(vector&lt;int&gt; pre,vector&lt;int&gt; vin) &#123;</span><br><span class="line">         if(pre.empty()||vin.empty()||pre.size()!=vin.size()) return NULL;</span><br><span class="line">         else return costruct(pre,vin,0,0,vin.size()-1);</span><br><span class="line">    &#125;</span><br><span class="line">    //构造函数，参数依次为前序遍历序列、中序遍历序列、前序遍历的起点、中序遍历的起点、中序遍历的终点</span><br><span class="line">    TreeNode* costruct(vector&lt;int&gt; pre,vector&lt;int&gt; vin,int prestr,int instr,int inend)&#123;</span><br><span class="line">        if(instr&gt;inend) return NULL;</span><br><span class="line">        TreeNode* root=new TreeNode(pre[prestr]);</span><br><span class="line">        for(int i=instr;i&lt;=inend;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            if(vin[i]==pre[prestr]) //找到中序遍历中的跟结点</span><br><span class="line">            &#123;</span><br><span class="line">                root-&gt;left=costruct(pre,vin,prestr+1,instr,i-1);//递归构造左子树</span><br><span class="line">                root-&gt;right=costruct(pre,vin,prestr+i-instr+1,i+1,inend);//递归构造右子树</span><br><span class="line">                break;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return root;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -544,6 +544,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2019/04/06/剑指offer-二叉树的下一个结点/" rel="prev" title="剑指offer-二叉树的下一个结点">
+                剑指offer-二叉树的下一个结点 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -614,7 +618,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">29</span>
+                    <span class="site-state-item-count">30</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
