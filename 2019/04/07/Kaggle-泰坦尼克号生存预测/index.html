@@ -104,14 +104,21 @@
 
 
 
-  <meta property="og:type" content="article">
-<meta property="og:title" content="YangJie&#39;s Blog">
+  <meta name="description" content="题目链接Titanic: Machine Learning from Disaster 运行环境python3、Jupyter 数据预处理通过数据质量分析，检查原始数据中是否存在脏数据，脏数据包括：缺失值，异常值，不一致的值，重复数据及含有特殊符号（如#、￥、*）的值。本题目中主要是缺失值的处理。  导入可能用到的包，将训练集和测试集合并，统一进行数据预处理  1234567891011impor">
+<meta name="keywords" content="机器学习">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Kaggle-泰坦尼克号生存预测">
 <meta property="og:url" content="http://yangjie.gq/2019/04/07/Kaggle-泰坦尼克号生存预测/index.html">
 <meta property="og:site_name" content="YangJie&#39;s Blog">
+<meta property="og:description" content="题目链接Titanic: Machine Learning from Disaster 运行环境python3、Jupyter 数据预处理通过数据质量分析，检查原始数据中是否存在脏数据，脏数据包括：缺失值，异常值，不一致的值，重复数据及含有特殊符号（如#、￥、*）的值。本题目中主要是缺失值的处理。  导入可能用到的包，将训练集和测试集合并，统一进行数据预处理  1234567891011impor">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-07T04:11:43.616Z">
+<meta property="og:image" content="https://i.loli.net/2019/04/07/5ca97a62dc27d.png">
+<meta property="og:image" content="https://i.loli.net/2019/04/07/5ca97a99c3964.png">
+<meta property="og:updated_time" content="2019-04-07T04:41:28.114Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="YangJie&#39;s Blog">
+<meta name="twitter:title" content="Kaggle-泰坦尼克号生存预测">
+<meta name="twitter:description" content="题目链接Titanic: Machine Learning from Disaster 运行环境python3、Jupyter 数据预处理通过数据质量分析，检查原始数据中是否存在脏数据，脏数据包括：缺失值，异常值，不一致的值，重复数据及含有特殊符号（如#、￥、*）的值。本题目中主要是缺失值的处理。  导入可能用到的包，将训练集和测试集合并，统一进行数据预处理  1234567891011impor">
+<meta name="twitter:image" content="https://i.loli.net/2019/04/07/5ca97a62dc27d.png">
 
 
 
@@ -128,7 +135,7 @@
   };
 </script>
 
-  <title> | YangJie's Blog</title>
+  <title>Kaggle-泰坦尼克号生存预测 | YangJie's Blog</title>
   
 
 
@@ -369,7 +376,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
+          <h1 class="post-title" itemprop="name headline">Kaggle-泰坦尼克号生存预测
 
               
             
@@ -395,7 +402,7 @@
                 
               
 
-              <time title="创建时间：2019-04-07 12:06:16 / 修改时间：12:11:43" itemprop="dateCreated datePublished" datetime="2019-04-07T12:06:16+08:00">2019-04-07</time>
+              <time title="创建时间：2019-04-07 12:06:16 / 修改时间：12:41:28" itemprop="dateCreated datePublished" datetime="2019-04-07T12:06:16+08:00">2019-04-07</time>
             
 
             
@@ -406,6 +413,24 @@
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Kaggle/" itemprop="url" rel="index"><span itemprop="name">Kaggle</span></a></span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -413,7 +438,7 @@
 
           
           
-             <span id="/2019/04/07/Kaggle-泰坦尼克号生存预测/" class="leancloud_visitors" data-flag-title="">
+             <span id="/2019/04/07/Kaggle-泰坦尼克号生存预测/" class="leancloud_visitors" data-flag-title="Kaggle-泰坦尼克号生存预测">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -441,7 +466,189 @@
       
       
       
-        
+        <h2 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h2><p><a href="https://www.kaggle.com/c/titanic/overview/tutorials" target="_blank" rel="noopener">Titanic: Machine Learning from Disaster</a></p>
+<h2 id="运行环境"><a href="#运行环境" class="headerlink" title="运行环境"></a>运行环境</h2><p>python3、Jupyter</p>
+<h2 id="数据预处理"><a href="#数据预处理" class="headerlink" title="数据预处理"></a>数据预处理</h2><p>通过数据质量分析，检查原始数据中是否存在脏数据，脏数据包括：缺失值，异常值，不一致的值，重复数据及含有特殊符号（如#、￥、*）的值。本题目中主要是缺失值的处理。 </p>
+<p>导入可能用到的包，将训练集和测试集合并，统一进行数据预处理 </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns </span><br><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> Counter</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line">train=pd.read_csv(<span class="string">'../Titanic/all/train.csv'</span>)<span class="comment">#读入训练数据集</span></span><br><span class="line">test=pd.read_csv(<span class="string">'../Titanic/all/test.csv'</span>)<span class="comment">#读入测试数据集</span></span><br><span class="line">print(<span class="string">'训练数据集规模'</span>,train.shape)<span class="comment">#训练数据集规模 (891, 12)</span></span><br><span class="line">print(<span class="string">'测试数据集规模'</span>,test.shape)<span class="comment">#测试数据集规模 (418, 11)</span></span><br><span class="line">df=train.append(test,sort=<span class="keyword">True</span>) <span class="comment">#合并数据集，方便进行数据预处理</span></span><br><span class="line">print(<span class="string">'合并后的数据集规模'</span>,df.shape)<span class="comment">#合并后的数据集规模 (1309, 12)</span></span><br></pre></td></tr></table></figure>
+<p>训练数据集的规模是891*12,891条数据，12个属性，测试数据集的规模418*11属性，测试集少一个属性 Survived，这是需要通过模型预测的,合并后的数据集规模是1309*12。 </p>
+<p>查看前 10 条数据了解一下数据集的格式： </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.head(<span class="number">10</span>)</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.loli.net/2019/04/07/5ca97a62dc27d.png" alt="1.png"><br>查看基本的统计信息： </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pd.options.display.float_format=<span class="string">'&#123;:,.3f&#125;'</span>.format <span class="comment"># 数据显示模式</span></span><br><span class="line">df.describe() <span class="comment">#查看数据的基本统计信息</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://i.loli.net/2019/04/07/5ca97a99c3964.png" alt="2.png"></p>
+<p>查看每一列的数据总数和数据类型，对于每个属性，合理的数据总数应该是 1309。 </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.info()<span class="comment">#查看每一列的数据以及数据类型，进行缺失值分析</span></span><br></pre></td></tr></table></figure>
+<pre><code>&lt;class &apos;pandas.core.frame.DataFrame&apos;&gt;
+Int64Index: 1309 entries, 0 to 417
+Data columns (total 12 columns):
+Age            1046 non-null float64
+Cabin          295 non-null object
+Embarked       1307 non-null object
+Fare           1308 non-null float64
+Name           1309 non-null object
+Parch          1309 non-null int64
+PassengerId    1309 non-null int64
+Pclass         1309 non-null int64
+Sex            1309 non-null object
+SibSp          1309 non-null int64
+Survived       891 non-null float64
+Ticket         1309 non-null object
+dtypes: float64(3), int64(4), object(5)
+memory usage: 132.9+ KB
+</code></pre><p>缺失值分析：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">属性</th>
+<th style="text-align:center">含义</th>
+<th style="text-align:center">数据总数</th>
+<th style="text-align:center">缺失值</th>
+<th style="text-align:center">缺失率</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Age</td>
+<td style="text-align:center">年龄</td>
+<td style="text-align:center">1046</td>
+<td style="text-align:center">263</td>
+<td style="text-align:center">20.09%</td>
+</tr>
+<tr>
+<td style="text-align:center">Cabin</td>
+<td style="text-align:center">船舱号</td>
+<td style="text-align:center">295</td>
+<td style="text-align:center">1014</td>
+<td style="text-align:center">77.46%</td>
+</tr>
+<tr>
+<td style="text-align:center">Embarked</td>
+<td style="text-align:center">登船港口</td>
+<td style="text-align:center">1307</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">0.15%</td>
+</tr>
+<tr>
+<td style="text-align:center">Fare</td>
+<td style="text-align:center">船票价格</td>
+<td style="text-align:center">1308</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0.08%</td>
+</tr>
+<tr>
+<td style="text-align:center">Name</td>
+<td style="text-align:center">姓名</td>
+<td style="text-align:center">1309</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">Parch</td>
+<td style="text-align:center">父母/子女数目</td>
+<td style="text-align:center">1309</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">PassengerID</td>
+<td style="text-align:center">乘客编号</td>
+<td style="text-align:center">1309</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">Pclass</td>
+<td style="text-align:center">乘客等级（三个等级，1=一等，2=二等，2=3等)</td>
+<td style="text-align:center">1309</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">Sex</td>
+<td style="text-align:center">性别(男为male,女为female)</td>
+<td style="text-align:center">1309</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">SibSp</td>
+<td style="text-align:center">兄弟姐妹、配偶数列</td>
+<td style="text-align:center">1309</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">Ticket</td>
+<td style="text-align:center">船票号码</td>
+<td style="text-align:center">1309</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">Surviied</td>
+<td style="text-align:center">是否存活(存活是1，死亡是0)</td>
+<td style="text-align:center">891</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+</tr>
+</tbody>
+</table>
+<p>需要进行缺失值处理的有：Age、Cabin、Embarked、Fare。 </p>
+<ul>
+<li>年龄 Age 是数值型，缺失值暂时采用平均值填充。 </li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df[<span class="string">'Age'</span>]=df[<span class="string">'Age'</span>].fillna(df[<span class="string">'Age'</span>].mean())<span class="comment">#年龄缺失值用均值填充</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>船舱号 Cablin 缺失较多，可以搁置此特征不使用。</p>
+</li>
+<li><p>Embarked 缺失值较少，且是分类数据，可以采用众数填充，众数是’S’。</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df[<span class="string">'Embarked'</span>]=df[<span class="string">'Embarked'</span>].fillna(<span class="string">'S'</span>)<span class="comment">#Embarked缺失值用众数'S'填充</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>Fare 是船票价格，数值型数据，只缺失一个数据，可以用平均值填充。 </li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df[<span class="string">'Fare'</span>]=df[<span class="string">'Fare'</span>].fillna(df[<span class="string">'Fare'</span>].mean())<span class="comment">#船票价格缺失值用均值填充</span></span><br></pre></td></tr></table></figure>
+<p>缺失值处理之后的数据信息如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#查看缺失值处理之后的数据</span></span><br><span class="line">df.info()</span><br></pre></td></tr></table></figure></p>
+<pre><code>&lt;class &apos;pandas.core.frame.DataFrame&apos;&gt;
+    Int64Index: 1309 entries, 0 to 417
+    Data columns (total 12 columns):
+    Age            1309 non-null float64
+    Cabin          1309 non-null object
+    Embarked       1309 non-null object
+    Fare           1309 non-null float64
+    Name           1309 non-null object
+    Parch          1309 non-null int64
+    PassengerId    1309 non-null int64
+    Pclass         1309 non-null int64
+    Sex            1309 non-null object
+    SibSp          1309 non-null int64
+    Survived       891 non-null float64
+    Ticket         1309 non-null object
+    dtypes: float64(3), int64(4), object(5)
+    memory usage: 132.9+ KB
+</code></pre><h2 id="数据分析"><a href="#数据分析" class="headerlink" title="数据分析"></a>数据分析</h2><p>特征分析，共 11 个特征： </p>
+<p>数值类型：Age、Fare、SibSp、Parch、PassergerID</p>
+<p>分类类型：Pclass、Sex、Embarked</p>
+<p>字符串类型：Name、Cabin、Ticket </p>
+<p>数值类型可以直接使用，分类类型用数值代替类别（one-hot 编码），同时由于数据量较小，一些明显无关的特征可以删除，防止过拟合。 </p>
+<h3 id="Age"><a href="#Age" class="headerlink" title="Age"></a>Age</h3><p>由于 Age 是连续性变量，不好观察特征，按照国际的标准将年龄划分为4 类，0-14 岁为 child，15-24 岁为 youth，25-64 为 adult，大于 64 岁为 old，可以看到明显老人和小孩存活下来的可能性更大。Age 特征明显影响存活率，要保留该项特征。<br>  分类，进行 one-hot 编码： </p>
+<h3 id="Cabin"><a href="#Cabin" class="headerlink" title="Cabin"></a>Cabin</h3><p>Cablin 数据有很多缺失值，删除该特征</p>
+<h3 id="Embarked"><a href="#Embarked" class="headerlink" title="Embarked"></a>Embarked</h3><p>Embarked 共有三类，分别是S、C、Q,存活的情况有一定差别，C 港口的生存概率大一些，此特征保留。 使用 One-hot编码。</p>
+<h3 id="Fare"><a href="#Fare" class="headerlink" title="Fare"></a>Fare</h3><p>Fare 是船票的价格，在小于 2.5 和大于 2.5时候存活率有明显的差异，One-hot 编码 </p>
+<h3 id="Name"><a href="#Name" class="headerlink" title="Name"></a>Name</h3><p>Name 中可能包含一些重要的信息，比如人的称呼、头衔。对此特征进行处理，提取出新的有用特征。</p>
+<h3 id="Parch"><a href="#Parch" class="headerlink" title="Parch"></a>Parch</h3><p>Parch 表示父母/子女数目，可以看到有父母/子女陪同的，比单独出行的生存率高，此特征也需要保留。<br>  分为三个类别：Parch 为 0、Parch 为 1 到 4、Parch大于 4，进行 one-hot 编码 </p>
+<h3 id="PassengerID"><a href="#PassengerID" class="headerlink" title="PassengerID"></a>PassengerID</h3><p>乘客的 ID，ID 是无关信息，删除。 </p>
+<h3 id="Pclass"><a href="#Pclass" class="headerlink" title="Pclass"></a>Pclass</h3><p>可以看到社会等级高的阶层存活概率显然更大，此特征对生存概率有很大影响，需要保留。 </p>
+<p>Pclass 为 1、2、3 类，使用 one-hot 编码 </p>
+<h3 id="Sex"><a href="#Sex" class="headerlink" title="Sex"></a>Sex</h3><p>女性的存活概率更大，性别特征对生存率有影响，此项特征保留。 </p>
+<p>由于 Sex 是分类数据，用数值代替类别，1 代表 male，0 代表 female,进行编码 </p>
+<h3 id="SibSp"><a href="#SibSp" class="headerlink" title="SibSp"></a>SibSp</h3><p>和 Parch 类似，分为三类进行 One-hot 编码 </p>
+<h3 id="Ticket"><a href="#Ticket" class="headerlink" title="Ticket"></a>Ticket</h3><p>船票号码，无关特征，删除。 </p>
+<h2 id="特征工程"><a href="#特征工程" class="headerlink" title="特征工程"></a>特征工程</h2><p>最终保留特征： </p>
+<p>PclassDf,ParchDf,SibSpDf,FareDf, df.Sex, cabinDf, EmbarkedDf </p>
+<h2 id="模型运用"><a href="#模型运用" class="headerlink" title="模型运用"></a>模型运用</h2><h2 id="项目总结"><a href="#项目总结" class="headerlink" title="项目总结"></a>项目总结</h2><h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2>
       
     </div>
 
@@ -490,6 +697,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/机器学习/" rel="tag"><i class="fa fa-tag"></i> 机器学习</a>
+          
+        </div>
       
 
       
@@ -553,8 +766,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -592,7 +814,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">4</span>
+                      
+                    
+                    <span class="site-state-item-count">5</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -686,6 +910,22 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目链接"><span class="nav-number">1.</span> <span class="nav-text">题目链接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运行环境"><span class="nav-number">2.</span> <span class="nav-text">运行环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据预处理"><span class="nav-number">3.</span> <span class="nav-text">数据预处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据分析"><span class="nav-number">4.</span> <span class="nav-text">数据分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Age"><span class="nav-number">4.1.</span> <span class="nav-text">Age</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Cabin"><span class="nav-number">4.2.</span> <span class="nav-text">Cabin</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Embarked"><span class="nav-number">4.3.</span> <span class="nav-text">Embarked</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Fare"><span class="nav-number">4.4.</span> <span class="nav-text">Fare</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Name"><span class="nav-number">4.5.</span> <span class="nav-text">Name</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Parch"><span class="nav-number">4.6.</span> <span class="nav-text">Parch</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PassengerID"><span class="nav-number">4.7.</span> <span class="nav-text">PassengerID</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pclass"><span class="nav-number">4.8.</span> <span class="nav-text">Pclass</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sex"><span class="nav-number">4.9.</span> <span class="nav-text">Sex</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SibSp"><span class="nav-number">4.10.</span> <span class="nav-text">SibSp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Ticket"><span class="nav-number">4.11.</span> <span class="nav-text">Ticket</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特征工程"><span class="nav-number">5.</span> <span class="nav-text">特征工程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模型运用"><span class="nav-number">6.</span> <span class="nav-text">模型运用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#项目总结"><span class="nav-number">7.</span> <span class="nav-text">项目总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考链接"><span class="nav-number">8.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
