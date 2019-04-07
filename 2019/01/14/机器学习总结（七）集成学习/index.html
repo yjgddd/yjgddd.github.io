@@ -112,7 +112,7 @@
 <meta property="og:site_name" content="YangJie&#39;s Blog">
 <meta property="og:description" content="个体与集成集成学习通过构建并结合多个学习器来完成任务。 集成学习的一般结构为：一系列个体学习器采用某种策略结合在一起产生最终的输出。 同质：集成中个体学习器是同类型的，同质集成中个体学习器又称为“基学习器”，相应的学习算法称为“基学习算法” 异质：集成中个体学习器是不同类型的 弱学习器(weak learner)：泛化能力略优于随机猜测的学习器 要获得好的集成，要求个体学习器“好而不同”，即个体学">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-07T02:05:13.483Z">
+<meta property="og:updated_time" content="2019-04-07T02:07:10.007Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习总结（七）集成学习">
 <meta name="twitter:description" content="个体与集成集成学习通过构建并结合多个学习器来完成任务。 集成学习的一般结构为：一系列个体学习器采用某种策略结合在一起产生最终的输出。 同质：集成中个体学习器是同类型的，同质集成中个体学习器又称为“基学习器”，相应的学习算法称为“基学习算法” 异质：集成中个体学习器是不同类型的 弱学习器(weak learner)：泛化能力略优于随机猜测的学习器 要获得好的集成，要求个体学习器“好而不同”，即个体学">
@@ -416,7 +416,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-04-07 10:05:13" itemprop="dateModified" datetime="2019-04-07T10:05:13+08:00">2019-04-07</time>
+                <time title="修改时间：2019-04-07 10:07:10" itemprop="dateModified" datetime="2019-04-07T10:07:10+08:00">2019-04-07</time>
               
             
           </span>
@@ -482,9 +482,9 @@
 <p>弱学习器(weak learner)：泛化能力略优于随机猜测的学习器</p>
 <p>要获得好的集成，要求个体学习器“好而不同”，即个体学习器要有一定的“准确性”，即不能太坏，并且要有“多样性”，即学习器之间有差异。</p>
 <p>集成学习的步骤：</p>
-<p>(1) 找到误差相互独立的基学习器</p>
-<p>(2) 训练基分类器</p>
-<p>(3) 合并基分类器的结果</p>
+<p>● 找到误差相互独立的基学习器</p>
+<p>● 训练基分类器</p>
+<p>● 合并基分类器的结果</p>
 <p>目前集成学习方法大致分为两大类，即个体学习器之间存在<strong>强依赖关系</strong>，必须串行生成的序列化方法，如<strong>Boosting，提升树</strong>等；以及个体学习器之间<strong>不存在强依赖关系</strong>，如<strong>Bagging和随机森林</strong>等。</p>
 <h3 id="Bagging方法"><a href="#Bagging方法" class="headerlink" title="Bagging方法"></a>Bagging方法</h3><p>要得到泛化能力强的集成，个体学习器应尽可能相互独立。虽然在现实任务中很难做到，但可以设法使个体学习器尽可能具有较大的差异性。一个可能的做法是对训练样本采样，产生出若干个不同的子集，再从每个子集中训练出基学习器。</p>
 <p>Bagging采用自助采样方法训练基学习器。每个基学习器将针对学习问题的不同方面进行训练。</p>
@@ -675,7 +675,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">31</span>
+                    <span class="site-state-item-count">32</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -696,7 +696,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">4</span>
+                      
+                    
+                    <span class="site-state-item-count">5</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
