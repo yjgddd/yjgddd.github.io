@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[TensorFlow基本使用]]></title>
+    <url>%2F2019%2F04%2F12%2FTensorFlow%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%2F</url>
+    <content type="text"><![CDATA[研一上用了tensorflow做了一些深度学习的实现，然而一段时间又忘记的七七八八，因此决定好好的总结一下Tensorflow的使用，本篇是TensorFlow的基本概念的回顾和一个简单的线性回归的实现。 基本概念张量TenSorFlow第一个词Tensor即是张量，表明了它的数据结构，可以把张量简单理解为多维数组。但是TenSorFlow的张量和NumPy中的数组不同，TenSorFlow计算的结果不是具体数字，不存储任何数据，而仅仅是一个张量的结构，一个张量主要保存了三个属性：名字（name)、维度（shape)、和类型(type)。 计算图Flow即为“流”,表达了张量之间通过计算相互转化的过程，TenSorFlow是一个通过计算图的形式来表述计算的编程系统。TenSorFlow的每一个计算都是计算图上的一个节点，而节点之间的边描述了计算之间的依赖关系。 会话会话拥有并管理tensorflow程序运行时候的所有资源,一般使用会话有两种模型。 第一种模式需要明确调用会话生成函数和关闭会话函数。代码如下： 123sess=tf.Session()#创建会话sess.run(...)#获得运算结果sess.close()#关闭会话 这种模式需要调用close函数来关闭会话，但是当程序异常时候，会话关闭函数不会执行从而导致资源泄漏，为了解决这个问题可以使用Python的上下文管理器来使用会话。代码示例如下： 12with tf.Session() as sess: sess.run(...) 只要所有计算放在”with”内部，上下文管理器退出时候会自动释放所有资源。 TensorFlow实现线性模型123456789101112131415161718import tensorflow as tfimport numpy as nptrX=np.linspace(-1,1,101)#用numpy的linspace方法产生指定的间隔内均匀间隔的数字trX。trY=2*trX+np.random.randn(*trX.shape)*0.33 #给线性值加一些噪声X=tf.placeholder("float")#输入的XY=tf.placeholder("float")#输入的Yw=tf.Variable(0.0,name="weights")#权重y_=tf.multiply(X,w)#预测的y_cost=tf.square(Y-y_)#损失函数为均方差train_step=tf.train.GradientDescentOptimizer(0.01).minimize(cost)#梯度下降法优化with tf.Session() as sess: tf.global_variables_initializer().run()# 初始化全局变量 #通过选取的样本训练并更新参数 for i in range(100): for (x,y) in zip(trX,trY): sess.run(train_step,feed_dict=&#123;X:x,Y:y&#125;) print(sess.run(w)) 参考【TensorFlow实战Google深度学习框架】]]></content>
+      <categories>
+        <category>深度学习</category>
+      </categories>
+      <tags>
+        <tag>深度学习</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[剑指offer-二进制中1的个数]]></title>
     <url>%2F2019%2F04%2F11%2F%E5%89%91%E6%8C%87offer-%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%B8%AD1%E7%9A%84%E4%B8%AA%E6%95%B0%2F</url>
     <content type="text"><![CDATA[题目链接牛客网剑指offer-二进制中1的个数 题目描述输入一个整数，输出该数二进制表示中1的个数。其中负数用补码表示。 解题思路可以判断整数最后一位是否为1(和1相与)，然后再右移一位，不断当前最后一位是否为1，直至整数为0，但是要考虑为负数的情况，因为负数移位后，为了保证仍然为负数，最高位会为设为1，如果一直做右移运算，会陷入死循环。 另一种更好的做法是，把一个整数减掉1，再和原来的整数做与运算，相当于把整数的二进制最右边的1变为0，比如1100，减去1为1011，再把1100和1011做与运算，得到的结果是1000，把1100最右边的1变成了0，因此一个整数的二进制表示中有多少个1，就可以进行多少次这样的操作。可以写出如下代码： C++代码123456789101112class Solution &#123;public: int NumberOf1(int n) &#123; int ans=0; while(n!=0) &#123; ans++; n=n&amp;(n-1); &#125; return ans; &#125;&#125;; 参考[剑指offer-名企面试官精讲典型编程题(第2版)]]]></content>
@@ -84,8 +95,8 @@
         <category>剑指offer</category>
       </categories>
       <tags>
-        <tag>递归</tag>
         <tag>链表</tag>
+        <tag>递归</tag>
       </tags>
   </entry>
   <entry>

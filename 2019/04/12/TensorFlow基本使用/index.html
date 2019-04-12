@@ -104,25 +104,25 @@
 
 
 
-  <meta name="description" content="本文对排序算法做一次总结和梳理，主要思想+实例+代码实现+时间空间复杂度分析 基于比较的排序算法交换类排序 冒泡排序  基本思想连续的扫描待排序的记录；每趟扫描时，都会移动最大的记录，使之更接近于序列的尾部，像气泡一样缓缓上升。 若某趟扫描过程中没有执行任何交换，则表明记录是有序的，因而需终止排序。 如何移动最大的记录，使之更接近于序列的尾部？ 将当前记录与下一条记录进行比较，若当前记录&amp;gt;下">
-<meta name="keywords" content="数据结构">
+  <meta name="description" content="研一上用了tensorflow做了一些深度学习的实现，然而一段时间又忘记的七七八八，因此决定好好的总结一下Tensorflow的使用，本篇是TensorFlow的基本概念的回顾和一个简单的线性回归的实现。 基本概念张量TenSorFlow第一个词Tensor即是张量，表明了它的数据结构，可以把张量简单理解为多维数组。但是TenSorFlow的张量和NumPy中的数组不同，TenSorFlow计算的">
+<meta name="keywords" content="深度学习">
 <meta property="og:type" content="article">
-<meta property="og:title" content="排序算法总结">
-<meta property="og:url" content="http://yangjie.gq/2018/12/25/排序算法总结/index.html">
+<meta property="og:title" content="TensorFlow基本使用">
+<meta property="og:url" content="http://yangjie.gq/2019/04/12/TensorFlow基本使用/index.html">
 <meta property="og:site_name" content="YangJie&#39;s Blog">
-<meta property="og:description" content="本文对排序算法做一次总结和梳理，主要思想+实例+代码实现+时间空间复杂度分析 基于比较的排序算法交换类排序 冒泡排序  基本思想连续的扫描待排序的记录；每趟扫描时，都会移动最大的记录，使之更接近于序列的尾部，像气泡一样缓缓上升。 若某趟扫描过程中没有执行任何交换，则表明记录是有序的，因而需终止排序。 如何移动最大的记录，使之更接近于序列的尾部？ 将当前记录与下一条记录进行比较，若当前记录&amp;gt;下">
+<meta property="og:description" content="研一上用了tensorflow做了一些深度学习的实现，然而一段时间又忘记的七七八八，因此决定好好的总结一下Tensorflow的使用，本篇是TensorFlow的基本概念的回顾和一个简单的线性回归的实现。 基本概念张量TenSorFlow第一个词Tensor即是张量，表明了它的数据结构，可以把张量简单理解为多维数组。但是TenSorFlow的张量和NumPy中的数组不同，TenSorFlow计算的">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-01-02T12:06:02.169Z">
+<meta property="og:updated_time" content="2019-04-12T12:41:36.643Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="排序算法总结">
-<meta name="twitter:description" content="本文对排序算法做一次总结和梳理，主要思想+实例+代码实现+时间空间复杂度分析 基于比较的排序算法交换类排序 冒泡排序  基本思想连续的扫描待排序的记录；每趟扫描时，都会移动最大的记录，使之更接近于序列的尾部，像气泡一样缓缓上升。 若某趟扫描过程中没有执行任何交换，则表明记录是有序的，因而需终止排序。 如何移动最大的记录，使之更接近于序列的尾部？ 将当前记录与下一条记录进行比较，若当前记录&amp;gt;下">
+<meta name="twitter:title" content="TensorFlow基本使用">
+<meta name="twitter:description" content="研一上用了tensorflow做了一些深度学习的实现，然而一段时间又忘记的七七八八，因此决定好好的总结一下Tensorflow的使用，本篇是TensorFlow的基本概念的回顾和一个简单的线性回归的实现。 基本概念张量TenSorFlow第一个词Tensor即是张量，表明了它的数据结构，可以把张量简单理解为多维数组。但是TenSorFlow的张量和NumPy中的数组不同，TenSorFlow计算的">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yangjie.gq/2018/12/25/排序算法总结/">
+  <link rel="canonical" href="http://yangjie.gq/2019/04/12/TensorFlow基本使用/">
 
 
 
@@ -132,7 +132,7 @@
   };
 </script>
 
-  <title>排序算法总结 | YangJie's Blog</title>
+  <title>TensorFlow基本使用 | YangJie's Blog</title>
   
 
 
@@ -356,7 +356,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yangjie.gq/2018/12/25/排序算法总结/">
+    <link itemprop="mainEntityOfPage" href="http://yangjie.gq/2019/04/12/TensorFlow基本使用/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="YangJie">
@@ -373,7 +373,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">排序算法总结
+          <h1 class="post-title" itemprop="name headline">TensorFlow基本使用
 
               
             
@@ -399,24 +399,12 @@
                 
               
 
-              <time title="创建时间：2018-12-25 10:04:48" itemprop="dateCreated datePublished" datetime="2018-12-25T10:04:48+08:00">2018-12-25</time>
+              <time title="创建时间：2019-04-12 20:38:28 / 修改时间：20:41:36" itemprop="dateCreated datePublished" datetime="2019-04-12T20:38:28+08:00">2019-04-12</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-01-02 20:06:02" itemprop="dateModified" datetime="2019-01-02T20:06:02+08:00">2019-01-02</time>
               
             
           </span>
@@ -433,7 +421,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/数据结构/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a></span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/深度学习/" itemprop="url" rel="index"><span itemprop="name">深度学习</span></a></span>
 
                 
                 
@@ -447,7 +435,7 @@
 
           
           
-             <span id="/2018/12/25/排序算法总结/" class="leancloud_visitors" data-flag-title="排序算法总结">
+             <span id="/2019/04/12/TensorFlow基本使用/" class="leancloud_visitors" data-flag-title="TensorFlow基本使用">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -475,48 +463,17 @@
       
       
       
-        <p>本文对排序算法做一次总结和梳理，主要思想+实例+代码实现+时间空间复杂度分析</p>
-<h2 id="基于比较的排序算法"><a href="#基于比较的排序算法" class="headerlink" title="基于比较的排序算法"></a>基于比较的排序算法</h2><h3 id="交换类排序"><a href="#交换类排序" class="headerlink" title="交换类排序"></a>交换类排序</h3><ul>
-<li><h4 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h4></li>
-</ul>
-<h5 id="基本思想"><a href="#基本思想" class="headerlink" title="基本思想"></a>基本思想</h5><p>连续的扫描待排序的记录；<br>每趟扫描时，都会移动最大的记录，使之更接近于序列的尾部，像气泡一样缓缓上升。</p>
-<p>若某趟扫描过程中没有执行任何交换，则表明记录是有序的，因而需终止排序。</p>
-<p>如何移动最大的记录，使之更接近于序列的尾部？</p>
-<p>将当前记录与下一条记录进行比较，若当前记录&gt;下一条记录，则交换两条记录的位置。</p>
-<h5 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h5><p>5 4 3 6 1 从小到大排序</p>
-<p>第一趟：从头到尾，两两比较，不符合前小后大，就交换位置。</p>
-<p>5和4比较，5比4大，交换位置，接着5和3比较，5比3大，交换位置，5再和6比较，不交换，6和1比较，6比1大，两者交换位置，一趟排序下来，变为</p>
-<p>4 3 5 1 6 </p>
-<p>此时最大的数字6，已经像气泡一样上升到了最后，它的位置就已经确定，下次比较，就只需要对前面4个数字进行排序</p>
-<p>第二趟：</p>
-<p>4和3比较，交换，4再和5比较，不交换，5和1比较，交换，此趟结束，那么一趟排序下来，变为了</p>
-<p>3 4 1 5 6</p>
-<p>5也升到了最后，也就是一次排序有一个数字到达了最终位置，第一趟是最后一个数，第二趟是倒数第二个数，因此下次只用对前面的数进行排序。</p>
-<p>第三趟：</p>
-<p>只用对3 4 1 排序，排序下来变为</p>
-<p>3 1 4 5 6</p>
-<p>第四趟：</p>
-<p>只用对 3 1排序</p>
-<p>1 3 4 5 6</p>
-<p>第五趟:只有一个1，排序完成</p>
-<p>最终就是 1 3 4 5 6</p>
-<h5 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h5><p>整个排序过程可以用两层循环完成，代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">void BubbleSort(int *a, int length)</span><br><span class="line">&#123;</span><br><span class="line">    int i,temp,flag;</span><br><span class="line">	for (i = 0;i &lt; length - 1;i++)</span><br><span class="line">	&#123;</span><br><span class="line">	    flag=0;</span><br><span class="line">		for (int j = 0;j &lt; length - i - 1;j++)</span><br><span class="line">		&#123;</span><br><span class="line">			if (a[j] &gt; a[j + 1])</span><br><span class="line">			&#123;</span><br><span class="line">				temp = a[j];</span><br><span class="line">				a[j] = a[j + 1];</span><br><span class="line">				a[j + 1] = temp;</span><br><span class="line">				flag=1;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		if(flag==0) break;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li><h4 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h4></li>
-</ul>
-<h3 id="选择类排序"><a href="#选择类排序" class="headerlink" title="选择类排序"></a>选择类排序</h3><ul>
-<li><h4 id="简单选择排序"><a href="#简单选择排序" class="headerlink" title="简单选择排序"></a>简单选择排序</h4></li>
-<li><h4 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h4></li>
-</ul>
-<h3 id="插入类排序"><a href="#插入类排序" class="headerlink" title="插入类排序"></a>插入类排序</h3><ul>
-<li><h4 id="直接插入排序"><a href="#直接插入排序" class="headerlink" title="直接插入排序"></a>直接插入排序</h4></li>
-<li><h4 id="折半插入排序"><a href="#折半插入排序" class="headerlink" title="折半插入排序"></a>折半插入排序</h4></li>
-<li><h4 id="希尔排序"><a href="#希尔排序" class="headerlink" title="希尔排序"></a>希尔排序</h4></li>
-</ul>
-<h2 id="基于某种映射函数的排序算法"><a href="#基于某种映射函数的排序算法" class="headerlink" title="基于某种映射函数的排序算法"></a>基于某种映射函数的排序算法</h2><ul>
-<li><h4 id="桶排序"><a href="#桶排序" class="headerlink" title="桶排序"></a>桶排序</h4></li>
-<li><h4 id="基数排序"><a href="#基数排序" class="headerlink" title="基数排序"></a>基数排序</h4></li>
-</ul>
+        <p>研一上用了tensorflow做了一些深度学习的实现，然而一段时间又忘记的七七八八，因此决定好好的总结一下Tensorflow的使用，本篇是TensorFlow的基本概念的回顾和一个简单的线性回归的实现。</p>
+<h1 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h1><h2 id="张量"><a href="#张量" class="headerlink" title="张量"></a>张量</h2><p>TenSorFlow第一个词Tensor即是张量，表明了它的数据结构，可以把张量简单理解为多维数组。但是TenSorFlow的张量和NumPy中的数组不同，TenSorFlow计算的结果不是具体数字，不存储任何数据，而仅仅是一个张量的结构，一个张量主要保存了三个属性：名字（name)、维度（shape)、和类型(type)。</p>
+<h2 id="计算图"><a href="#计算图" class="headerlink" title="计算图"></a>计算图</h2><p>Flow即为“流”,表达了张量之间通过计算相互转化的过程，TenSorFlow是一个通过计算图的形式来表述计算的编程系统。TenSorFlow的每一个计算都是计算图上的一个节点，而节点之间的边描述了计算之间的依赖关系。</p>
+<h2 id="会话"><a href="#会话" class="headerlink" title="会话"></a>会话</h2><p>会话拥有并管理tensorflow程序运行时候的所有资源,一般使用会话有两种模型。</p>
+<p>第一种模式需要明确调用会话生成函数和关闭会话函数。代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sess=tf.Session()#创建会话</span><br><span class="line">sess.run(...)#获得运算结果</span><br><span class="line">sess.close()#关闭会话</span><br></pre></td></tr></table></figure>
+<p>这种模式需要调用close函数来关闭会话，但是当程序异常时候，会话关闭函数不会执行从而导致资源泄漏，为了解决这个问题可以使用Python的上下文管理器来使用会话。代码示例如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</span><br><span class="line">    sess.run(...)</span><br></pre></td></tr></table></figure>
+<p>只要所有计算放在”with”内部，上下文管理器退出时候会自动释放所有资源。</p>
+<h1 id="TensorFlow实现线性模型"><a href="#TensorFlow实现线性模型" class="headerlink" title="TensorFlow实现线性模型"></a>TensorFlow实现线性模型</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">trX=np.linspace(<span class="number">-1</span>,<span class="number">1</span>,<span class="number">101</span>)<span class="comment">#用numpy的linspace方法产生指定的间隔内均匀间隔的数字trX。</span></span><br><span class="line">trY=<span class="number">2</span>*trX+np.random.randn(*trX.shape)*<span class="number">0.33</span> <span class="comment">#给线性值加一些噪声</span></span><br><span class="line"></span><br><span class="line">X=tf.placeholder(<span class="string">"float"</span>)<span class="comment">#输入的X</span></span><br><span class="line">Y=tf.placeholder(<span class="string">"float"</span>)<span class="comment">#输入的Y</span></span><br><span class="line">w=tf.Variable(<span class="number">0.0</span>,name=<span class="string">"weights"</span>)<span class="comment">#权重</span></span><br><span class="line">y_=tf.multiply(X,w)<span class="comment">#预测的y_</span></span><br><span class="line">cost=tf.square(Y-y_)<span class="comment">#损失函数为均方差</span></span><br><span class="line">train_step=tf.train.GradientDescentOptimizer(<span class="number">0.01</span>).minimize(cost)<span class="comment">#梯度下降法优化</span></span><br><span class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</span><br><span class="line">    tf.global_variables_initializer().run()<span class="comment"># 初始化全局变量</span></span><br><span class="line">    <span class="comment">#通过选取的样本训练并更新参数</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">100</span>):</span><br><span class="line">        <span class="keyword">for</span> (x,y) <span class="keyword">in</span> zip(trX,trY):</span><br><span class="line">            sess.run(train_step,feed_dict=&#123;X:x,Y:y&#125;)</span><br><span class="line">    print(sess.run(w))</span><br></pre></td></tr></table></figure>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p>【TensorFlow实战Google深度学习框架】</p>
 
       
     </div>
@@ -569,7 +526,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/数据结构/" rel="tag"><i class="fa fa-tag"></i> 数据结构</a>
+            <a href="/tags/深度学习/" rel="tag"><i class="fa fa-tag"></i> 深度学习</a>
           
         </div>
       
@@ -582,8 +539,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/12/23/skicit-learn学习笔记(一)/" rel="next" title="scikit-learn学习笔记（一）">
-                <i class="fa fa-chevron-left"></i> scikit-learn学习笔记（一）
+              <a href="/2019/04/11/剑指offer-二进制中1的个数/" rel="next" title="剑指offer-二进制中1的个数">
+                <i class="fa fa-chevron-left"></i> 剑指offer-二进制中1的个数
               </a>
             
           </div>
@@ -591,10 +548,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/01/01/实用算法总结(一) 基本概念、线性表/" rel="prev" title="实用算法总结(一) 基本概念、线性表">
-                实用算法总结(一) 基本概念、线性表 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -797,7 +750,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基于比较的排序算法"><span class="nav-number">1.</span> <span class="nav-text">基于比较的排序算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#交换类排序"><span class="nav-number">1.1.</span> <span class="nav-text">交换类排序</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#冒泡排序"><span class="nav-number">1.1.1.</span> <span class="nav-text">冒泡排序</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#基本思想"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">基本思想</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#实例"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">实例</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#实现代码"><span class="nav-number">1.1.1.3.</span> <span class="nav-text">实现代码</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#快速排序"><span class="nav-number">1.1.2.</span> <span class="nav-text">快速排序</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#选择类排序"><span class="nav-number">1.2.</span> <span class="nav-text">选择类排序</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#简单选择排序"><span class="nav-number">1.2.1.</span> <span class="nav-text">简单选择排序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#堆排序"><span class="nav-number">1.2.2.</span> <span class="nav-text">堆排序</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#插入类排序"><span class="nav-number">1.3.</span> <span class="nav-text">插入类排序</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#直接插入排序"><span class="nav-number">1.3.1.</span> <span class="nav-text">直接插入排序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#折半插入排序"><span class="nav-number">1.3.2.</span> <span class="nav-text">折半插入排序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#希尔排序"><span class="nav-number">1.3.3.</span> <span class="nav-text">希尔排序</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基于某种映射函数的排序算法"><span class="nav-number">2.</span> <span class="nav-text">基于某种映射函数的排序算法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#桶排序"><span class="nav-number">2.0.1.</span> <span class="nav-text">桶排序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基数排序"><span class="nav-number">2.0.2.</span> <span class="nav-text">基数排序</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本概念"><span class="nav-number">1.</span> <span class="nav-text">基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#张量"><span class="nav-number">1.1.</span> <span class="nav-text">张量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#计算图"><span class="nav-number">1.2.</span> <span class="nav-text">计算图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#会话"><span class="nav-number">1.3.</span> <span class="nav-text">会话</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TensorFlow实现线性模型"><span class="nav-number">2.</span> <span class="nav-text">TensorFlow实现线性模型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">3.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
 
           </div>
