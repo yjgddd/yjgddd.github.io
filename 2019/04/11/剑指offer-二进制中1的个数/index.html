@@ -104,17 +104,18 @@
 
 
 
-  <meta name="description" content="title: 剑指offer-二进制中1的个数date: 2019-04-11 20:18:18tags: 位运算 categories: 剑指offer题目链接牛客网剑指offer-二进制中1的个数 题目描述输入一个整数，输出该数二进制表示中1的个数。其中负数用补码表示。 解题思路可以判断整数最后一位是否为1(和1相与)，然后再右移一位，不断当前最后一位是否为1，直至整数为0，但是要考虑为负数">
+  <meta name="description" content="题目链接牛客网剑指offer-二进制中1的个数 题目描述输入一个整数，输出该数二进制表示中1的个数。其中负数用补码表示。 解题思路可以判断整数最后一位是否为1(和1相与)，然后再右移一位，不断当前最后一位是否为1，直至整数为0，但是要考虑为负数的情况，因为负数移位后，为了保证仍然为负数，最高位会为设为1，如果一直做右移运算，会陷入死循环。 另一种更好的做法是，把一个整数减掉1，再和原来的整数做与运">
+<meta name="keywords" content="位运算">
 <meta property="og:type" content="article">
-<meta property="og:title" content="YangJie&#39;s Blog">
+<meta property="og:title" content="剑指offer-二进制中1的个数">
 <meta property="og:url" content="http://yangjie.gq/2019/04/11/剑指offer-二进制中1的个数/index.html">
 <meta property="og:site_name" content="YangJie&#39;s Blog">
-<meta property="og:description" content="title: 剑指offer-二进制中1的个数date: 2019-04-11 20:18:18tags: 位运算 categories: 剑指offer题目链接牛客网剑指offer-二进制中1的个数 题目描述输入一个整数，输出该数二进制表示中1的个数。其中负数用补码表示。 解题思路可以判断整数最后一位是否为1(和1相与)，然后再右移一位，不断当前最后一位是否为1，直至整数为0，但是要考虑为负数">
+<meta property="og:description" content="题目链接牛客网剑指offer-二进制中1的个数 题目描述输入一个整数，输出该数二进制表示中1的个数。其中负数用补码表示。 解题思路可以判断整数最后一位是否为1(和1相与)，然后再右移一位，不断当前最后一位是否为1，直至整数为0，但是要考虑为负数的情况，因为负数移位后，为了保证仍然为负数，最高位会为设为1，如果一直做右移运算，会陷入死循环。 另一种更好的做法是，把一个整数减掉1，再和原来的整数做与运">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-11T12:20:41.242Z">
+<meta property="og:updated_time" content="2019-04-12T09:50:01.430Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="YangJie&#39;s Blog">
-<meta name="twitter:description" content="title: 剑指offer-二进制中1的个数date: 2019-04-11 20:18:18tags: 位运算 categories: 剑指offer题目链接牛客网剑指offer-二进制中1的个数 题目描述输入一个整数，输出该数二进制表示中1的个数。其中负数用补码表示。 解题思路可以判断整数最后一位是否为1(和1相与)，然后再右移一位，不断当前最后一位是否为1，直至整数为0，但是要考虑为负数">
+<meta name="twitter:title" content="剑指offer-二进制中1的个数">
+<meta name="twitter:description" content="题目链接牛客网剑指offer-二进制中1的个数 题目描述输入一个整数，输出该数二进制表示中1的个数。其中负数用补码表示。 解题思路可以判断整数最后一位是否为1(和1相与)，然后再右移一位，不断当前最后一位是否为1，直至整数为0，但是要考虑为负数的情况，因为负数移位后，为了保证仍然为负数，最高位会为设为1，如果一直做右移运算，会陷入死循环。 另一种更好的做法是，把一个整数减掉1，再和原来的整数做与运">
 
 
 
@@ -131,7 +132,7 @@
   };
 </script>
 
-  <title> | YangJie's Blog</title>
+  <title>剑指offer-二进制中1的个数 | YangJie's Blog</title>
   
 
 
@@ -372,7 +373,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
+          <h1 class="post-title" itemprop="name headline">剑指offer-二进制中1的个数
 
               
             
@@ -398,17 +399,47 @@
                 
               
 
-              <time title="创建时间：2019-04-11 20:18:18 / 修改时间：20:20:41" itemprop="dateCreated datePublished" datetime="2019-04-11T20:18:18+08:00">2019-04-11</time>
+              <time title="创建时间：2019-04-11 11:19:18" itemprop="dateCreated datePublished" datetime="2019-04-11T11:19:18+08:00">2019-04-11</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-04-12 17:50:01" itemprop="dateModified" datetime="2019-04-12T17:50:01+08:00">2019-04-12</time>
               
             
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/剑指offer/" itemprop="url" rel="index"><span itemprop="name">剑指offer</span></a></span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -416,7 +447,7 @@
 
           
           
-             <span id="/2019/04/11/剑指offer-二进制中1的个数/" class="leancloud_visitors" data-flag-title="">
+             <span id="/2019/04/11/剑指offer-二进制中1的个数/" class="leancloud_visitors" data-flag-title="剑指offer-二进制中1的个数">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -444,9 +475,7 @@
       
       
       
-        <hr>
-<p>title: 剑指offer-二进制中1的个数<br>date: 2019-04-11 20:18:18<br>tags: 位运算</p>
-<h2 id="categories-剑指offer"><a href="#categories-剑指offer" class="headerlink" title="categories: 剑指offer"></a>categories: 剑指offer</h2><h1 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h1><p><a href="https://www.nowcoder.com/practice/8ee967e43c2c4ec193b040ea7fbb10b8?tpId=13&amp;tqId=11164&amp;tPage=1&amp;rp=1&amp;ru=/ta/coding-interviews&amp;qru=/ta/coding-interviews/question-ranking" target="_blank" rel="noopener">牛客网剑指offer-二进制中1的个数</a></p>
+        <h1 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h1><p><a href="https://www.nowcoder.com/practice/8ee967e43c2c4ec193b040ea7fbb10b8?tpId=13&amp;tqId=11164&amp;tPage=1&amp;rp=1&amp;ru=/ta/coding-interviews&amp;qru=/ta/coding-interviews/question-ranking" target="_blank" rel="noopener">牛客网剑指offer-二进制中1的个数</a></p>
 <h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>输入一个整数，输出该数二进制表示中1的个数。其中负数用补码表示。</p>
 <h1 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h1><p>可以判断整数最后一位是否为1(和1相与)，然后再右移一位，不断当前最后一位是否为1，直至整数为0，但是要考虑为负数的情况，因为负数移位后，为了保证仍然为负数，<br>最高位会为设为1，如果一直做右移运算，会陷入死循环。</p>
 <p>另一种更好的做法是，把一个整数减掉1，再和原来的整数做与运算，相当于把整数的二进制最右边的1变为0，比如1100，减去1为1011，再把1100和1011做与运算，得到的<br>结果是1000，把1100最右边的1变成了0，因此一个整数的二进制表示中有多少个1，就可以进行多少次这样的操作。可以写出如下代码：</p>
@@ -501,6 +530,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/位运算/" rel="tag"><i class="fa fa-tag"></i> 位运算</a>
+          
+        </div>
       
 
       
@@ -718,7 +753,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#categories-剑指offer"><span class="nav-number">1.</span> <span class="nav-text">categories: 剑指offer</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#题目链接"><span class="nav-number"></span> <span class="nav-text">题目链接</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#题目描述"><span class="nav-number"></span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解题思路"><span class="nav-number"></span> <span class="nav-text">解题思路</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#C-代码"><span class="nav-number"></span> <span class="nav-text">C++代码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number"></span> <span class="nav-text">参考</span></a></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#题目链接"><span class="nav-number">1.</span> <span class="nav-text">题目链接</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#题目描述"><span class="nav-number">2.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解题思路"><span class="nav-number">3.</span> <span class="nav-text">解题思路</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#C-代码"><span class="nav-number">4.</span> <span class="nav-text">C++代码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">5.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
 
           </div>
