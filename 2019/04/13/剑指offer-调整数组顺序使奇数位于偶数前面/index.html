@@ -112,7 +112,7 @@
 <meta property="og:site_name" content="YangJie&#39;s Blog">
 <meta property="og:description" content="题目链接牛客网剑指offer-调整数组顺序使奇数位于偶数前面 题目描述输入一个整数数组，实现一个函数来调整该数组中数字的顺序，使得所有的奇数位于数组的前半部分，所有的偶数位于数组的后半部分，并保证奇数和奇数，偶数和偶数之间的相对位置不变。 解题思路剑指offer书上并没有要求奇数和偶数的相对位置保持不变，因此可以用两个指针，一个初始化时指向数组第一个数字，只向后移动，一个初始化指向数组最后一个数字">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-13T03:00:56.209Z">
+<meta property="og:updated_time" content="2019-04-13T03:04:11.440Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="剑指offer-调整数组顺序使奇数位于偶数前面">
 <meta name="twitter:description" content="题目链接牛客网剑指offer-调整数组顺序使奇数位于偶数前面 题目描述输入一个整数数组，实现一个函数来调整该数组中数字的顺序，使得所有的奇数位于数组的前半部分，所有的偶数位于数组的后半部分，并保证奇数和奇数，偶数和偶数之间的相对位置不变。 解题思路剑指offer书上并没有要求奇数和偶数的相对位置保持不变，因此可以用两个指针，一个初始化时指向数组第一个数字，只向后移动，一个初始化指向数组最后一个数字">
@@ -399,7 +399,7 @@
                 
               
 
-              <time title="创建时间：2019-04-13 10:58:31 / 修改时间：11:00:56" itemprop="dateCreated datePublished" datetime="2019-04-13T10:58:31+08:00">2019-04-13</time>
+              <time title="创建时间：2019-04-13 10:58:31 / 修改时间：11:04:11" itemprop="dateCreated datePublished" datetime="2019-04-13T10:58:31+08:00">2019-04-13</time>
             
 
             
@@ -464,9 +464,9 @@
       
       
         <h1 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h1><p><a href="https://www.nowcoder.com/practice/beb5aa231adc45b2a5dcc5b62c93f593?tpId=13&amp;tqId=11166&amp;tPage=1&amp;rp=1&amp;ru=/ta/coding-interviews&amp;qru=/ta/coding-interviews/question-ranking" target="_blank" rel="noopener">牛客网剑指offer-调整数组顺序使奇数位于偶数前面</a></p>
-<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>输入一个整数数组，实现一个函数来调整该数组中数字的顺序，使得所有的奇数位于数组的前半部分，所有的偶数位于数组的后半部分，并保证奇数和奇数，偶数和偶数之间<br>的相对位置不变。</p>
-<h1 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h1><p>剑指offer书上并没有要求奇数和偶数的相对位置保持不变，因此可以用两个指针，一个初始化时指向数组第一个数字，只向后移动，一个初始化指向数组最后一个数字，只<br>向前移动，在两个指针相遇之前，如果第一个指针指向的数字是偶数，另一个指针指向的是奇数，那么交换两个位置上的数字，最后可以实现奇数在前，偶数在后。</p>
-<p>但牛客网上的要求奇数和奇数，偶数和偶数之间的相对位置不变。一个比较简单的做法是用空间换时间，可以再开一个vector(C语言里面就是再开一个数组),遍历原来的数<br>组，先将所有的奇数插入新开的vetcor，再把所有偶数插入。最后再把vector复制到原来的数组中。</p>
+<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>输入一个整数数组，实现一个函数来调整该数组中数字的顺序，使得所有的奇数位于数组的前半部分，所有的偶数位于数组的后半部分，并保证奇数和奇数，偶数和偶数之间的相对位置不变。</p>
+<h1 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h1><p>剑指offer书上并没有要求奇数和偶数的相对位置保持不变，因此可以用两个指针，一个初始化时指向数组第一个数字，只向后移动，一个初始化指向数组最后一个数字，只向前移动，在两个指针相遇之前，如果第一个指针指向的数字是偶数，另一个指针指向的是奇数，那么交换两个位置上的数字，最后可以实现奇数在前，偶数在后。</p>
+<p>但牛客网上的要求奇数和奇数，偶数和偶数之间的相对位置不变。一个比较简单的做法是用空间换时间，可以再开一个vector(C语言里面就是再开一个数组),遍历原来的数组，先将所有的奇数插入新开的vetcor，再把所有偶数插入。最后再把vector复制到原来的数组中。</p>
 <h1 id="C-代码"><a href="#C-代码" class="headerlink" title="C++代码"></a>C++代码</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    void reOrderArray(vector&lt;int&gt; &amp;array) &#123;</span><br><span class="line">        vector &lt;int&gt; temp;</span><br><span class="line">        int i;</span><br><span class="line">        for(i=0;i&lt;array.size();i++)</span><br><span class="line">            if(array[i]%2==1) temp.push_back(array[i]);</span><br><span class="line">        for(i=0;i&lt;array.size();i++)</span><br><span class="line">            if(array[i]%2==0) temp.push_back(array[i]);</span><br><span class="line">        for(i=0;i&lt;array.size();i++)</span><br><span class="line">            array[i]=temp[i];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
       
@@ -543,6 +543,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2019/04/13/剑指offer-链表中倒数第k个节点/" rel="prev" title="链表中倒数第k个节点">
+                链表中倒数第k个节点 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -613,7 +617,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">36</span>
+                    <span class="site-state-item-count">37</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>

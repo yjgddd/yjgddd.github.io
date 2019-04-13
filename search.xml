@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[链表中倒数第k个节点]]></title>
+    <url>%2F2019%2F04%2F13%2F%E5%89%91%E6%8C%87offer-%E9%93%BE%E8%A1%A8%E4%B8%AD%E5%80%92%E6%95%B0%E7%AC%ACk%E4%B8%AA%E8%8A%82%E7%82%B9%2F</url>
+    <content type="text"><![CDATA[题目链接牛客网剑指offer-链表中倒数第k个节点 题目描述输入一个链表，输出该链表中倒数第k个结点。 解题思路常规的想法是先遍历一遍求链表的长度len,倒数第k个节点也就是整数第len-k+1个节点，再遍历找到这个节点，因此需要遍历链表两次。 其实遍历链表一次就可以实现了，做法是定义两个指针，开始都初始化为链表头结点，第一个指针先从头节点走k-1步，从第k步开始，两个指针一起开始遍历链表，那么两个指针的距离始终是k-1，当第一个指针走到链表的尾节点时候，第二个指针刚好指向倒数第k个节点。 为了保证代码的鲁棒性，需要考虑pListHead为空、k为0、k的值比链表长度大三种特殊情况，此时返回空指针。 C++代码1234567891011121314151617181920212223242526/*struct ListNode &#123; int val; struct ListNode *next; ListNode(int x) : val(x), next(NULL) &#123; &#125;&#125;;*/class Solution &#123;public: ListNode* FindKthToTail(ListNode* pListHead, unsigned int k) &#123; ListNode* p1=pListHead,*p2=pListHead; if(pListHead==NULL||k==0) return NULL; for(unsigned int i=1;i&lt;k;i++) &#123; if(p1-&gt;next!=NULL) p1=p1-&gt;next; else return NULL; &#125; while(p1-&gt;next!=NULL) &#123; p1=p1-&gt;next; p2=p2-&gt;next; &#125; return p2; &#125;&#125;;]]></content>
+      <categories>
+        <category>剑指offer</category>
+      </categories>
+      <tags>
+        <tag>链表</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[剑指offer-调整数组顺序使奇数位于偶数前面]]></title>
     <url>%2F2019%2F04%2F13%2F%E5%89%91%E6%8C%87offer-%E8%B0%83%E6%95%B4%E6%95%B0%E7%BB%84%E9%A1%BA%E5%BA%8F%E4%BD%BF%E5%A5%87%E6%95%B0%E4%BD%8D%E4%BA%8E%E5%81%B6%E6%95%B0%E5%89%8D%E9%9D%A2%2F</url>
     <content type="text"><![CDATA[题目链接牛客网剑指offer-调整数组顺序使奇数位于偶数前面 题目描述输入一个整数数组，实现一个函数来调整该数组中数字的顺序，使得所有的奇数位于数组的前半部分，所有的偶数位于数组的后半部分，并保证奇数和奇数，偶数和偶数之间的相对位置不变。 解题思路剑指offer书上并没有要求奇数和偶数的相对位置保持不变，因此可以用两个指针，一个初始化时指向数组第一个数字，只向后移动，一个初始化指向数组最后一个数字，只向前移动，在两个指针相遇之前，如果第一个指针指向的数字是偶数，另一个指针指向的是奇数，那么交换两个位置上的数字，最后可以实现奇数在前，偶数在后。 但牛客网上的要求奇数和奇数，偶数和偶数之间的相对位置不变。一个比较简单的做法是用空间换时间，可以再开一个vector(C语言里面就是再开一个数组),遍历原来的数组，先将所有的奇数插入新开的vetcor，再把所有偶数插入。最后再把vector复制到原来的数组中。 C++代码12345678910111213class Solution &#123;public: void reOrderArray(vector&lt;int&gt; &amp;array) &#123; vector &lt;int&gt; temp; int i; for(i=0;i&lt;array.size();i++) if(array[i]%2==1) temp.push_back(array[i]); for(i=0;i&lt;array.size();i++) if(array[i]%2==0) temp.push_back(array[i]); for(i=0;i&lt;array.size();i++) array[i]=temp[i]; &#125;&#125;;]]></content>
@@ -174,8 +185,8 @@
         <category>剑指offer</category>
       </categories>
       <tags>
-        <tag>链表</tag>
         <tag>栈</tag>
+        <tag>链表</tag>
       </tags>
   </entry>
   <entry>
