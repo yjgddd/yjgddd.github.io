@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.6.0" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.6.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.ico?v=6.6.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.ico?v=6.6.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.6.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '6.6.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="对象基本概念对象中包含一系列属性，这些属性是无序的。每个属性都有一个字符串key和对应的value。 123var obj=&amp;#123;x:1,y:2&amp;#125;;obj.x;//1obj.y;//2 创建对象、原型链对象创建： 创建对象-字面量123456789var obj1=&amp;#123;x:1,y:2&amp;#125;;var obj2=&amp;#123;    x:1,    y:2,    o:&amp;#">
+<meta name="keywords" content="JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript笔记（三）">
+<meta property="og:url" content="http://yangjie.gq/2019/03/04/JavaScript深入浅出笔记（三）/index.html">
+<meta property="og:site_name" content="YangJie&#39;s Blog">
+<meta property="og:description" content="对象基本概念对象中包含一系列属性，这些属性是无序的。每个属性都有一个字符串key和对应的value。 123var obj=&amp;#123;x:1,y:2&amp;#125;;obj.x;//1obj.y;//2 创建对象、原型链对象创建： 创建对象-字面量123456789var obj1=&amp;#123;x:1,y:2&amp;#125;;var obj2=&amp;#123;    x:1,    y:2,    o:&amp;#">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-04-03T03:14:36.792Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript笔记（三）">
+<meta name="twitter:description" content="对象基本概念对象中包含一系列属性，这些属性是无序的。每个属性都有一个字符串key和对应的value。 123var obj=&amp;#123;x:1,y:2&amp;#125;;obj.x;//1obj.y;//2 创建对象、原型链对象创建： 创建对象-字面量123456789var obj1=&amp;#123;x:1,y:2&amp;#125;;var obj2=&amp;#123;    x:1,    y:2,    o:&amp;#">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yangjie.gq/2019/03/04/JavaScript深入浅出笔记（三）/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>JavaScript笔记（三） | YangJie's Blog</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion .logo-line-before i { left: initial; }
+    .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">YangJie's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+  
+  
+  
+  
+
+  
+
+    <a href="https://github.com/yjgddd" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewbox="0 0 250 250" style="fill: #222; color: #fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a>
+
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yangjie.gq/2019/03/04/JavaScript深入浅出笔记（三）/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="YangJie">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YangJie's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">JavaScript笔记（三）
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-03-04 16:13:43" itemprop="dateCreated datePublished" datetime="2019-03-04T16:13:43+08:00">2019-03-04</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-04-03 11:14:36" itemprop="dateModified" datetime="2019-04-03T11:14:36+08:00">2019-04-03</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/前端/" itemprop="url" rel="index"><span itemprop="name">前端</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2019/03/04/JavaScript深入浅出笔记（三）/" class="leancloud_visitors" data-flag-title="JavaScript笔记（三）">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+      
+        <h2 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h2><h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><p>对象中包含一系列属性，这些属性是<strong>无序</strong>的。每个属性都有一个<strong>字符串</strong>key和对应的value。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var obj=&#123;x:1,y:2&#125;;</span><br><span class="line">obj.x;//1</span><br><span class="line">obj.y;//2</span><br></pre></td></tr></table></figure>
+<h3 id="创建对象、原型链"><a href="#创建对象、原型链" class="headerlink" title="创建对象、原型链"></a>创建对象、原型链</h3><p>对象创建：</p>
+<h4 id="创建对象-字面量"><a href="#创建对象-字面量" class="headerlink" title="创建对象-字面量"></a>创建对象-字面量</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var obj1=&#123;x:1,y:2&#125;;</span><br><span class="line">var obj2=&#123;</span><br><span class="line">    x:1,</span><br><span class="line">    y:2,</span><br><span class="line">    o:&#123;</span><br><span class="line">        z:3,</span><br><span class="line">        n:4</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h4 id="创建对象-new-原型链"><a href="#创建对象-new-原型链" class="headerlink" title="创建对象-new/原型链"></a>创建对象-new/原型链</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">function foo()&#123;&#125;;</span><br><span class="line">foo.prototype.z=3</span><br><span class="line"></span><br><span class="line">var obj=new foo();</span><br><span class="line">obj.y=2;</span><br><span class="line">obj.x=1;</span><br><span class="line"></span><br><span class="line">obj.x;//1</span><br><span class="line">obj.y;//2</span><br><span class="line">obj.z;//3</span><br><span class="line">typeof obj.toString;//&apos;function&apos;</span><br><span class="line">z in obj;//true</span><br><span class="line">obj.hasOwnProperty(&apos;z&apos;);//false</span><br><span class="line"></span><br><span class="line">obj.z=5;</span><br><span class="line"></span><br><span class="line">obj.hasOwnProperty(&apos;z&apos;);//true</span><br><span class="line">foo.prototype.z;//still 3</span><br><span class="line">obj.z;//5</span><br><span class="line"></span><br><span class="line">obj.z=undefined;</span><br><span class="line">obj.z;//undefined</span><br><span class="line"></span><br><span class="line">delete obj.z;//true</span><br><span class="line">obj.z;//3</span><br><span class="line"></span><br><span class="line">delete obj.z;//true</span><br><span class="line">obj.z;//still 3!!!</span><br></pre></td></tr></table></figure>
+<h4 id="创建对象-Object-create"><a href="#创建对象-Object-create" class="headerlink" title="创建对象-Object.create"></a>创建对象-Object.create</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var obj=Object.create(&#123;x:1&#125;);</span><br><span class="line">obj.x;//1</span><br><span class="line">typeof obj.toString;//&quot;function&quot;</span><br><span class="line">obj.hasOwnProperty(&apos;x&apos;);//false</span><br><span class="line"></span><br><span class="line">var obj=Object.create(null);</span><br><span class="line">obj.toString;//undefined</span><br></pre></td></tr></table></figure>
+<h3 id="属性类型"><a href="#属性类型" class="headerlink" title="属性类型"></a>属性类型</h3><h4 id="数据属性"><a href="#数据属性" class="headerlink" title="数据属性"></a>数据属性</h4><h5 id="configurable"><a href="#configurable" class="headerlink" title="[[configurable]]"></a>[[configurable]]</h5><p>表示能否通过delete删除属性从而重新定义属性，能否修改属性的特性，或者能否把属性修改为访问器属性</p>
+<h5 id="Enumberable"><a href="#Enumberable" class="headerlink" title="[[Enumberable]]"></a>[[Enumberable]]</h5><p>表示能否通过for-in循环返回属性</p>
+<h5 id="Writeable"><a href="#Writeable" class="headerlink" title="[[Writeable]]"></a>[[Writeable]]</h5><p>表示能否修改属性的值</p>
+<h5 id="Value"><a href="#Value" class="headerlink" title="[[Value]]"></a>[[Value]]</h5><p>包含这个属性的数据值。读取属性值的时候，从这个位置读。写入属性值的时候，把新值保存在这个位置。这个特性的默认值为undefined。</p>
+<p>对于直接在对象上定义的属性，他们的[[configurable]]、[[Enumberable]]、[[Writeable]]特性都被设置为true，而[[Value]]特性被设置为指定的值</p>
+<h4 id="访问器属性"><a href="#访问器属性" class="headerlink" title="访问器属性"></a>访问器属性</h4><p>访问器属性不包含数据值，包含一对getter和setter函数（非必需），在读取访问器属性的时候，会调用getter函数，这个函数负责返回有效的值；在写入访问器属性时，会调用setter函数并传入新值，这个函数负责决定如何处理数据，访问器属性有如下四个特性：</p>
+<h5 id="configurable-1"><a href="#configurable-1" class="headerlink" title="[[configurable]]"></a>[[configurable]]</h5><p>表示能否通过delete删除属性从而重新定义属性，能否修改属性的特性，或者能否把属性修改为访问器属性</p>
+<h5 id="Enumberable-1"><a href="#Enumberable-1" class="headerlink" title="[[Enumberable]]"></a>[[Enumberable]]</h5><p>表示能否通过for-in循环返回属性</p>
+<h5 id="Get"><a href="#Get" class="headerlink" title="[[Get]]"></a>[[Get]]</h5><p>在读取属性时调用的函数。默认值为undefined</p>
+<h5 id="Set"><a href="#Set" class="headerlink" title="[[Set]]"></a>[[Set]]</h5><p>在写入属性时调用的函数。默认值为undefined</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">var book=&#123;</span><br><span class="line">    _year:2004,//下划线记号表示只能通过对象方法访问的属性。</span><br><span class="line">    edition:1</span><br><span class="line">&#125;;</span><br><span class="line">//year是访问器属性，包含一个getter函数一个setter函数，getter函数返回_year函数的值，setter函数通过计算来确定正确的版本</span><br><span class="line">Object.defineProperty(book,&quot;year&quot;,&#123;</span><br><span class="line">    get: function()&#123;</span><br><span class="line">        return this._year;</span><br><span class="line">    &#125;</span><br><span class="line">    set: function(newValue)&#123;</span><br><span class="line">        if(newValue)&#123;</span><br><span class="line">            this_year=newValue;</span><br><span class="line">            this.edition+=newValue-2004;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">book.year=2005;</span><br><span class="line">alert(book.edition);//2</span><br></pre></td></tr></table></figure>
+<p>只指定getter意味着属性不能写，只指定setter属性不能读。</p>
+<h3 id="属性操作"><a href="#属性操作" class="headerlink" title="属性操作"></a>属性操作</h3><h4 id="读写对象属性"><a href="#读写对象属性" class="headerlink" title="读写对象属性"></a>读写对象属性</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var obj=&#123;x:1,y:2&#125;;</span><br><span class="line">obj.x;//1</span><br><span class="line">obj[&quot;y&quot;];//2</span><br></pre></td></tr></table></figure>
+<p>使用Object.getOwnPropertyDescriptor()方法可以获得给定属性的描述符。这个方法接受两个参数：属性所在对象和要读取其描述符的属性名称</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var descriptor=Object.getOwnPropertyDescriptor(book,&quot;x&quot;);</span><br><span class="line">alert(descriptor.value);//1</span><br><span class="line">alert(descriptor.configurable);//true</span><br></pre></td></tr></table></figure>
+<h4 id="属性异常-略"><a href="#属性异常-略" class="headerlink" title="属性异常(略)"></a>属性异常(略)</h4><h4 id="删除属性"><a href="#删除属性" class="headerlink" title="删除属性"></a>删除属性</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var person=&#123;age:28,title:&quot;fe&quot;&#125;;</span><br><span class="line">delete person.age;//true</span><br><span class="line">delete person[&apos;title&apos;];//true</span><br><span class="line">person.age;//undefined</span><br><span class="line">delete person.age;//true</span><br><span class="line"></span><br><span class="line">delete Object.prototype;//false不允许删除</span><br></pre></td></tr></table></figure>
+<h4 id="检测属性"><a href="#检测属性" class="headerlink" title="检测属性"></a>检测属性</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var cat=new Object;</span><br><span class="line">cat.legs=4;</span><br><span class="line">cat.name=&quot;Kitty&quot;;</span><br><span class="line"></span><br><span class="line">&apos;legs&apos; in cat;//true</span><br><span class="line">&apos;abc&apos; in cat;//false</span><br><span class="line">&quot;toString&quot; in cat;//true</span><br></pre></td></tr></table></figure>
+<h4 id="枚举属性（略）"><a href="#枚举属性（略）" class="headerlink" title="枚举属性（略）"></a>枚举属性（略）</h4><h4 id="属性getter-setter方法"><a href="#属性getter-setter方法" class="headerlink" title="属性getter/setter方法"></a>属性getter/setter方法</h4><p>见前面</p>
+<h4 id="属性标签"><a href="#属性标签" class="headerlink" title="属性标签"></a>属性标签</h4><p>修改属性标签。用Object.defineProperty()方法；接受三个参数：属性所在的对象、属性的名字、描述符对象；</p>
+<p>其中，描述符对象的属性必须是：configurable、enumerable、writable、value；</p>
+<p>设置其中的一个或多个值，可以修改对应的特性值。一旦将confidurable特性改为false，不能再改回true。</p>
+<p>在调用Object.defineProperty()方法时，如果不指定，configurable、enumerable、writable特性的值都是false。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var person=&#123;&#125;;</span><br><span class="line">Object.defineProperty(person,&apos;name&apos;,&#123;</span><br><span class="line">configurable:false;</span><br><span class="line">writable:false;</span><br><span class="line">enumerable:true;</span><br><span class="line">value:&quot;Bosn Ma&quot;</span><br><span class="line">&#125;);</span><br><span class="line">//多个属性用defineProperties</span><br></pre></td></tr></table></figure>
+<h3 id="对象标签"><a href="#对象标签" class="headerlink" title="对象标签"></a>对象标签</h3><h4 id="原型标签"><a href="#原型标签" class="headerlink" title="原型标签"></a>原型标签</h4><p>比如Object.prototype</p>
+<h4 id="class标签"><a href="#class标签" class="headerlink" title="class标签"></a>class标签</h4><p>toString 是 Object原型对象上的方法，使用Object.prototype.toString.call() 来调用该方法会返回调用者的类型字符串，返回格式为 [object,xxx]，xxx 是调用者的数据类型，包括：String、Number、Boolean、Undefined、Null、Function、Date、Array、RegExp、Error、HTMLDocument 等。</p>
+<h4 id="extensible标签"><a href="#extensible标签" class="headerlink" title="extensible标签"></a>extensible标签</h4><p>表示对象是否可以扩展，即对象上的属性是否可以继续添加</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">var obj=&#123;x:1,y:2&#125;;</span><br><span class="line">Object.isExtensible(obj);//true</span><br><span class="line">Object.preventExtensions(obj);//变为不可扩展</span><br><span class="line">Object.isExtensible(obj);//false</span><br><span class="line">obj.z=1;</span><br><span class="line">obj.z;//undefined,add new property failed</span><br><span class="line"></span><br><span class="line">Object.seal(obj)//设置对象属性标签不可被配置,设置confinurable为false</span><br><span class="line"></span><br><span class="line">Object.isSealed(obj)//判断对象是否被隐藏</span><br><span class="line"></span><br><span class="line">Object.freeze(obj)//冻结，设置属性不可写</span><br><span class="line"></span><br><span class="line">Object.isFrozen(obj)//判断对象是否被冻结</span><br></pre></td></tr></table></figure>
+<h3 id="对象序列化"><a href="#对象序列化" class="headerlink" title="对象序列化"></a>对象序列化</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;x:1,y:true,z:[1,2,3],nullVal:null&#125;;</span><br><span class="line"></span><br><span class="line">JSON.stringify(obj)</span><br><span class="line">/*如果属性是undefined，就不会出现在序列中。</span><br><span class="line">NaN和Infinity会转换为null，时间会转为UTC时间格式*/</span><br><span class="line"></span><br><span class="line">//把JSON转为对象</span><br><span class="line">obj=JSON.parse(&apos;&#123;&quot;x&quot;:1&#125;&apos;);</span><br><span class="line">obj.x;//1</span><br></pre></td></tr></table></figure>
+<h3 id="其他对象方法"><a href="#其他对象方法" class="headerlink" title="其他对象方法"></a>其他对象方法</h3><p>toString()</p>
+<p>valueOf</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="https://www.imooc.com/learn/277" target="_blank" rel="noopener">JavaScript深入浅出</a></p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+   
+    
+
+    
+      
+    
+    
+    <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="YangJie 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="YangJie 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag"><i class="fa fa-tag"></i> JavaScript</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/03/04/JavaScript深入浅出笔记（二）/" rel="next" title="JavaScript笔记（二）">
+                <i class="fa fa-chevron-left"></i> JavaScript笔记（二）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/03/04/JavaScript深入浅出笔记（四）/" rel="prev" title="JavaScript笔记（四）">
+                JavaScript笔记（四） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80Mzc0NC8yMDI4Mw=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="YangJie">
+            
+              <p class="site-author-name" itemprop="name">YangJie</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">37</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">16</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/yjgddd" title="GitHub &rarr; https://github.com/yjgddd" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:youngjie@mail.ustc.edu.cn" title="E-Mail &rarr; mailto:youngjie@mail.ustc.edu.cn" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#对象"><span class="nav-number">1.</span> <span class="nav-text">对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本概念"><span class="nav-number">1.1.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建对象、原型链"><span class="nav-number">1.2.</span> <span class="nav-text">创建对象、原型链</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#创建对象-字面量"><span class="nav-number">1.2.1.</span> <span class="nav-text">创建对象-字面量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建对象-new-原型链"><span class="nav-number">1.2.2.</span> <span class="nav-text">创建对象-new/原型链</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建对象-Object-create"><span class="nav-number">1.2.3.</span> <span class="nav-text">创建对象-Object.create</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性类型"><span class="nav-number">1.3.</span> <span class="nav-text">属性类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数据属性"><span class="nav-number">1.3.1.</span> <span class="nav-text">数据属性</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#configurable"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">[[configurable]]</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Enumberable"><span class="nav-number">1.3.1.2.</span> <span class="nav-text">[[Enumberable]]</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Writeable"><span class="nav-number">1.3.1.3.</span> <span class="nav-text">[[Writeable]]</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Value"><span class="nav-number">1.3.1.4.</span> <span class="nav-text">[[Value]]</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#访问器属性"><span class="nav-number">1.3.2.</span> <span class="nav-text">访问器属性</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#configurable-1"><span class="nav-number">1.3.2.1.</span> <span class="nav-text">[[configurable]]</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Enumberable-1"><span class="nav-number">1.3.2.2.</span> <span class="nav-text">[[Enumberable]]</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Get"><span class="nav-number">1.3.2.3.</span> <span class="nav-text">[[Get]]</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Set"><span class="nav-number">1.3.2.4.</span> <span class="nav-text">[[Set]]</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性操作"><span class="nav-number">1.4.</span> <span class="nav-text">属性操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#读写对象属性"><span class="nav-number">1.4.1.</span> <span class="nav-text">读写对象属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#属性异常-略"><span class="nav-number">1.4.2.</span> <span class="nav-text">属性异常(略)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除属性"><span class="nav-number">1.4.3.</span> <span class="nav-text">删除属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#检测属性"><span class="nav-number">1.4.4.</span> <span class="nav-text">检测属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#枚举属性（略）"><span class="nav-number">1.4.5.</span> <span class="nav-text">枚举属性（略）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#属性getter-setter方法"><span class="nav-number">1.4.6.</span> <span class="nav-text">属性getter/setter方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#属性标签"><span class="nav-number">1.4.7.</span> <span class="nav-text">属性标签</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对象标签"><span class="nav-number">1.5.</span> <span class="nav-text">对象标签</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#原型标签"><span class="nav-number">1.5.1.</span> <span class="nav-text">原型标签</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#class标签"><span class="nav-number">1.5.2.</span> <span class="nav-text">class标签</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#extensible标签"><span class="nav-number">1.5.3.</span> <span class="nav-text">extensible标签</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对象序列化"><span class="nav-number">1.6.</span> <span class="nav-text">对象序列化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他对象方法"><span class="nav-number">1.7.</span> <span class="nav-text">其他对象方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-number">2.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">YangJie</span>
+<!--
+  
+
+  
+</div>
+-->
+
+  <span class="post-meta-divider">|</span>
+
+
+
+</div>
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv" title="总访客量">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="site-pv" title="总访问量">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+      
+  
+  <script color="0,0,255" opacity="0.5" zindex="-1" count="99" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=6.6.0"></script>
+
+  <script src="/js/src/motion.js?v=6.6.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/src/affix.js?v=6.6.0"></script>
+
+  <script src="/js/src/schemes/pisces.js?v=6.6.0"></script>
+
+
+
+  
+  <script src="/js/src/scrollspy.js?v=6.6.0"></script>
+<script src="/js/src/post-details.js?v=6.6.0"></script>
+
+
+
+  
+
+
+  <script src="/js/src/bootstrap.js?v=6.6.0"></script>
+
+
+
+  
+
+
+
+  
+    <script>
+      window.livereOptions = {
+        refer: '2019/03/04/JavaScript深入浅出笔记（三）/'
+      };
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script>
+    
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+
+      Counter('get', '/classes/Counter', { where: JSON.stringify({ url }) })
+        .done(function ({ results }) {
+          if (results.length > 0) {
+            var counter = results[0];
+            
+            Counter('put', `/classes/Counter/${counter.objectId}`, JSON.stringify({ time: { "__op":"Increment", "amount":1 } }))
+            
+            .done(function () {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(counter.time + 1);
+            })
+            
+            .fail(function ({ responseJSON }) {
+                console.log('Failed to save Visitor num, with error message: ' + responseJSON.error);
+            })
+          } else {
+            
+              var $element = $(document.getElementById(url));
+              $element.find('.leancloud-visitors-count').text('Counter not initialized! See more at console err msg.');
+              console.error('ATTENTION! LeanCloud counter has security bug, see here how to solve it: https://github.com/theme-next/hexo-leancloud-counter-security. \n But you also can use LeanCloud without security, by set \'security\' option to \'false\'.');
+            
+          }
+        })
+      .fail(function ({ responseJSON }) {
+        console.log('LeanCloud Counter Error:' + responseJSON.code + " " + responseJSON.error);
+      });
+    }
+    
+
+    $(function() {
+      $.get('https://app-router.leancloud.cn/2/route?appId=' + "")
+        .done(function ({ api_server }) {
+          var Counter = function (method, url, data) {
+            return $.ajax({
+              method: method,
+              url: `https://${api_server}/1.1${url}`,
+              headers: {
+                'X-LC-Id': "",
+                'X-LC-Key': "",
+                'Content-Type': 'application/json',
+              },
+              data: data,
+            });
+          };
+          
+          addCount(Counter);
+          
+        })
+    });
+  </script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+  </script>
+   
+
+</body>
+</html>
